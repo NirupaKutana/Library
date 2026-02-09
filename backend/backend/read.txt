@@ -1,0 +1,233 @@
+{
+"book_name":"pqr",
+"category_id":1,
+"copies":100,
+"author_id":2
+}
+-------------------------------------------------------------------------
+-------------------------------1.category------------------------------------
+create table tbl_categories (
+      category_id serial primary key ,
+	  category_name varchar(50) not null,
+
+	  status VARCHAR(20) DEFAULT 'active',
+      created_by int DEFAULT 1,
+	  updated_by int DEFAULT 1,
+	  created_at timestamp DEFAULT current_timestamp,
+	  updated_at timestamp,
+	  update_reason varchar(100) DEFAULT 'system'
+);
+---------------------------------category Functions-----------------------------------
+drop function if exists get_all_categorys();
+create or replace function get_all_categorys()
+returns table(
+categoty_id int,
+category_name varchar
+)
+as $$
+begin
+    return query 
+	select * from tbl_categories;
+end;
+$$ language plpgsql;
+
+-------------------------------------------------------------------------------------------
+create or replace function post_update_category(p_action varchar,cat_id int,cat_name varchar) 
+returns text as $$
+begin
+   if p_action = 'post' then
+      insert into tbl_categories(category_name) values(cat_name);
+	  return 'category inserted successfully..!';
+   elseif p_action ='update' then
+       update tbl_categories set category_name = cat_name,updated_at =Now() where category_id = cat_id;
+	   return 'category updated..!';
+   else
+   return 'invalid action..!';
+   end if ;
+   
+end;
+$$ language plpgsql;
+
+select * from post_update_category('update',1,'nirupaaa')
+
+
+
+
+---------------------------------2. author -----------------------------------------
+
+create table tbl_authors(
+      author_id serial primary key,
+	  author_name varchar(100) not null,
+      status VARCHAR(20) DEFAULT 'active',
+      created_by int DEFAULT 1,
+	  updated_by int DEFAULT 1,
+	  created_at timestamp DEFAULT current_timestamp,
+	  updated_at timestamp,
+	  update_reason varchar(100) DEFAULT 'system'
+)
+-------------------------------author Functions---------------------------------------------
+drop function if exists get_all_author_detail();
+create or replace function get_all_author_detail()
+returns table(
+ author_name varchar
+)
+as $$
+begin
+     return query
+     select a.author_name from tbl_author a;
+end;
+$$
+language plpgsql;
+
+select * from get_all_author_detail();
+----------------------------------------------------------------------------------------------------
+create or replace function post_update_author(p_action varchar,u_id int,u_name varchar)
+returns text
+as $$
+begin
+	if p_action='post' then
+		insert into tbl_author(author_name) values(u_name);
+		return 'author added ..!';
+	elseif p_action='update' then
+	     update tbl_author set author_name=u_name ,updated_at = now() where author_id=u_id ;
+		 return 'uthor updated..!';
+	else 
+		return 'invalis action..!' ;
+	end if;
+end;
+$$ language plpgsql;
+
+select * from post_update_author('post',null,'niruuu');
+select * from post_update_author('update',3,'niruuu2');
+
+-----------------------------------3. books -----------------------------------
+create table books (
+     book_id serial primary key,
+	 book_name varchar(100) not null ,
+	 category_id int not null references tbl_categories(category_id),
+	 author_id int not null references tbl_author(author_id),
+	 book_page numeric,
+	 copies numeric not null,
+
+	  status VARCHAR(20) DEFAULT 'active',
+      created_by int DEFAULT 1,
+	  updated_by int DEFAULT 1,
+	  created_at timestamp DEFAULT current_timestamp,
+	  updated_at timestamp,
+	  update_reason varchar(100) DEFAULT 'system'
+);
+-----------------------Book functions -------------------------------
+DROP FUNCTION IF EXISTS get_all_books_detail();
+create or replace function get_all_books_detail ()
+returns table (
+book_id int,
+book_name varchar,
+category_name varchar,
+author_name varchar,
+book_page numeric,
+copies numeric,
+status varchar)
+
+as $$
+begin
+     return query select b.book_id , b.book_name,c.category_name,a.author_name,
+	 b.book_page , b.copies , b.status 
+	 from tbl_books b inner join tbl_categories c on b.category_id = c.category_id 
+	 inner join tbl_author a on b.author_id = a.author_id;
+	 
+end;
+$$
+language plpgsql;
+select * from get_all_books_detail ();
+create or replace function post_update_book(
+    p_action varchar,
+	b_id integer,
+    b_name character varying,
+	c_id integer,
+	a_id integer,
+	b_page numeric,
+	copy numeric,
+	up_by integer default null,
+	up_reason character varying default null)
+	returns text
+as $$
+begin
+   if p_action = 'post' then 
+      insert into tbl_books (book_name,category_id,author_id,book_page,copies)
+	  values(b_name,c_id,a_id,b_page,copy);
+	  return 'book inserted successfully..!';
+	  
+   elseif p_action = 'update' then
+       update tbl_books set book_name=b_name ,category_id=c_id , author_id=a_id,
+	   book_page = b_page, copies=copy, updated_at = Now() ,
+	   updated_by = up_by , update_reason =up_reason where book_id=b_id;
+	   return 'book updated..!';
+   end if;
+   
+end;
+$$ language plpgsql;
+tbl
+select * from post_update_book('update',2,'sg',4,5,101,100)
+------------------------------------------------------------------------------------
+---------------------------------LOGINNNN---------------------------------------------------
+create or replace function user_login_sp(email varchar,pass varchar)
+RETURNS TABLE(
+    status TEXT,
+	o_flag int,
+    -- message TEXT,
+    u_id int,
+    u_name VARCHAR,
+    u_email VARCHAR,
+	u_count int
+)
+LANGUAGE plpgsql
+as $$
+   declare l_user RECORD;
+begin 
+    select * into l_user from tbl_users where user_email = email and is_active = TRUE;
+	-- email check
+	if not found then 
+	   return query select 'error',0,NULL::int,NULL::varchar,NULL::varchar,null::int;
+	   return;
+	end if;
+	
+    -- unlock after 2 min
+	   if l_user.count>=3 AND l_user.duration is not null AND now()>=l_user.duration + INTERVAL '2 minutes' then
+	   		update tbl_users set count=0,duration = NULL where user_email =email;
+			l_user.count := 0;
+            l_user.duration := NULL;
+		end if;
+		
+
+	-- account lockk
+	if l_user.count >=3 then
+	     return query select 'error',1,NULL::int,NULL::varchar,NULL::varchar,null::int;
+		 return;
+	end if;
+
+	-- password check
+	if not (l_user.user_password = pass) then
+	    IF l_user.count = 2 THEN
+            -- 3rd wrong attempt → lock account
+	            UPDATE tbl_users SET count = 3,duration = now() WHERE user_email = email;
+	
+	            RETURN QUERY SELECT 'LOCKED'::TEXT,2,
+	                   NULL::INT, NULL::VARCHAR, NULL::VARCHAR,null::int;
+	            RETURN;
+		else
+		    update tbl_users  set count = count + 1 where user_email = email;
+			return query select 'error',3,NULL::int,NULL::varchar,NULL::varchar,null::int;
+			return;
+		end if;
+	end if;
+	
+	-- success login
+	update tbl_users set count =0 ,duration = null  where user_email = email;
+	return query select 'success',4,l_user.user_id,l_user.user_name,l_user.user_email,l_user.count;
+			 
+end;
+$$;
+select * from user_login_sp('nirupa@gmail.com','Nirupa@13');
+select * from tbl_users;
+
+update tbl_users set count=0;

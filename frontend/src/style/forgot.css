@@ -1,0 +1,83 @@
+.forgot-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Title */
+.forgot-title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Subtitle */
+.forgot-text {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Input field */
+.forgot-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.forgot-field label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.forgot-field input {
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.forgot-field input:focus {
+  border-color: #457b9d;
+  box-shadow: 0 0 0 3px rgba(69, 123, 157, 0.15);
+}
+
+/* Buttons */
+.forgot-actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.forgot-yes {
+  background: #457b9d;
+  color: white;
+  border: none;
+  padding: 10px 28px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.forgot-yes:hover {
+  background: #35607a;
+}
+
+.forgot-no {
+  background: #e5e5e5;
+  color: #333;
+  border: none;
+  padding: 10px 28px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.forgot-no:hover {
+  background: #d6d6d6;
+}

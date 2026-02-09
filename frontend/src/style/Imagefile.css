@@ -1,0 +1,110 @@
+/* Page background */
+.image-page {
+  /* min-height: 100vh; */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+
+/*---------------------------------add image css--------------------------------------------------------------------------- */
+.add-image-link {
+  position: absolute;
+  top:-50px;     /* slightly above card */
+  right: 160px;
+  text-decoration: none;
+}
+
+/* Button styling */
+.add-image-btn {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  background: #2c3e50;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transition: all 0.2s ease;
+}
+
+.add-image-btn:hover {
+  background: #1a252f;
+  transform: translateY(-2px);
+}
+
+.add-image-btn:active {
+  transform: scale(0.95);
+}
+
+/* -------------------------image and name in card */
+/* Container for all cards */
+.image-list {
+  display: flex;
+  flex-wrap: wrap;              /* wrap to next line if needed */
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Single card */
+.image-card-view {
+  width: 220px;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect */
+.image-card-view:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Image */
+.image-card-view img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Image name */
+.image-card-view h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+}
+
+/* Delete button */
+.image-card-view button {
+  width: 100%;
+  padding: 8px 0;
+  border-radius: 6px;
+  border: none;
+  background: #2c3e50;          /* red */
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+/* Hover */
+.image-card-view button:hover {
+  background: #1a252f;
+  transform: translateY(-1px);
+}
+
+/* Active */
+.image-card-view button:active {
+  transform: scale(0.95);
+}

@@ -1,0 +1,84 @@
+.unauth-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.unauth-card {
+  background: #ffffff;
+  padding: 40px 50px;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 420px;
+  width: 100%;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.unauth-code {
+  font-size: 72px;
+  font-weight: 700;
+  color: #760c16;
+  margin: 0;
+}
+
+.unauth-title {
+  font-size: 24px;
+  margin: 10px 0;
+  color: #343a40;
+}
+
+.unauth-text {
+  font-size: 16px;
+  color: #6c757d;
+  margin-bottom: 30px;
+}
+
+.unauth-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 22px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  transition: all 0.25s ease;
+}
+
+.btn.primary {
+  background-color: #0e0718;
+  color: #ffffff;
+}
+
+.btn.primary:hover {
+  background-color: #0f0735;
+}
+
+.btn.secondary {
+  background-color: #520404;
+  color: #ffffff;
+}
+
+.btn.secondary:hover {
+  background-color: #550505;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,198 @@
+/*---------------------------------add Category css--------------------------------------------------------------------------- */
+/* Container for top-right button */
+.table-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+/* Add Book button */
+.add-book-btn {
+  padding: 7px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #2c3e50;   /* matches header theme */
+  border: 1px solid #2c3e50;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect */
+.add-book-btn:hover {
+  background-color: #1f2d3a;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Focus (keyboard accessibility) */
+.add-book-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(44, 62, 80, 0.3);
+}
+
+
+/*---------------------------------category Table css--------------------------------------------------------------------------- */
+
+.book-container {
+  max-width: 1000px;     /* not full page */
+  margin: 20px auto;    /* centered */
+  padding: 10px;
+  
+}
+
+.book-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* Table Header */
+.book-table thead {
+  background-color: #2c3e50;
+}
+
+.book-table th {
+  color: #ffffff;
+  padding: 12px 10px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+  align-items: center;
+  
+}
+
+/* Table Body */
+.book-table td {
+  padding: 10px;
+  height: 40px;
+  font-size: 15px;
+  color: #333;
+  border-bottom: 1px solid #eaeaea;
+  white-space: nowrap;
+}
+
+/* Zebra striping */
+.book-table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+/* Hover effect */
+.book-table tbody tr:hover {
+  background-color: #eef5ff;
+}
+
+/* Status badge */
+.status {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* Status colors */
+.status.active {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status.inactive {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Responsive scrolling */
+@media (max-width: 768px) {
+  .book-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+/*---------------------------------Delete-Update-Button css--------------------------------------------------------------------------- */
+
+
+/* Action column */
+.action-col {
+  white-space: nowrap;
+}
+
+/* Common button */
+.btn {
+  padding: 4px 10px;
+  font-size: 15px;
+  border: none;
+  height: 40px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 6px;
+}
+
+/* Update button */
+.btn-update {
+  background-color: #e3f2fd;
+  color: #1565c0;
+}
+
+/* Delete button */
+.btn-delete {
+  background-color: #fdecea;
+  color: #c62828;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+
+
+/* ---------------------------- */
+/* When modal is open */
+.book-container.dimmed {
+  opacity: 0.35;          /* fade background */
+  filter: blur(2px);     /* soft blur */
+  pointer-events: none;  /* disable clicks */
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  z-index: 1001;
+}
+
+
+/* --------------------------SERCHBAR--- */
+
+
+.srch
+{
+  margin-right: 20px;
+  width: 200px;
+  padding: 8px 35px 8px 10px; /* space for icon */
+  text-align: left;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+

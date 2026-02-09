@@ -1,0 +1,83 @@
+/* Page background */
+.reset-page {
+  min-height: 100vh;
+  background: #f5f7fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card */
+.reset-card {
+  width: 420px;
+  background: #ffffff;
+  padding: 32px 28px;
+  border-radius: 12px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+/* Title */
+.reset-card h2 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: #1f2933;
+  margin-bottom: 8px;
+}
+
+/* Subtitle */
+.reset-card p {
+  text-align: center;
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+/* Field */
+.reset-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 22px;
+}
+
+.reset-field label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.reset-field input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.reset-field input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* Button */
+.reset-btn {
+  width: 100%;
+  background: #355f75;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.reset-btn:hover {
+  background: #2b4d60;
+}
+
+.reset-btn:active {
+  transform: scale(0.98);
+}
