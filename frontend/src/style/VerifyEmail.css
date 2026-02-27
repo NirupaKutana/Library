@@ -1,0 +1,91 @@
+/* ===== Full Page Center Layout ===== */
+.verify-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  /* background: linear-gradient(135deg, #4e73df, #1cc88a); */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== Card ===== */
+.verify-card {
+  background: #ffffff;
+  padding: 40px 35px;
+  width: 380px;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* ===== Heading ===== */
+.verify-card h2 {
+  margin-bottom: 10px;
+  color: #2e3a59;
+  font-weight: 600;
+}
+
+.verify-card p {
+  font-size: 14px;
+  color: #6c757d;
+  margin-bottom: 25px;
+}
+
+/* ===== Buttons ===== */
+.verify-btn {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Login Button */
+.login-btn {
+  background-color: #4e73df;
+  color: white;
+}
+
+.login-btn:hover {
+  background-color: #2e59d9;
+  transform: translateY(-2px);
+}
+
+/* Resend Button */
+.resend-btn {
+  background-color: #f8f9fc;
+  color: #4e73df;
+  border: 1px solid #4e73df;
+}
+
+.resend-btn:hover {
+  background-color: #4e73df;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* ===== Animation ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 450px) {
+  .verify-card {
+    width: 90%;
+    padding: 30px 20px;
+  }
+}

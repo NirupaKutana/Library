@@ -1,7 +1,8 @@
-import React, { FormEvent, useState } from 'react'
+import React, { useState } from 'react'
 import '../style/Signup.css'
 import axios from 'axios'
-import { Navigate, NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Signup = () => {
     
@@ -22,20 +23,23 @@ const Signup = () => {
     };
 //  setTimeout (()=>{
 //     setError("");
-//  },3000);
-    const signupAPI=()=>
-    {
+//  },3000); 
     
-        axios.post(`http://127.0.0.1:8000/user/`,{
+    const signupAPI=async()=>
+    {
+        
+         axios.post(`http://127.0.0.1:8000/user/`,{
           user_name :name,
           user_email:email,
           user_password:password,
         }).then(res=>{
             setUserData(res.data);
+            toast.success(res.data.Detail )
             
         }).catch(err=>console.log(err))
     }
     const handlesubmit =async (e:React.FormEvent) =>{
+        e.preventDefault()
         if(password!==repass){
             
             setError("password do not match");
@@ -50,8 +54,8 @@ const Signup = () => {
         setError("");
         try{
             const res = await signupAPI();
-            alert("signup successfully..!");
-            navigate("/login");
+            localStorage.setItem("verify_email", email);
+            navigate("/Verify");
             
         }catch(err){
           console.log(err)

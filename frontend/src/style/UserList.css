@@ -1,0 +1,71 @@
+/* ===== Container ===== */
+.userlist-container {
+  padding: 30px;
+  background-color: #f4f6f9;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.userlist-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 26px;
+  font-weight: 600;
+  color: #2f3f50;
+}
+/* ===== Table Styling ===== */
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Table Header ===== */
+.user-table thead {
+  background: linear-gradient(90deg, #2f3f50, #1e2a38);
+  color: #ffffff;
+}
+
+.user-table th {
+  padding: 15px;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+/* ===== Table Body ===== */
+.user-table td {
+  padding: 14px 15px;
+  font-size: 14px;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+
+/* ===== Hover Effect ===== */
+.user-table tbody tr {
+  transition: all 0.2s ease-in-out;
+}
+
+.user-table tbody tr:hover {
+  background-color: #f1f5f9;
+  transform: scale(1.01);
+}
+
+/* ===== Button Styling ===== */
+.audit-btn {
+  padding: 7px 14px;
+  border: none;
+  border-radius: 6px;
+  background-color: #263444;
+  color: #ffffff;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.audit-btn:hover {
+  background-color: #475564;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}

@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     
-    
 ]
 
 MIDDLEWARE = [
@@ -55,12 +54,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
-    'libApp.middlewares.simple_middleware.RequestLoggingMiddleware',
-    'libApp.middlewares.simple_middleware.MethodRestrictionMiddleware',
-    'libApp.middlewares.simple_middleware.PerformanceMiddleware',
+    # 'libApp.middlewares.simple_middleware.RequestLoggingMiddleware',
+    # 'libApp.middlewares.simple_middleware.MethodRestrictionMiddleware',
+     # 'libApp.middlewares.simple_middleware.PerformanceMiddleware',
     # 'libApp.middlewares.jwt_middleware.JWTAuthenticationMiddleware',
 ]
-MIDDLEWARE.append('libApp.middlewares.simple_middleware.workingHoursMiddleware')
+# MIDDLEWARE.append('libApp.middlewares.simple_middleware.workingHoursMiddleware')
 
 CORS_ALLOW_ALL_ORIGINS = True
 ROOT_URLCONF = 'backend.urls'

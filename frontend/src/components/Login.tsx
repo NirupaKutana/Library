@@ -24,19 +24,23 @@ const Login = () => {
                 if(response.data.access_token)
                 {   
                     
-                    toast.success("login Successfully")
+                    toast.success(response.data.message)
                     //  save token
                     localStorage.setItem("access_token", response.data.access_token);
                     localStorage.setItem("refresh_token", response.data.refresh_token);
                     // optional: save user
                     localStorage.setItem("role", response.data.user.role);
                     localStorage.setItem("user", JSON.stringify(response.data.user));
-                    navigate("/");
+                    {localStorage.getItem("role")==="ADMIN" &&(
+                       navigate("/profile")
+                    )}
+                    {localStorage.getItem("role")==="USER" &&(
+                       navigate("/")
+                    )}
                 }
                 }catch(error:any)
                 {   
                
-                    console.log("login error",error.response?.data?.error)
                     toast.error(`${error.response?.data?.error}`)
                     //setError(error.response?.data?.error)
                 }

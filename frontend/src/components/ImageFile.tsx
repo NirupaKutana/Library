@@ -1,15 +1,25 @@
 import React, { useEffect,useState } from 'react'
 import '../style/Imagefile.css'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { Api } from './Token' 
-
+import AddImage from './AddImage'
 import { refreshAccessToken } from './RefreshToken'
 import Loader from './Loader'
+import Pagination from './Pagination'
+import { toast } from 'react-toastify'
 const ImageFile = () => {
-    const[imgdata,setImgData] =useState<any[]>([])
+    const[imgdata,setImgData] =useState<any[]>([]);
+    const [isshow,setshowmodel] = useState<Boolean>(false);
+    const navigate = useNavigate()
     const BASE_URL = 'http://127.0.0.1:8000/image/'
-    const[Loading,setLoading] = useState(false)
+    const[Loading,setLoading] = useState(false);
+    const [currentPage,setCurrentPage]=useState(1);
+    const itemPerPage = 6;
+    const indexOfLast = currentPage * itemPerPage ;
+    const indexOfFirst = indexOfLast - itemPerPage;
+    const currentUsers = imgdata.slice(indexOfFirst,indexOfLast) ;
+    
         // const fetchImage = async () => {
         //     try {
         //         const res = await Api("http://127.0.0.1:8000/image/");
@@ -41,14 +51,15 @@ const ImageFile = () => {
                             Authorization: `Bearer ${localStorage.getItem("access_token")}`,
                             },
                         })
-                    setImgData(res.data)
+                    setImgData(res.data);
+                    navigate("/profile", { state: { activeTab: "AddImage" } })
                 }catch(err :any)
                 {
                     if(err.response?.status === 401)
                     {
                         const newtoken = await refreshAccessToken();
                         fetchImage();
-                        console.log("hello")
+                    
                         // if(newtoken){
                         //     const retry = await axios.get("http://127.0.0.1:8000/image/",{
                         //         headers :{
@@ -62,6 +73,7 @@ const ImageFile = () => {
                 finally{setLoading(false)}
         };
         fetchImage();
+
        },[])
        const handleDelete = (id : number)=>{
             axios.delete(`${BASE_URL}${id}/`,{
@@ -69,22 +81,26 @@ const ImageFile = () => {
                    Authorization: `Bearer ${localStorage.getItem("token")}`
                 }
             }).then(res=>{
-                alert("Image Deleted");
+                toast.success(res.data.detail)
+                navigate("/profile", { state: { activeTab: "AddImage" } })
                 window.location.reload();
-            }).catch(er=>console.log(er))
+            }).catch((err:any)=>{
+                toast.error(err.response?.data?.err)
+            })
             
         }
   
   return (
     <>  
     {Loading && <Loader/>}
+   
     <div className="image-page">
         <div className="table-actions">
         {localStorage.getItem("role")==="ADMIN" &&(
-        <NavLink to='addimage/' className="add-image-link"><button className="add-image-btn">+ADD Image</button></NavLink>
+      <div className="add-image-link"><button className="add-image-btn" onClick={()=>{setshowmodel(true)}}>+ADD Image</button></div>
         )}  
            <div className="image-list">
-            {imgdata.map((data:any)=>
+            {currentUsers.map((data:any)=>
             <div className="image-card-view" key={data[0]}>
                 <img src={`http://127.0.0.1:8000/media/${data[1]}`} alt={data[1]} />
                 <h4>{data[2]}</h4><br />
@@ -93,9 +109,26 @@ const ImageFile = () => {
                 )}
             </div>
             )}
+        <Pagination
+        currentPage={currentPage}
+        totalItems={imgdata.length}
+        itemPerPage={itemPerPage}
+        onPageChange={(page)=>{setCurrentPage(page)}}/>
            </div>
-         </div>  
     </div>
+    </div>  
+  
+     
+    {isshow && (
+    <>
+    <div className='overlay'></div>
+    <div className='modal'>
+      
+      <button className='modal-close' onClick={()=>setshowmodel(false)}>&times;</button>
+      <AddImage onSuccess={()=>{setshowmodel(false)}}/>
+    </div>
+    </>
+   )}
    </>
   )
 }

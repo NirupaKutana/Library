@@ -45,3 +45,8 @@ class ImageSerializer(serializers.Serializer):
     image_file =serializers.ImageField()
     image_name=serializers.CharField(max_length=200)
 
+class ContactSerializer(serializers.Serializer):
+    contact_id = serializers.IntegerField(required=False)
+    contact_name=serializers.CharField(max_length=100)
+    contact_email=serializers.CharField(max_length=100)
+    contact_msg=serializers.CharField(max_length=400)

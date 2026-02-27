@@ -1,0 +1,137 @@
+/* Page Container */
+.audit-container {
+ 
+  padding: 30px;
+  background: #f4f6f9;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Title */
+.audit-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 26px;
+  font-weight: 600;
+  color: #2f3f50;
+}
+
+/* Card Wrapper */
+.audit-table-wrapper {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  overflow-x: auto;
+}
+
+/* Table */
+.audit-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+/* Header */
+.audit-table thead {
+  background: linear-gradient(90deg, #2f3f50, #1e2a38);
+}
+
+.audit-table th {
+  color: #ffffff;
+  text-align: center;
+  padding: 14px 16px;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+/* Body */
+.audit-table td {
+  padding: 14px 16px;
+  font-size: 14px;
+  color: #333;
+  border-bottom: 1px solid #eaeaea;
+}
+
+/* Hover Effect */
+.audit-table tbody tr:hover {
+  background-color: #f2f7ff;
+  transition: 0.2s ease-in-out;
+}
+
+/* Zebra Striping */
+.audit-table tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* Action Badge Styling */
+.audit-table td:nth-child(3) {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Scroll Styling */
+.audit-table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.audit-table-wrapper::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+  border-radius: 10px;
+}
+
+.audit-table-wrapper::-webkit-scrollbar-thumb:hover {
+  background-color: #999;
+}
+
+
+.badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  color: white;
+}
+
+.badge.create {
+  background-color: #4baf62;
+}
+
+.badge.update {
+  background-color: #eec64d;
+
+}
+
+.badge.deleted {
+  background-color: #fc6675;
+}
+
+/* --------------------------------Search Bar */
+
+/* Search Input */
+.srchbar {
+  width: 200px;
+  margin-left: 600px;
+  margin-bottom: 10px;
+  padding: 10px 30px 10px 15px;
+  border-radius: 10px;
+  border: 1px solid #dcdcdc;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  
+}
+
+/* Focus Effect */
+.srchbar:focus {
+  border-color: #2f3f50;
+  box-shadow: 0 4px 12px rgba(47, 63, 80, 0.15);
+}
+
+/* Placeholder */
+.srchbar::placeholder {
+  color: #999;
+}
+

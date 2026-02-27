@@ -1,32 +1,44 @@
 import React, { useEffect ,useState} from 'react'
-
 import '../style/Category.css'
 import axios from 'axios'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import Addcategory from './Addcategory'
 import { toast } from 'react-toastify'
 import Loader from './Loader'
+import Pagination from './Pagination'
+
 const Category = () => {
     const BASE_URL = "http://127.0.0.1:8000";
     const [categorydata,setcategorydata] = useState([]);
     const [isshow,setshowmodel]=useState<boolean>(false);
     const [search,setsearch] = useState("");
     const [filterdata,setfilterdata] = useState([]);
-   const isSearch = search.trim().length > 0;
-    const datatoSHow = isSearch ? filterdata : categorydata;
+    const isSearch = search.trim().length > 0;  
     const [Loading,setLoading] =useState(false)
-  
-    useEffect(()=>{
-        setLoading(true)
-        axios.get(`${BASE_URL}/category/`)
-        .then(res=>{
-            setcategorydata(res.data)
+    const navigate = useNavigate()
+    const [selectedCategory, setSelectedCategory] = useState<any>(null);
+    const [currentPage,setCurrentPage]=useState(1);
+    const itemPerPage = 6;
+    const indexOfLast = currentPage * itemPerPage ;
+    const indexOfFirst = indexOfLast - itemPerPage;
+    const currentUsers = categorydata.slice(indexOfFirst,indexOfLast) ;
+    const datatoSHow = isSearch ? filterdata : currentUsers;
 
-        }).catch(err=>console.log(err))
-        .finally(()=>
-          {setLoading(false)})
-    },[])
-      useEffect(()=>{
+  
+  const fetchAllCategories = () => {
+   setLoading(true)
+  axios.get(`${BASE_URL}/category/`)
+    .then(res => setcategorydata(res.data))
+    .catch(err=>console.log(err))
+    .finally(()=>
+         {setLoading(false)})
+};
+
+useEffect(() => {
+  fetchAllCategories();
+}, []);
+
+    useEffect(()=>{
             fetchcategory(search)
     },[search])
 
@@ -34,6 +46,8 @@ const Category = () => {
        axios.get(`${BASE_URL}/cat/filter/?name=${encodeURIComponent(name)}`)
        .then(res=>{
         setfilterdata(res.data)
+        navigate("/profile", { state: { activeTab: "Category" } })
+
        }).catch(err=>console.log(err))
     }
 
@@ -44,6 +58,7 @@ const Category = () => {
                 data :{c_id}
             })
             toast.warning(res.data.Detail)
+            navigate("/profile", { state: { activeTab: "Category" } })
             window.location.reload();
        }
        catch(err:any)
@@ -60,17 +75,22 @@ const Category = () => {
                 
                    <input type="text" className='srch' placeholder='🔍  Search Here..!' value={search} onChange={(e)=>setsearch(e.target.value)}/>
                   
-          {/* <NavLink to='addcategory/'></NavLink>  */}
           
-          <button  className="add-book-btn" onClick={()=>setshowmodel(true)}>+Add Category</button> 
-          
+          {localStorage.getItem("role")==="ADMIN" &&(
+            <button className="add-book-btn" onClick={() => {setSelectedCategory(null);   // important
+              setshowmodel(true);  }}>
+            +Add Category </button>
+          // <button  className="add-book-btn" onClick={()=>setshowmodel(true)}>+Add Category</button> 
+          )}
           </div>
       <table className="book-table">
         <thead>
          <tr>
             <th>Category Id</th>
             <th>Category Name</th>
+            {localStorage.getItem("role")==="ADMIN" &&(
             <th>Action</th>
+            )}
          </tr>
         </thead>
   
@@ -79,26 +99,37 @@ const Category = () => {
         <tr key={index}>
             <td>{data[0]}</td>
             <td>{data[1]}</td>
-           
+           {localStorage.getItem("role")==="ADMIN" &&(
             <td className="action-col">
-               <NavLink to='addcategory/' state={{id:data[0],name:data[1]}}><button className="btn btn-update">Update</button></NavLink>
+              <button className="btn btn-update" onClick={() => 
+              {setSelectedCategory({ id: data[0], name: data[1] });setshowmodel(true);}}>
+                 Update </button>
+               {/* <NavLink to='addcategory/' state={{id:data[0],name:data[1]}}><button className="btn btn-update">Update</button></NavLink> */}
                 <button className="btn btn-delete" onClick={()=>handleDelete(data[0])}>Delete</button>
             </td>
+           )}
         </tr>
         )}
            
         </tbody>
-
       </table>
-      
+      <Pagination
+        currentPage={currentPage}
+        totalItems={categorydata.length}
+        itemPerPage={itemPerPage}
+        onPageChange={(page)=>{setCurrentPage(page)}}/>
         </div>
         </div>
         {isshow && (
         <>
         <div className="overlay">
         <div className="modal">
-          <button onClick={()=>setshowmodel(false)}>-</button>
-          <Addcategory/>
+          <button className='modal-close' onClick={()=>setshowmodel(false)}>&times;</button>
+           <Addcategory category={selectedCategory}
+               onSuccess={() => {
+               setshowmodel(false);
+               fetchAllCategories();
+          }}/>
           </div>
           </div>
         </>

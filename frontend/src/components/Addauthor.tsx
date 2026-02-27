@@ -3,20 +3,21 @@ import '../style/Addauthor.css'
 import axios from 'axios'
 import { useNavigate,useLocation, Navigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
-const Addauthor = () => {
+const Addauthor = ({ author, onSuccess }: any) => {
   const BASE_URL = "http://127.0.0.1:8000";
   const[name,setname]= useState("")
   const navigate=useNavigate()
-  const locatin = useLocation()
-  const author = locatin.state
-  const isEdit = Boolean(author)
+  const isEdit = Boolean(author?.id)
   
   useEffect(()=>{
       if(author)
     {
         setname(author.name)
     } 
-    },[])
+    else{
+        setname("")
+    }
+    },[author])
 
   const handlechange = async (e:React.FormEvent)=>
     {
@@ -28,30 +29,34 @@ const Addauthor = () => {
           }).then((res)=>{
             
             toast.success(res.data.success)
-            navigate("/authors")
-          }).catch(err=>console.log(err))
+            navigate("/profile", { state: { activeTab: "Author" } })
+            window.location.reload()
+          }).catch((err:any)=>{
+      
+            toast.error(err.response?.data?.error)
+          })
       }
     else
       {
         axios.post(`${BASE_URL}/author/`,{
            author_name :name
           }).then((res)=>{
-          // alert("Author added ..!")
           toast.success(res.data.success)
-          navigate("/authors")
+          navigate("/profile", { state: { activeTab: "Author" } })
           }).catch((error)=>{
-          alert(error.response.data.error)
+              toast.error(error.response?.data?.error)
           })
       }
+      onSuccess()
    }
 
   return (
     <div className='addbook-container'>
-       <form action="">
-        <h3>{isEdit ? "Upadte Author " : "Author Details"}</h3>
+       <form onSubmit={handlechange}>
+        <h3>{isEdit ? "Upadte Author " : "Add Author Details"}</h3>
         <label htmlFor="">Name</label>
         <input type="text" value={name} onChange={(e)=>setname(e.target.value)}/>
-        <button type='submit' onClick={handlechange}>Submit</button>
+        <button type='submit'>Submit</button>
        </form>
     </div>
   )

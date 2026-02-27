@@ -1,0 +1,102 @@
+.footer {
+  margin-top: 80px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ===== CTA SECTION ===== */
+.footer-cta {
+  background: #2f3f50;   /* Matches your navbar */
+  color: white;
+  padding: 5px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border-radius: 20px 20px 0 0; */
+}
+
+.footer-cta h2 {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.footer-btn {
+  padding: 12px 30px;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.footer-btn:hover {
+  background: white;
+  color: #2f3f50;
+}
+
+/* ===== MAIN SECTION ===== */
+.footer-main {
+  background: #1c252e;  /* Dark black-blue */
+  color: #ccc;
+  padding: 60px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.footer-column h3,
+.footer-column h4 {
+  color: white;
+  margin-bottom: 15px;
+}
+
+.footer-column p {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 8px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.footer-column ul li:hover {
+  color: white;
+  padding-left: 6px;
+}
+
+/* ===== BOTTOM ===== */
+.footer-bottom {
+  background: #141a20;
+  color: #888;
+  text-align: center;
+  padding: 18px;
+  font-size: 13px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .footer-main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-cta {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-main {
+    grid-template-columns: 1fr;
+  }
+}

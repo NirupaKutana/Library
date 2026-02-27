@@ -1,28 +1,198 @@
-.profile-card {
-  width: 350px;
-  margin: 80px auto;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+/* ===== DASHBOARD LAYOUT ===== */
+.dashboard-container {
+  display: flex;
+  height: 100vh;        /* full screen */
+  overflow: hidden;     /* prevent whole page scroll */
+  background: #f4f6f9;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #2f3f50, #1e2a38);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 15px; 
+  height: 100vh;      /* full height */
+  position: fixed;    /* FIXED instead of sticky */
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+/* Top section */
+.sidebar-top {
   text-align: center;
-  background: #fff;
+  margin-bottom: 40px;
+  flex-shrink: 0;
 }
 
-.profile-card h2 {
-  margin-bottom: 20px;
+
+.sidebar-top h3 {
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.8;
+  word-break: break-word;
 }
 
-.profile-card p {
-  font-size: 15px;
-  margin: 8px 0;
+/* Menu */
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-right: 5px;
+  min-height: 0; 
+  flex: 1;   /* This pushes logout to bottom */
+  overflow-y: auto;   /* vertical scroll */
+  scrollbar-color: #5c7086 transparent;
+        
+}
+/* ===== Chrome, Edge, Safari ===== */
+.sidebar-menu::-webkit-scrollbar {
+  width:8px;
 }
 
-.profile-card button {
-  margin-top: 20px;
-  padding: 10px 25px;
+.sidebar-menu::-webkit-scrollbar-track {
+  background: transparent;           /* Background of scrollbar */
+}
+
+.sidebar-menu::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    #5c7086,
+    #3c4f63
+  );
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.sidebar-menu::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    #7d94ad,
+    #4b627a
+  );
+}
+.sidebar-menu li {
+  padding: 12px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 8px;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+/* Hover effect */
+.sidebar-menu li:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(5px);
+}
+
+/* Active Menu */
+.sidebar-menu li.active {
+  background: white;
+  color: #2f3f50;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Logout */
+.sidebar-bottom {
+  margin-top: auto;
+  flex-shrink: 0;
+ 
+}
+
+.sidebar-bottom button {
+  width: 100%;
+  padding: 10px;
   border: none;
   border-radius: 8px;
   background: #e74c3c;
-  color: #fff;
+  color: white;
   cursor: pointer;
+  margin-top: 20px; 
+  margin-bottom: 15px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.sidebar-bottom button:hover {
+  background: #c0392b;
+  transform: scale(1.03);
+}
+
+
+
+/* ===== CONTENT ===== */
+.content-area {
+  margin-left: 260px;   /* same as sidebar width */
+  flex: 1;
+  padding: 40px;
+  height: 100vh;
+  overflow-y: auto;     /* ONLY content scrolls */
+}
+
+.content-card {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content-card h2 {
+  margin-bottom: 20px;
+}
+
+.btnnn
+{
+  padding: 8px 50px;
+  color: white;
+  background-color:black;
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-bottom: -5px;
+  border:solid white;
+  /* margin-left: 600px; */
+}
+/* Profile Info */
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* Issued Books */
+.book-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+.status {
+  background: #27ae60;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.status.pending {
+  background: #f39c12;
 }

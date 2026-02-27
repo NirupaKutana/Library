@@ -5,10 +5,10 @@ import { NavLink } from 'react-router-dom'
 import { useNavigate,useLocation } from 'react-router-dom'
 import { toast } from 'react-toastify'
 
-const Addbook = () => {
+const Addbook = ({book,onSuccess}:any) => {
   const BASE_URl = "http://127.0.0.1:8000";
   const [name ,setname] =useState<string>("")
-  const [cat,setcat] = useState<number>()
+  const [cat,setcat] = useState<number >()
   const[auth,setauth] = useState<number>()
   const[page,setpage] = useState<number>()
   const[copy,setcopy]=useState<number>()
@@ -16,8 +16,7 @@ const Addbook = () => {
   const[reason,setreason]=useState<string>("")
   const navigate = useNavigate()
   const location = useLocation()
-  const books = location.state
-  const isEdit = Boolean(books)
+  const isEdit = Boolean(book)
 
   const[category,setCategory] = useState([])
   const[author,setauthor]=useState([])
@@ -37,22 +36,22 @@ const Addbook = () => {
   },[])
   
   useEffect(()=>{
-    if(books)
+    if(book)
     {
-     setname(books.name)
-     setcat(books.c_id)
-     setauth(books.a_id)
-     setpage(books.page)
-     setcopy(books.copy)
+     setname(book.name)
+     setcat(book.c_id)
+     setauth(book.a_id)
+     setpage(book.page)
+     setcopy(book.copy)
     }
-  },[])
+  },[book])
 
   const handlechange =async (e:React.FormEvent)=>
   {
     e.preventDefault()
     if(isEdit)
     {
-        axios.put(`${BASE_URl}/book/update/${books.id}/`,{
+        axios.put(`${BASE_URl}/book/update/${book.id}/`,{
           book_name:name,
           category_id :cat,
           author_id:auth,
@@ -63,8 +62,10 @@ const Addbook = () => {
 
         }).then((res)=>{
           toast.success(res.data.success)
-          navigate("/books")
-        }).catch(err=>console.log(err))
+          navigate("/profile", { state: { activeTab: "Book" } })
+        }).catch((err:any)=>{
+          toast.error(err.response?.data?.error)
+        })
     }
     else
       {
@@ -77,22 +78,26 @@ const Addbook = () => {
             copies :copy
             })
             toast.success(res.data.success)
-              // .then(()=>{
-              // alert("Bock Added..!")
-            navigate("/books")
-            // }).catch((error)=>{
-            //   alert(error.response.data.error)
-            // })
+            navigate("/profile", { state: { activeTab: "Book" } })
+           
+            
         }catch(error:any)
         {  
-        
-           console.log(error.res)
+          //  console.log("full error",error.response)
+          //  toast.error(error.response?.data?.error)
+          const errors = error.response?.data;
+          if(errors){
+                Object.entries(errors).forEach(([field, messages]: any) => {
+                toast.error(`${field}: ${messages[0]}`);
+                });
+              }
         }
       }
+      onSuccess()
   }
   return (
     <div className="addbook-container">
-      <form action="">
+      <form onSubmit={handlechange}>
         <h3>{isEdit?"Update Book":"Book Details"}</h3>
         <label>Name :</label>
         <input type="text" placeholder='Bock Name' value={name} onChange={(e)=>setname(e.target.value)} />
@@ -130,7 +135,7 @@ const Addbook = () => {
         )}
 
         
-        <NavLink to="/books"><button type='submit' onClick={handlechange}>{!isEdit?"Save Information":"Update Information"}</button></NavLink>
+        <button type='submit'>{!isEdit?"Save Information":"Update Information"}</button>
       </form>
     </div>
   )

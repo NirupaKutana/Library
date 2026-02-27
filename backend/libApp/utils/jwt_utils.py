@@ -4,6 +4,8 @@ from datetime import datetime,timedelta,timezone
 from django.conf import settings
 from django.http import JsonResponse
 from functools import wraps
+from django.core.mail import send_mail
+
 
 SECRET_KEY = settings.SECRET_KEY
 
@@ -64,3 +66,30 @@ def admin_reqired(method):
         request.user=payload
         return method(self,request)
     return wrapper
+
+def send_overdue_email(user_email, user_name, book_name, due_date, fine):
+    
+    subject = "📚 Book Overdue Notice - Library"
+    
+    message = f"""
+Hello {user_name},
+
+This is a reminder that the following book is overdue:
+
+Book Name: {book_name}
+Due Date: {due_date}
+Current Fine: ₹{fine}
+
+Please return the book as soon as possible to avoid additional charges.
+
+Thank you,
+Library Management
+"""
+
+    send_mail(
+        subject,
+        message,
+        settings.DEFAULT_FROM_EMAIL,
+        [user_email],
+        fail_silently=False,
+    )
