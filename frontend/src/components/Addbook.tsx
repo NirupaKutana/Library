@@ -15,9 +15,10 @@ const Addbook = ({book,onSuccess}:any) => {
   const [up_by,setup_by]=useState<number>()
   const[reason,setreason]=useState<string>("")
   const navigate = useNavigate()
-  const location = useLocation()
+  // const location = useLocation()
   const isEdit = Boolean(book)
 
+  
   const[category,setCategory] = useState([])
   const[author,setauthor]=useState([])
   useEffect(()=>{

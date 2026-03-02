@@ -27,7 +27,6 @@ const Books = () => {
     const dataToshow = isSearch ? filterdata : currentUsers;
 
 
-
     const fetchAllBook =() =>{
        setLoading(true)
             axios.get(`${BASE_URL}/book/`,{
@@ -153,7 +152,7 @@ const handleDelete = async(book_id : number)=>
       </table>
       <Pagination 
       currentPage={currentPage}
-      totalItems={dataToshow.length}
+      totalItems={bookdata.length}
       itemPerPage={itemPerPage}
       onPageChange={(page)=>setCurrentPage(page)}/>
    </div>

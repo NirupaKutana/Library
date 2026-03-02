@@ -15,7 +15,7 @@ const ImageFile = () => {
     const BASE_URL = 'http://127.0.0.1:8000/image/'
     const[Loading,setLoading] = useState(false);
     const [currentPage,setCurrentPage]=useState(1);
-    const itemPerPage = 6;
+    const itemPerPage = 3;
     const indexOfLast = currentPage * itemPerPage ;
     const indexOfFirst = indexOfLast - itemPerPage;
     const currentUsers = imgdata.slice(indexOfFirst,indexOfLast) ;
@@ -109,12 +109,14 @@ const ImageFile = () => {
                 )}
             </div>
             )}
+        <div className='pag'>
         <Pagination
         currentPage={currentPage}
         totalItems={imgdata.length}
         itemPerPage={itemPerPage}
         onPageChange={(page)=>{setCurrentPage(page)}}/>
-           </div>
+        </div>
+        </div>
     </div>
     </div>  
   

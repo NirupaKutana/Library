@@ -66028,3 +66028,1074 @@ INFO 2026-02-27 14:00:09,515 "GET /category/ HTTP/1.1" 200 389
 INFO 2026-02-27 14:00:10,532 "GET /author/ HTTP/1.1" 200 183
 INFO 2026-02-27 14:00:10,760 "GET /author/ HTTP/1.1" 200 183
 INFO 2026-02-27 14:08:06,622 Watching for file changes with StatReloader
+INFO 2026-02-27 14:08:27,219 "GET / HTTP/1.1" 200 32
+WARNING 2026-02-27 14:08:27,737 Not Found: /favicon.ico
+WARNING 2026-02-27 14:08:27,737 "GET /favicon.ico HTTP/1.1" 404 8975
+INFO 2026-02-27 14:09:43,587 "GET /image/pag/?page=1&page_size=4 HTTP/1.1" 200 96
+INFO 2026-02-27 14:09:43,981 "GET /image/ HTTP/1.1" 200 96
+INFO 2026-02-27 14:09:44,857 "GET /image/ HTTP/1.1" 200 96
+INFO 2026-02-27 14:09:47,555 "GET /image/pag/?page=1&page_size=4 HTTP/1.1" 200 96
+INFO 2026-02-27 14:10:12,580 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-02-27 14:10:12,606 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-02-27 14:10:12,668 "GET /chart/ HTTP/1.1" 200 51
+INFO 2026-02-27 14:10:12,745 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 14:10:12,870 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-02-27 14:10:12,890 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-02-27 14:10:13,064 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 14:10:13,115 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-02-27 14:10:13,115 "GET /chart/ HTTP/1.1" 200 51
+INFO 2026-02-27 14:10:13,248 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-02-27 14:10:14,794 "GET /image/pag/?page=1&page_size=4 HTTP/1.1" 200 96
+INFO 2026-02-27 14:10:14,844 "GET /image/ HTTP/1.1" 200 96
+INFO 2026-02-27 14:10:14,945 "GET /image/pag/?page=1&page_size=4 HTTP/1.1" 200 96
+INFO 2026-02-27 14:10:14,973 "GET /image/ HTTP/1.1" 200 96
+INFO 2026-02-27 14:11:22,498 "GET /image/ HTTP/1.1" 200 96
+INFO 2026-02-27 14:11:22,498 "GET /image/pag/?page=1&page_size=4 HTTP/1.1" 200 96
+INFO 2026-02-27 14:11:22,629 "GET /image/ HTTP/1.1" 200 96
+INFO 2026-02-27 14:11:22,632 "GET /image/pag/?page=1&page_size=4 HTTP/1.1" 200 96
+INFO 2026-02-27 14:29:25,115 "OPTIONS /login/ HTTP/1.1" 200 0
+INFO 2026-02-27 14:29:26,582 "POST /login/ HTTP/1.1" 200 799
+INFO 2026-02-27 14:29:26,859 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-02-27 14:29:26,927 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-02-27 14:29:26,983 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 14:29:27,041 "GET /chart/ HTTP/1.1" 200 51
+INFO 2026-02-27 14:29:27,201 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-02-27 14:29:27,310 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-02-27 14:29:27,310 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 14:29:27,397 "GET /chart/ HTTP/1.1" 200 51
+INFO 2026-02-27 14:29:27,471 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-02-27 14:29:27,588 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-02-27 14:29:31,023 "GET /issue/ HTTP/1.1" 200 377
+INFO 2026-02-27 14:29:31,024 "GET /issue/search/?name= HTTP/1.1" 200 257
+INFO 2026-02-27 14:29:31,194 "GET /issue/search/?name= HTTP/1.1" 200 257
+INFO 2026-02-27 14:29:31,199 "GET /issue/ HTTP/1.1" 200 377
+INFO 2026-02-27 14:29:34,817 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 14:29:34,824 "GET /book/ HTTP/1.1" 200 261
+INFO 2026-02-27 14:29:34,928 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 14:29:34,946 "GET /book/ HTTP/1.1" 200 261
+INFO 2026-02-27 14:29:42,384 "GET /issue/overdue/ HTTP/1.1" 200 89
+INFO 2026-02-27 14:29:44,812 "GET /issue/ HTTP/1.1" 200 377
+INFO 2026-02-27 14:29:55,169 "OPTIONS /book/ HTTP/1.1" 200 0
+INFO 2026-02-27 14:29:55,435 "GET /search/book/?name= HTTP/1.1" 200 2
+INFO 2026-02-27 14:29:55,462 "GET /category/ HTTP/1.1" 200 389
+INFO 2026-02-27 14:29:55,483 "GET /book/ HTTP/1.1" 200 261
+INFO 2026-02-27 14:29:55,618 "GET /search/book/?name= HTTP/1.1" 200 2
+INFO 2026-02-27 14:29:55,629 "GET /category/ HTTP/1.1" 200 389
+INFO 2026-02-27 14:29:55,658 "GET /book/ HTTP/1.1" 200 261
+INFO 2026-02-27 14:30:00,219 "GET /cat/filter/?name= HTTP/1.1" 200 75
+INFO 2026-02-27 14:30:00,219 "GET /category/ HTTP/1.1" 200 389
+INFO 2026-02-27 14:30:00,397 "GET /category/ HTTP/1.1" 200 389
+INFO 2026-02-27 14:30:00,402 "GET /cat/filter/?name= HTTP/1.1" 200 75
+INFO 2026-02-27 14:30:02,401 "GET /author/ HTTP/1.1" 200 183
+INFO 2026-02-27 14:30:02,641 "GET /author/ HTTP/1.1" 200 183
+INFO 2026-02-27 14:30:03,230 "OPTIONS /image/ HTTP/1.1" 200 0
+INFO 2026-02-27 14:30:03,230 "OPTIONS /image/ HTTP/1.1" 200 0
+INFO 2026-02-27 14:30:03,570 "GET /image/ HTTP/1.1" 200 96
+INFO 2026-02-27 14:30:03,679 "GET /media/demo/book10.jfif HTTP/1.1" 304 0
+INFO 2026-02-27 14:30:03,698 "GET /media/demo/book11.jfif HTTP/1.1" 304 0
+INFO 2026-02-27 14:30:03,719 "GET /media/demo/book2.jfif HTTP/1.1" 304 0
+INFO 2026-02-27 14:30:03,791 "GET /image/ HTTP/1.1" 200 96
+INFO 2026-02-27 14:30:16,623 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 14:30:16,771 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 14:30:24,346 "GET /usAudit/?email=nirupakutana%40gmail.com HTTP/1.1" 200 2700
+WARNING 2026-02-27 14:30:24,693 Not Found: /favicon.ico
+WARNING 2026-02-27 14:30:24,693 "GET /favicon.ico HTTP/1.1" 404 8975
+INFO 2026-02-27 14:30:39,650 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 14:30:39,663 "GET /audit/ HTTP/1.1" 200 623
+INFO 2026-02-27 14:30:39,835 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 14:30:39,863 "GET /audit/ HTTP/1.1" 200 623
+INFO 2026-02-27 14:30:54,841 "GET /LoginAudit/ HTTP/1.1" 200 775
+INFO 2026-02-27 14:30:54,854 "GET /search/LoginAudit/?name= HTTP/1.1" 200 202
+INFO 2026-02-27 14:30:55,024 "GET /LoginAudit/ HTTP/1.1" 200 775
+INFO 2026-02-27 14:30:55,036 "GET /search/LoginAudit/?name= HTTP/1.1" 200 202
+INFO 2026-02-27 14:31:05,170 "GET /audit/ HTTP/1.1" 200 623
+INFO 2026-02-27 14:31:05,170 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 14:31:05,357 "GET /audit/ HTTP/1.1" 200 623
+INFO 2026-02-27 14:31:05,366 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 14:31:11,372 "GET /LoginAudit/ HTTP/1.1" 200 775
+INFO 2026-02-27 14:31:11,388 "GET /search/LoginAudit/?name= HTTP/1.1" 200 202
+INFO 2026-02-27 14:31:11,550 "GET /LoginAudit/ HTTP/1.1" 200 775
+INFO 2026-02-27 14:31:11,569 "GET /search/LoginAudit/?name= HTTP/1.1" 200 202
+INFO 2026-02-27 14:31:49,238 "GET /audit/ HTTP/1.1" 200 623
+INFO 2026-02-27 14:31:49,238 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 14:31:49,397 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 14:31:49,399 "GET /audit/ HTTP/1.1" 200 623
+INFO 2026-02-27 14:31:50,310 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 14:31:50,637 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 14:31:51,915 "GET /image/ HTTP/1.1" 200 96
+INFO 2026-02-27 14:31:52,089 "GET /image/ HTTP/1.1" 200 96
+INFO 2026-02-27 14:31:53,032 "GET /author/ HTTP/1.1" 200 183
+INFO 2026-02-27 14:31:53,421 "GET /author/ HTTP/1.1" 200 183
+INFO 2026-02-27 14:31:53,900 "GET /category/ HTTP/1.1" 200 389
+INFO 2026-02-27 14:31:53,909 "GET /cat/filter/?name= HTTP/1.1" 200 75
+INFO 2026-02-27 14:31:54,083 "GET /category/ HTTP/1.1" 200 389
+INFO 2026-02-27 14:31:54,100 "GET /cat/filter/?name= HTTP/1.1" 200 75
+INFO 2026-02-27 14:31:54,969 "GET /book/ HTTP/1.1" 200 261
+INFO 2026-02-27 14:31:54,969 "GET /search/book/?name= HTTP/1.1" 200 2
+INFO 2026-02-27 14:31:54,984 "GET /category/ HTTP/1.1" 200 389
+INFO 2026-02-27 14:31:55,195 "GET /search/book/?name= HTTP/1.1" 200 2
+INFO 2026-02-27 14:31:55,198 "GET /category/ HTTP/1.1" 200 389
+INFO 2026-02-27 14:31:55,201 "GET /book/ HTTP/1.1" 200 261
+INFO 2026-02-27 14:31:56,065 "GET /issue/search/?name= HTTP/1.1" 200 257
+INFO 2026-02-27 14:31:56,072 "GET /issue/ HTTP/1.1" 200 377
+INFO 2026-02-27 14:31:56,249 "GET /issue/search/?name= HTTP/1.1" 200 257
+INFO 2026-02-27 14:31:56,283 "GET /issue/ HTTP/1.1" 200 377
+INFO 2026-02-27 14:31:56,937 "GET /chart/ HTTP/1.1" 200 51
+INFO 2026-02-27 14:31:57,064 "GET /chart/ HTTP/1.1" 200 51
+INFO 2026-02-27 14:32:10,473 "GET /issue/ HTTP/1.1" 200 377
+INFO 2026-02-27 14:32:10,476 "GET /issue/search/?name= HTTP/1.1" 200 257
+INFO 2026-02-27 14:32:10,663 "GET /issue/ HTTP/1.1" 200 377
+INFO 2026-02-27 14:32:10,669 "GET /issue/search/?name= HTTP/1.1" 200 257
+INFO 2026-02-27 14:32:11,920 "GET /category/ HTTP/1.1" 200 389
+INFO 2026-02-27 14:32:11,948 "GET /book/ HTTP/1.1" 200 261
+INFO 2026-02-27 14:32:11,957 "GET /search/book/?name= HTTP/1.1" 200 2
+INFO 2026-02-27 14:32:12,114 "GET /category/ HTTP/1.1" 200 389
+INFO 2026-02-27 14:32:12,161 "GET /book/ HTTP/1.1" 200 261
+INFO 2026-02-27 14:32:12,163 "GET /search/book/?name= HTTP/1.1" 200 2
+INFO 2026-02-27 14:32:13,366 "GET /cat/filter/?name= HTTP/1.1" 200 75
+INFO 2026-02-27 14:32:13,372 "GET /category/ HTTP/1.1" 200 389
+INFO 2026-02-27 14:32:13,546 "GET /category/ HTTP/1.1" 200 389
+INFO 2026-02-27 14:32:13,548 "GET /cat/filter/?name= HTTP/1.1" 200 75
+INFO 2026-02-27 14:32:14,890 "GET /author/ HTTP/1.1" 200 183
+INFO 2026-02-27 14:32:15,031 "GET /author/ HTTP/1.1" 200 183
+INFO 2026-02-27 14:32:16,943 "GET /image/ HTTP/1.1" 200 96
+INFO 2026-02-27 14:32:17,138 "GET /image/ HTTP/1.1" 200 96
+INFO 2026-02-27 14:39:55,746 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-02-27 14:39:55,779 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-02-27 14:39:55,792 "GET /image/ HTTP/1.1" 200 96
+INFO 2026-02-27 14:39:55,804 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 14:39:55,998 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-02-27 14:39:56,003 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-02-27 14:39:56,017 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 14:39:56,033 "GET /image/ HTTP/1.1" 200 96
+INFO 2026-02-27 14:39:56,171 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-02-27 14:39:56,270 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-02-27 14:40:09,746 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-02-27 14:40:09,816 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-02-27 14:40:09,880 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 14:40:10,043 "GET /chart/ HTTP/1.1" 200 51
+INFO 2026-02-27 14:40:10,062 - Broken pipe from ('127.0.0.1', 56891)
+INFO 2026-02-27 14:40:10,132 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-02-27 14:40:10,152 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-02-27 14:40:10,162 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 14:40:10,364 "GET /chart/ HTTP/1.1" 200 51
+INFO 2026-02-27 14:40:10,482 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-02-27 14:40:10,664 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-02-27 14:40:12,356 "GET /image/ HTTP/1.1" 200 126
+INFO 2026-02-27 14:40:12,536 "GET /image/ HTTP/1.1" 200 126
+INFO 2026-02-27 14:40:14,319 "GET /media/demo/lib6.jfif HTTP/1.1" 200 10217
+INFO 2026-02-27 14:40:42,786 "GET /media/demo/lib6.jfif HTTP/1.1" 304 0
+INFO 2026-02-27 14:44:12,502 "GET /media/demo/lib6.jfif HTTP/1.1" 304 0
+INFO 2026-02-27 14:45:23,657 - Broken pipe from ('127.0.0.1', 56978)
+INFO 2026-02-27 14:45:24,650 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-02-27 14:45:24,691 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 14:45:24,710 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-02-27 14:45:24,761 "GET /chart/ HTTP/1.1" 200 51
+INFO 2026-02-27 14:45:24,971 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 14:45:25,001 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-02-27 14:45:25,039 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-02-27 14:45:25,128 "GET /chart/ HTTP/1.1" 200 51
+INFO 2026-02-27 14:45:25,244 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-02-27 14:45:25,346 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-02-27 14:45:26,528 "GET /image/ HTTP/1.1" 200 156
+INFO 2026-02-27 14:45:26,684 "GET /image/ HTTP/1.1" 200 156
+INFO 2026-02-27 14:45:28,293 "GET /media/demo/lib6.jfif HTTP/1.1" 304 0
+INFO 2026-02-27 14:45:28,351 "GET /media/demo/lib3.jfif HTTP/1.1" 200 10447
+INFO 2026-02-27 14:47:07,277 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 14:47:07,436 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 14:47:08,457 "GET /image/ HTTP/1.1" 200 156
+INFO 2026-02-27 14:47:08,863 "GET /image/ HTTP/1.1" 200 156
+INFO 2026-02-27 14:47:09,932 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 14:47:10,145 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 14:47:11,287 "GET /image/ HTTP/1.1" 200 156
+INFO 2026-02-27 14:47:11,471 "GET /image/ HTTP/1.1" 200 156
+INFO 2026-02-27 14:47:15,154 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-02-27 14:47:15,160 "GET /image/ HTTP/1.1" 200 156
+INFO 2026-02-27 14:47:15,162 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 14:47:15,238 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-02-27 14:47:15,372 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-02-27 14:47:15,374 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 14:47:15,381 "GET /image/ HTTP/1.1" 200 156
+INFO 2026-02-27 14:47:15,429 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-02-27 14:47:15,526 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-02-27 14:47:15,849 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-02-27 14:47:18,055 "GET /category/ HTTP/1.1" 200 389
+INFO 2026-02-27 14:47:18,068 "GET /cat/filter/?name= HTTP/1.1" 200 75
+INFO 2026-02-27 14:47:18,212 "GET /category/ HTTP/1.1" 200 389
+INFO 2026-02-27 14:47:18,226 "GET /cat/filter/?name= HTTP/1.1" 200 75
+INFO 2026-02-27 14:47:19,238 "GET /image/ HTTP/1.1" 200 156
+INFO 2026-02-27 14:47:19,373 "GET /image/ HTTP/1.1" 200 156
+INFO 2026-02-27 14:47:30,583 - Broken pipe from ('127.0.0.1', 56990)
+INFO 2026-02-27 14:47:30,891 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-02-27 14:47:31,022 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 14:47:31,098 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-02-27 14:47:31,150 "GET /chart/ HTTP/1.1" 200 51
+INFO 2026-02-27 14:47:31,239 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-02-27 14:47:31,317 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 14:47:31,435 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-02-27 14:47:31,435 "GET /chart/ HTTP/1.1" 200 51
+INFO 2026-02-27 14:47:31,569 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-02-27 14:47:31,669 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-02-27 14:56:19,930 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 14:56:22,920 Watching for file changes with StatReloader
+INFO 2026-02-27 14:57:31,085 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 14:57:34,358 Watching for file changes with StatReloader
+INFO 2026-02-27 14:58:05,348 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 14:58:07,613 Watching for file changes with StatReloader
+INFO 2026-02-27 14:58:30,767 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 14:58:33,172 Watching for file changes with StatReloader
+INFO 2026-02-27 14:58:47,814 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 14:58:50,076 Watching for file changes with StatReloader
+INFO 2026-02-27 14:59:10,208 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 14:59:12,750 Watching for file changes with StatReloader
+INFO 2026-02-27 14:59:49,941 C:\Users\asad\Desktop\Library_management\backend\libApp\db_model.py changed, reloading.
+INFO 2026-02-27 14:59:52,461 Watching for file changes with StatReloader
+INFO 2026-02-27 15:01:32,120 C:\Users\asad\Desktop\Library_management\backend\libApp\service\Book_service.py changed, reloading.
+INFO 2026-02-27 15:01:34,257 Watching for file changes with StatReloader
+INFO 2026-02-27 15:01:47,027 C:\Users\asad\Desktop\Library_management\backend\libApp\db_model.py changed, reloading.
+INFO 2026-02-27 15:01:50,090 Watching for file changes with StatReloader
+INFO 2026-02-27 15:01:59,601 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 15:02:02,243 Watching for file changes with StatReloader
+INFO 2026-02-27 15:02:12,297 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 15:02:14,439 Watching for file changes with StatReloader
+INFO 2026-02-27 15:02:38,410 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 15:02:41,070 Watching for file changes with StatReloader
+INFO 2026-02-27 15:02:58,184 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 15:03:00,546 Watching for file changes with StatReloader
+INFO 2026-02-27 15:04:49,041 C:\Users\asad\Desktop\Library_management\backend\libApp\db_model.py changed, reloading.
+INFO 2026-02-27 15:04:51,562 Watching for file changes with StatReloader
+INFO 2026-02-27 15:05:36,997 C:\Users\asad\Desktop\Library_management\backend\libApp\db_model.py changed, reloading.
+INFO 2026-02-27 15:05:41,421 Watching for file changes with StatReloader
+INFO 2026-02-27 15:05:47,163 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 15:05:49,697 Watching for file changes with StatReloader
+INFO 2026-02-27 15:06:35,513 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 15:06:38,254 Watching for file changes with StatReloader
+INFO 2026-02-27 15:06:45,515 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 15:06:47,939 Watching for file changes with StatReloader
+INFO 2026-02-27 15:07:02,068 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 15:07:04,222 Watching for file changes with StatReloader
+INFO 2026-02-27 15:08:31,051 C:\Users\asad\Desktop\Library_management\backend\libApp\db_model.py changed, reloading.
+INFO 2026-02-27 15:08:34,823 Watching for file changes with StatReloader
+INFO 2026-02-27 15:08:40,691 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 15:08:42,952 Watching for file changes with StatReloader
+INFO 2026-02-27 15:09:01,659 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 15:09:04,154 Watching for file changes with StatReloader
+INFO 2026-02-27 15:10:14,315 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 15:10:16,546 Watching for file changes with StatReloader
+INFO 2026-02-27 15:10:20,024 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 15:10:22,238 Watching for file changes with StatReloader
+INFO 2026-02-27 15:10:33,407 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 15:10:36,406 Watching for file changes with StatReloader
+INFO 2026-02-27 15:13:03,275 C:\Users\asad\Desktop\Library_management\backend\libApp\db_model.py changed, reloading.
+INFO 2026-02-27 15:13:07,028 Watching for file changes with StatReloader
+INFO 2026-02-27 15:13:19,431 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 15:13:21,934 Watching for file changes with StatReloader
+INFO 2026-02-27 15:13:56,113 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 15:13:58,076 Watching for file changes with StatReloader
+INFO 2026-02-27 15:14:56,870 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 15:14:59,155 Watching for file changes with StatReloader
+INFO 2026-02-27 15:15:11,235 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 15:15:14,416 Watching for file changes with StatReloader
+INFO 2026-02-27 15:17:49,810 C:\Users\asad\Desktop\Library_management\backend\libApp\service\Login_service.py changed, reloading.
+INFO 2026-02-27 15:17:52,892 Watching for file changes with StatReloader
+INFO 2026-02-27 15:17:59,750 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 15:18:02,231 Watching for file changes with StatReloader
+INFO 2026-02-27 15:18:12,132 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 15:18:14,762 Watching for file changes with StatReloader
+INFO 2026-02-27 15:18:20,649 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 15:18:22,606 Watching for file changes with StatReloader
+INFO 2026-02-27 15:18:59,235 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 15:19:01,595 Watching for file changes with StatReloader
+INFO 2026-02-27 15:23:58,868 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 15:24:01,354 Watching for file changes with StatReloader
+INFO 2026-02-27 15:24:11,053 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 15:24:13,414 Watching for file changes with StatReloader
+INFO 2026-02-27 15:24:38,962 C:\Users\asad\Desktop\Library_management\backend\libApp\service\Issue_service.py changed, reloading.
+INFO 2026-02-27 15:24:41,271 Watching for file changes with StatReloader
+INFO 2026-02-27 15:24:49,192 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 15:24:52,166 Watching for file changes with StatReloader
+INFO 2026-02-27 15:50:20,036 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 15:50:21,639 Watching for file changes with StatReloader
+INFO 2026-02-27 15:54:54,982 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 15:54:56,568 Watching for file changes with StatReloader
+INFO 2026-02-27 15:55:24,226 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 15:55:25,806 Watching for file changes with StatReloader
+INFO 2026-02-27 15:58:20,611 C:\Users\asad\Desktop\Library_management\backend\libApp\db_model.py changed, reloading.
+INFO 2026-02-27 15:58:22,602 Watching for file changes with StatReloader
+INFO 2026-02-27 15:58:39,699 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 15:58:41,360 Watching for file changes with StatReloader
+INFO 2026-02-27 15:58:44,027 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 15:58:45,607 Watching for file changes with StatReloader
+INFO 2026-02-27 15:59:17,103 C:\Users\asad\Desktop\Library_management\backend\libApp\service\Issue_service.py changed, reloading.
+INFO 2026-02-27 15:59:19,472 Watching for file changes with StatReloader
+INFO 2026-02-27 15:59:32,308 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 15:59:33,948 Watching for file changes with StatReloader
+INFO 2026-02-27 15:59:54,021 C:\Users\asad\Desktop\Library_management\backend\libApp\service\Issue_service.py changed, reloading.
+INFO 2026-02-27 15:59:55,757 Watching for file changes with StatReloader
+INFO 2026-02-27 16:00:04,354 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 16:00:05,810 Watching for file changes with StatReloader
+INFO 2026-02-27 16:00:40,609 C:\Users\asad\Desktop\Library_management\backend\libApp\service\Issue_service.py changed, reloading.
+INFO 2026-02-27 16:00:42,635 Watching for file changes with StatReloader
+INFO 2026-02-27 16:01:00,967 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 16:01:02,776 Watching for file changes with StatReloader
+INFO 2026-02-27 16:01:07,083 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 16:01:08,755 Watching for file changes with StatReloader
+INFO 2026-02-27 16:01:27,812 C:\Users\asad\Desktop\Library_management\backend\libApp\db_model.py changed, reloading.
+INFO 2026-02-27 16:01:29,510 Watching for file changes with StatReloader
+INFO 2026-02-27 16:02:27,175 C:\Users\asad\Desktop\Library_management\backend\libApp\service\Issue_service.py changed, reloading.
+INFO 2026-02-27 16:02:28,932 Watching for file changes with StatReloader
+INFO 2026-02-27 16:03:00,417 C:\Users\asad\Desktop\Library_management\backend\libApp\service\Issue_service.py changed, reloading.
+INFO 2026-02-27 16:03:01,710 Watching for file changes with StatReloader
+INFO 2026-02-27 16:03:45,169 C:\Users\asad\Desktop\Library_management\backend\libApp\service\Issue_service.py changed, reloading.
+INFO 2026-02-27 16:03:46,917 Watching for file changes with StatReloader
+INFO 2026-02-27 16:03:54,204 C:\Users\asad\Desktop\Library_management\backend\libApp\db_model.py changed, reloading.
+INFO 2026-02-27 16:03:55,722 Watching for file changes with StatReloader
+INFO 2026-02-27 16:04:20,681 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 16:04:22,513 Watching for file changes with StatReloader
+INFO 2026-02-27 16:04:34,889 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 16:04:36,370 Watching for file changes with StatReloader
+INFO 2026-02-27 16:06:07,770 C:\Users\asad\Desktop\Library_management\backend\libApp\db_model.py changed, reloading.
+INFO 2026-02-27 16:06:09,501 Watching for file changes with StatReloader
+INFO 2026-02-27 16:08:55,240 C:\Users\asad\Desktop\Library_management\backend\libApp\db_model.py changed, reloading.
+INFO 2026-02-27 16:08:56,807 Watching for file changes with StatReloader
+INFO 2026-02-27 16:09:04,370 C:\Users\asad\Desktop\Library_management\backend\libApp\db_model.py changed, reloading.
+INFO 2026-02-27 16:09:05,800 Watching for file changes with StatReloader
+INFO 2026-02-27 16:09:24,812 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 16:09:26,638 Watching for file changes with StatReloader
+INFO 2026-02-27 16:09:37,250 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 16:09:39,016 Watching for file changes with StatReloader
+INFO 2026-02-27 16:10:47,909 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 16:10:49,671 Watching for file changes with StatReloader
+INFO 2026-02-27 16:11:15,594 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 16:11:17,554 Watching for file changes with StatReloader
+INFO 2026-02-27 16:11:23,396 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 16:11:24,877 Watching for file changes with StatReloader
+INFO 2026-02-27 16:11:29,502 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 16:11:30,997 Watching for file changes with StatReloader
+INFO 2026-02-27 16:13:48,357 C:\Users\asad\Desktop\Library_management\backend\libApp\service\User_service.py changed, reloading.
+INFO 2026-02-27 16:13:50,441 Watching for file changes with StatReloader
+INFO 2026-02-27 16:17:56,118 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 16:17:57,823 Watching for file changes with StatReloader
+INFO 2026-02-27 16:19:15,249 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 16:19:17,505 Watching for file changes with StatReloader
+INFO 2026-02-27 16:19:25,911 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 16:19:27,420 Watching for file changes with StatReloader
+INFO 2026-02-27 16:19:54,470 C:\Users\asad\Desktop\Library_management\backend\libApp\service\Audit_service.py changed, reloading.
+INFO 2026-02-27 16:19:56,651 Watching for file changes with StatReloader
+INFO 2026-02-27 16:20:17,378 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 16:20:19,091 Watching for file changes with StatReloader
+INFO 2026-02-27 16:20:53,444 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 16:20:55,053 Watching for file changes with StatReloader
+INFO 2026-02-27 16:21:12,180 C:\Users\asad\Desktop\Library_management\backend\libApp\service\Audit_service.py changed, reloading.
+INFO 2026-02-27 16:21:13,949 Watching for file changes with StatReloader
+INFO 2026-02-27 16:21:31,036 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 16:21:32,732 Watching for file changes with StatReloader
+INFO 2026-02-27 16:22:08,582 C:\Users\asad\Desktop\Library_management\backend\libApp\service\Audit_service.py changed, reloading.
+INFO 2026-02-27 16:22:10,728 Watching for file changes with StatReloader
+INFO 2026-02-27 16:22:21,037 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 16:22:22,619 Watching for file changes with StatReloader
+INFO 2026-02-27 16:23:00,267 C:\Users\asad\Desktop\Library_management\backend\libApp\service\Audit_service.py changed, reloading.
+INFO 2026-02-27 16:23:02,183 Watching for file changes with StatReloader
+INFO 2026-02-27 16:23:16,946 C:\Users\asad\Desktop\Library_management\backend\libApp\service\Audit_service.py changed, reloading.
+INFO 2026-02-27 16:23:18,526 Watching for file changes with StatReloader
+INFO 2026-02-27 16:23:21,047 C:\Users\asad\Desktop\Library_management\backend\libApp\service\Audit_service.py changed, reloading.
+INFO 2026-02-27 16:23:22,390 Watching for file changes with StatReloader
+INFO 2026-02-27 16:23:44,117 C:\Users\asad\Desktop\Library_management\backend\libApp\service\Audit_service.py changed, reloading.
+INFO 2026-02-27 16:23:46,984 Watching for file changes with StatReloader
+INFO 2026-02-27 16:24:06,857 C:\Users\asad\Desktop\Library_management\backend\libApp\service\Audit_service.py changed, reloading.
+INFO 2026-02-27 16:24:08,938 Watching for file changes with StatReloader
+INFO 2026-02-27 16:24:34,421 C:\Users\asad\Desktop\Library_management\backend\libApp\service\Audit_service.py changed, reloading.
+INFO 2026-02-27 16:24:36,143 Watching for file changes with StatReloader
+INFO 2026-02-27 16:24:56,227 "GET /LoginAudit/ HTTP/1.1" 200 775
+INFO 2026-02-27 16:24:56,227 "GET /search/LoginAudit/?name= HTTP/1.1" 200 202
+INFO 2026-02-27 16:24:56,361 "GET /search/LoginAudit/?name= HTTP/1.1" 200 202
+INFO 2026-02-27 16:24:56,361 "GET /LoginAudit/ HTTP/1.1" 200 775
+INFO 2026-02-27 16:24:57,561 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 16:24:57,577 "GET /audit/ HTTP/1.1" 200 848
+INFO 2026-02-27 16:24:57,678 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 16:24:57,678 "GET /audit/ HTTP/1.1" 200 848
+INFO 2026-02-27 16:25:12,447 C:\Users\asad\Desktop\Library_management\backend\libApp\service\Audit_service.py changed, reloading.
+INFO 2026-02-27 16:25:14,059 Watching for file changes with StatReloader
+INFO 2026-02-27 16:25:45,304 C:\Users\asad\Desktop\Library_management\backend\libApp\service\Audit_service.py changed, reloading.
+INFO 2026-02-27 16:25:47,073 Watching for file changes with StatReloader
+INFO 2026-02-27 16:25:50,715 C:\Users\asad\Desktop\Library_management\backend\libApp\service\Audit_service.py changed, reloading.
+INFO 2026-02-27 16:25:52,650 Watching for file changes with StatReloader
+INFO 2026-02-27 16:26:11,038 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 16:26:12,786 Watching for file changes with StatReloader
+INFO 2026-02-27 16:26:34,444 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 16:26:36,676 Watching for file changes with StatReloader
+INFO 2026-02-27 16:26:51,491 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 16:26:53,307 Watching for file changes with StatReloader
+INFO 2026-02-27 16:27:05,996 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 16:27:08,158 Watching for file changes with StatReloader
+INFO 2026-02-27 16:28:11,039 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 16:28:12,752 Watching for file changes with StatReloader
+INFO 2026-02-27 16:29:06,267 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 16:29:08,214 Watching for file changes with StatReloader
+INFO 2026-02-27 16:30:03,731 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 16:30:05,505 Watching for file changes with StatReloader
+INFO 2026-02-27 16:30:30,214 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 16:30:31,947 Watching for file changes with StatReloader
+INFO 2026-02-27 16:31:06,713 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 16:31:08,253 Watching for file changes with StatReloader
+INFO 2026-02-27 16:31:43,648 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 16:31:45,364 Watching for file changes with StatReloader
+INFO 2026-02-27 16:31:52,472 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 16:31:54,059 Watching for file changes with StatReloader
+INFO 2026-02-27 16:32:51,807 C:\Users\asad\Desktop\Library_management\backend\libApp\service\User_service.py changed, reloading.
+INFO 2026-02-27 16:32:53,720 Watching for file changes with StatReloader
+INFO 2026-02-27 16:33:05,593 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 16:33:07,201 Watching for file changes with StatReloader
+INFO 2026-02-27 16:33:14,067 C:\Users\asad\Desktop\Library_management\backend\libApp\db_model.py changed, reloading.
+INFO 2026-02-27 16:33:16,167 Watching for file changes with StatReloader
+INFO 2026-02-27 16:35:06,041 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 16:35:08,074 Watching for file changes with StatReloader
+INFO 2026-02-27 16:35:13,925 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 16:35:15,756 Watching for file changes with StatReloader
+INFO 2026-02-27 16:35:56,279 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 16:35:57,966 Watching for file changes with StatReloader
+INFO 2026-02-27 16:36:01,445 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 16:36:03,217 Watching for file changes with StatReloader
+INFO 2026-02-27 16:44:20,899 C:\Users\asad\Desktop\Library_management\backend\libApp\urls.py changed, reloading.
+INFO 2026-02-27 16:44:22,411 Watching for file changes with StatReloader
+INFO 2026-02-27 16:44:25,956 C:\Users\asad\Desktop\Library_management\backend\libApp\urls.py changed, reloading.
+INFO 2026-02-27 16:44:27,431 Watching for file changes with StatReloader
+INFO 2026-02-27 16:44:41,127 C:\Users\asad\Desktop\Library_management\backend\libApp\urls.py changed, reloading.
+INFO 2026-02-27 16:44:42,851 Watching for file changes with StatReloader
+INFO 2026-02-27 16:45:04,249 C:\Users\asad\Desktop\Library_management\backend\libApp\urls.py changed, reloading.
+INFO 2026-02-27 16:45:05,932 Watching for file changes with StatReloader
+INFO 2026-02-27 16:45:55,101 C:\Users\asad\Desktop\Library_management\backend\libApp\urls.py changed, reloading.
+INFO 2026-02-27 16:45:56,859 Watching for file changes with StatReloader
+INFO 2026-02-27 16:46:40,940 C:\Users\asad\Desktop\Library_management\backend\libApp\Views\Category_Views.py changed, reloading.
+INFO 2026-02-27 16:46:42,833 Watching for file changes with StatReloader
+INFO 2026-02-27 16:47:05,565 C:\Users\asad\Desktop\Library_management\backend\libApp\urls.py changed, reloading.
+INFO 2026-02-27 16:47:07,677 Watching for file changes with StatReloader
+INFO 2026-02-27 16:47:33,430 C:\Users\asad\Desktop\Library_management\backend\libApp\urls.py changed, reloading.
+INFO 2026-02-27 16:47:35,032 Watching for file changes with StatReloader
+INFO 2026-02-27 16:48:28,557 C:\Users\asad\Desktop\Library_management\backend\libApp\Views\Author_Views.py changed, reloading.
+INFO 2026-02-27 16:48:30,345 Watching for file changes with StatReloader
+INFO 2026-02-27 16:48:50,815 C:\Users\asad\Desktop\Library_management\backend\libApp\urls.py changed, reloading.
+INFO 2026-02-27 16:48:52,772 Watching for file changes with StatReloader
+INFO 2026-02-27 16:49:50,303 C:\Users\asad\Desktop\Library_management\backend\libApp\Views\Image_Views.py changed, reloading.
+INFO 2026-02-27 16:49:52,226 Watching for file changes with StatReloader
+INFO 2026-02-27 16:50:21,606 C:\Users\asad\Desktop\Library_management\backend\libApp\urls.py changed, reloading.
+INFO 2026-02-27 16:50:23,544 Watching for file changes with StatReloader
+INFO 2026-02-27 16:52:00,511 C:\Users\asad\Desktop\Library_management\backend\libApp\Views\Book_Views.py changed, reloading.
+INFO 2026-02-27 16:52:02,389 Watching for file changes with StatReloader
+INFO 2026-02-27 16:53:16,999 C:\Users\asad\Desktop\Library_management\backend\libApp\Views\Image_Views.py changed, reloading.
+INFO 2026-02-27 16:53:19,110 Watching for file changes with StatReloader
+INFO 2026-02-27 16:55:13,249 C:\Users\asad\Desktop\Library_management\backend\libApp\Views\Category_Views.py changed, reloading.
+INFO 2026-02-27 16:55:15,179 Watching for file changes with StatReloader
+INFO 2026-02-27 16:56:46,026 C:\Users\asad\Desktop\Library_management\backend\libApp\Views\Author_Views.py changed, reloading.
+INFO 2026-02-27 16:56:47,754 Watching for file changes with StatReloader
+INFO 2026-02-27 16:56:55,630 C:\Users\asad\Desktop\Library_management\backend\libApp\Views\Author_Views.py changed, reloading.
+INFO 2026-02-27 16:56:57,494 Watching for file changes with StatReloader
+INFO 2026-02-27 16:57:37,801 C:\Users\asad\Desktop\Library_management\backend\libApp\urls.py changed, reloading.
+INFO 2026-02-27 16:57:39,637 Watching for file changes with StatReloader
+INFO 2026-02-27 16:58:08,952 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-02-27 16:58:08,986 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-02-27 16:58:08,986 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 16:58:09,083 "GET /audit/ HTTP/1.1" 200 848
+INFO 2026-02-27 16:58:09,125 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-02-27 16:58:09,125 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 16:58:09,140 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-02-27 16:58:09,267 "GET /audit/ HTTP/1.1" 200 848
+INFO 2026-02-27 16:58:09,267 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 16:58:09,292 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-02-27 16:58:09,351 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-02-27 16:58:09,382 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-02-27 17:04:46,488 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 17:04:48,205 Watching for file changes with StatReloader
+INFO 2026-02-27 17:07:46,096 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-02-27 17:07:48,120 Watching for file changes with StatReloader
+INFO 2026-03-02 09:21:00,327 C:\Users\asad\Desktop\Library_management\backend\libApp\urls.py changed, reloading.
+INFO 2026-03-02 09:21:02,706 Watching for file changes with StatReloader
+INFO 2026-03-02 09:21:21,509 C:\Users\asad\Desktop\Library_management\backend\libApp\urls.py changed, reloading.
+INFO 2026-03-02 09:21:25,068 Watching for file changes with StatReloader
+INFO 2026-03-02 09:22:50,537 C:\Users\asad\Desktop\Library_management\backend\libApp\urls.py changed, reloading.
+INFO 2026-03-02 09:22:53,165 Watching for file changes with StatReloader
+INFO 2026-03-02 09:23:06,062 C:\Users\asad\Desktop\Library_management\backend\libApp\urls.py changed, reloading.
+INFO 2026-03-02 09:23:08,907 Watching for file changes with StatReloader
+INFO 2026-03-02 09:24:22,211 C:\Users\asad\Desktop\Library_management\backend\libApp\urls.py changed, reloading.
+INFO 2026-03-02 09:24:24,153 Watching for file changes with StatReloader
+INFO 2026-03-02 09:24:48,469 C:\Users\asad\Desktop\Library_management\backend\libApp\urls.py changed, reloading.
+INFO 2026-03-02 09:24:51,662 Watching for file changes with StatReloader
+INFO 2026-03-02 09:27:40,418 C:\Users\asad\Desktop\Library_management\backend\libApp\urls.py changed, reloading.
+INFO 2026-03-02 09:27:43,083 Watching for file changes with StatReloader
+INFO 2026-03-02 09:27:57,188 C:\Users\asad\Desktop\Library_management\backend\libApp\urls.py changed, reloading.
+INFO 2026-03-02 09:27:58,940 Watching for file changes with StatReloader
+INFO 2026-03-02 09:28:13,952 C:\Users\asad\Desktop\Library_management\backend\libApp\urls.py changed, reloading.
+INFO 2026-03-02 09:28:16,293 Watching for file changes with StatReloader
+INFO 2026-03-02 09:29:37,345 C:\Users\asad\Desktop\Library_management\backend\libApp\urls.py changed, reloading.
+INFO 2026-03-02 09:29:39,773 Watching for file changes with StatReloader
+INFO 2026-03-02 09:30:05,147 C:\Users\asad\Desktop\Library_management\backend\libApp\urls.py changed, reloading.
+INFO 2026-03-02 09:30:07,739 Watching for file changes with StatReloader
+INFO 2026-03-02 09:31:30,408 C:\Users\asad\Desktop\Library_management\backend\libApp\Views\Login_Views.py changed, reloading.
+INFO 2026-03-02 09:31:33,278 Watching for file changes with StatReloader
+INFO 2026-03-02 09:32:56,444 C:\Users\asad\Desktop\Library_management\backend\libApp\urls.py changed, reloading.
+INFO 2026-03-02 09:32:59,265 Watching for file changes with StatReloader
+INFO 2026-03-02 09:33:55,253 C:\Users\asad\Desktop\Library_management\backend\libApp\urls.py changed, reloading.
+INFO 2026-03-02 09:33:57,540 Watching for file changes with StatReloader
+INFO 2026-03-02 09:34:13,144 C:\Users\asad\Desktop\Library_management\backend\libApp\urls.py changed, reloading.
+INFO 2026-03-02 09:34:16,146 Watching for file changes with StatReloader
+INFO 2026-03-02 09:34:23,882 C:\Users\asad\Desktop\Library_management\backend\libApp\urls.py changed, reloading.
+INFO 2026-03-02 09:34:26,100 Watching for file changes with StatReloader
+INFO 2026-03-02 09:34:29,475 C:\Users\asad\Desktop\Library_management\backend\libApp\urls.py changed, reloading.
+INFO 2026-03-02 09:34:32,091 Watching for file changes with StatReloader
+INFO 2026-03-02 09:35:32,342 C:\Users\asad\Desktop\Library_management\backend\libApp\Views\Login_Views.py changed, reloading.
+INFO 2026-03-02 09:35:34,712 Watching for file changes with StatReloader
+INFO 2026-03-02 09:36:13,239 C:\Users\asad\Desktop\Library_management\backend\libApp\Views\Login_Views.py changed, reloading.
+INFO 2026-03-02 09:36:16,004 Watching for file changes with StatReloader
+INFO 2026-03-02 09:36:28,568 C:\Users\asad\Desktop\Library_management\backend\libApp\Views\Login_Views.py changed, reloading.
+INFO 2026-03-02 09:36:31,691 Watching for file changes with StatReloader
+INFO 2026-03-02 09:42:42,603 C:\Users\asad\Desktop\Library_management\backend\libApp\Views\Audit_Views.py changed, reloading.
+INFO 2026-03-02 09:42:45,902 Watching for file changes with StatReloader
+INFO 2026-03-02 09:43:12,230 C:\Users\asad\Desktop\Library_management\backend\libApp\Views\Audit_Views.py changed, reloading.
+INFO 2026-03-02 09:43:14,914 Watching for file changes with StatReloader
+INFO 2026-03-02 09:43:49,786 C:\Users\asad\Desktop\Library_management\backend\libApp\urls.py changed, reloading.
+INFO 2026-03-02 09:43:52,298 Watching for file changes with StatReloader
+INFO 2026-03-02 09:45:26,391 C:\Users\asad\Desktop\Library_management\backend\libApp\urls.py changed, reloading.
+INFO 2026-03-02 09:45:28,965 Watching for file changes with StatReloader
+INFO 2026-03-02 09:47:54,637 C:\Users\asad\Desktop\Library_management\backend\libApp\Views\Login_Views.py changed, reloading.
+INFO 2026-03-02 09:47:57,470 Watching for file changes with StatReloader
+INFO 2026-03-02 09:48:06,688 C:\Users\asad\Desktop\Library_management\backend\libApp\Views\Login_Views.py changed, reloading.
+INFO 2026-03-02 09:48:09,424 Watching for file changes with StatReloader
+INFO 2026-03-02 09:48:25,613 C:\Users\asad\Desktop\Library_management\backend\libApp\Views\Login_Views.py changed, reloading.
+INFO 2026-03-02 09:48:29,236 Watching for file changes with StatReloader
+INFO 2026-03-02 09:48:35,187 C:\Users\asad\Desktop\Library_management\backend\libApp\urls.py changed, reloading.
+INFO 2026-03-02 09:48:37,589 Watching for file changes with StatReloader
+INFO 2026-03-02 09:48:44,823 C:\Users\asad\Desktop\Library_management\backend\libApp\Views\Login_Views.py changed, reloading.
+INFO 2026-03-02 09:48:47,293 Watching for file changes with StatReloader
+INFO 2026-03-02 09:49:57,734 C:\Users\asad\Desktop\Library_management\backend\libApp\service\Login_service.py changed, reloading.
+INFO 2026-03-02 09:50:00,339 Watching for file changes with StatReloader
+INFO 2026-03-02 09:50:18,782 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-03-02 09:50:21,233 Watching for file changes with StatReloader
+INFO 2026-03-02 09:51:00,151 C:\Users\asad\Desktop\Library_management\backend\libApp\service\Login_service.py changed, reloading.
+INFO 2026-03-02 09:51:02,913 Watching for file changes with StatReloader
+INFO 2026-03-02 09:51:26,982 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-03-02 09:51:29,494 Watching for file changes with StatReloader
+INFO 2026-03-02 09:52:10,413 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-03-02 09:52:13,169 Watching for file changes with StatReloader
+INFO 2026-03-02 09:52:24,724 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-03-02 09:52:26,897 Watching for file changes with StatReloader
+INFO 2026-03-02 09:52:35,701 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-03-02 09:52:38,471 Watching for file changes with StatReloader
+INFO 2026-03-02 09:53:12,237 C:\Users\asad\Desktop\Library_management\backend\libApp\service\Login_service.py changed, reloading.
+INFO 2026-03-02 09:53:14,669 Watching for file changes with StatReloader
+INFO 2026-03-02 09:53:20,517 C:\Users\asad\Desktop\Library_management\backend\libApp\service\Login_service.py changed, reloading.
+INFO 2026-03-02 09:53:22,731 Watching for file changes with StatReloader
+INFO 2026-03-02 09:53:27,454 C:\Users\asad\Desktop\Library_management\backend\libApp\service\User_service.py changed, reloading.
+INFO 2026-03-02 09:53:31,748 Watching for file changes with StatReloader
+INFO 2026-03-02 09:55:06,234 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-03-02 09:55:08,801 Watching for file changes with StatReloader
+INFO 2026-03-02 09:55:25,069 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-03-02 09:55:27,169 Watching for file changes with StatReloader
+INFO 2026-03-02 09:57:18,652 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-03-02 09:57:21,083 Watching for file changes with StatReloader
+INFO 2026-03-02 09:57:28,422 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-03-02 09:57:30,639 Watching for file changes with StatReloader
+INFO 2026-03-02 09:57:37,204 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-03-02 09:57:39,865 Watching for file changes with StatReloader
+INFO 2026-03-02 09:57:46,632 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-03-02 09:57:49,138 Watching for file changes with StatReloader
+INFO 2026-03-02 09:58:40,582 C:\Users\asad\Desktop\Library_management\backend\libApp\Views\Login_Views.py changed, reloading.
+INFO 2026-03-02 09:58:43,068 Watching for file changes with StatReloader
+INFO 2026-03-02 09:59:45,144 C:\Users\asad\Desktop\Library_management\backend\libApp\Views\Login_Views.py changed, reloading.
+INFO 2026-03-02 09:59:47,501 Watching for file changes with StatReloader
+INFO 2026-03-02 10:00:00,820 C:\Users\asad\Desktop\Library_management\backend\libApp\Views\Login_Views.py changed, reloading.
+INFO 2026-03-02 10:00:03,701 Watching for file changes with StatReloader
+INFO 2026-03-02 10:00:51,463 Watching for file changes with StatReloader
+INFO 2026-03-02 10:05:52,559 C:\Users\asad\Desktop\Library_management\backend\libApp\Views\Login_Views.py changed, reloading.
+INFO 2026-03-02 10:05:55,100 Watching for file changes with StatReloader
+INFO 2026-03-02 10:08:44,420 C:\Users\asad\Desktop\Library_management\backend\libApp\Views\Audit_Views.py changed, reloading.
+INFO 2026-03-02 10:08:46,856 Watching for file changes with StatReloader
+INFO 2026-03-02 10:09:09,506 "OPTIONS /book/ HTTP/1.1" 200 0
+INFO 2026-03-02 10:09:09,508 "OPTIONS /book/ HTTP/1.1" 200 0
+INFO 2026-03-02 10:09:09,789 "GET /category/ HTTP/1.1" 200 389
+INFO 2026-03-02 10:09:09,800 "GET /search/book/?name= HTTP/1.1" 200 2
+INFO 2026-03-02 10:09:09,808 "GET /book/ HTTP/1.1" 200 261
+INFO 2026-03-02 10:09:09,990 "GET /category/ HTTP/1.1" 200 389
+INFO 2026-03-02 10:09:10,001 "GET /search/book/?name= HTTP/1.1" 200 2
+INFO 2026-03-02 10:09:10,038 "GET /book/ HTTP/1.1" 200 261
+INFO 2026-03-02 10:09:12,452 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:09:12,452 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:09:12,589 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:09:12,735 "GET /book/ HTTP/1.1" 200 261
+INFO 2026-03-02 10:09:12,767 "GET /category/ HTTP/1.1" 200 389
+INFO 2026-03-02 10:09:12,846 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:09:12,912 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:09:12,936 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:09:12,976 "GET /search/book/?name= HTTP/1.1" 200 2
+INFO 2026-03-02 10:09:13,209 "GET /category/ HTTP/1.1" 200 389
+INFO 2026-03-02 10:09:13,216 "GET /book/ HTTP/1.1" 200 261
+INFO 2026-03-02 10:09:13,242 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:09:13,287 "GET /search/book/?name= HTTP/1.1" 200 2
+INFO 2026-03-02 10:09:13,455 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:09:17,970 "GET /search/book/?name=lovee HTTP/1.1" 200 95
+INFO 2026-03-02 10:09:20,247 "GET /search/book/?name= HTTP/1.1" 200 2
+INFO 2026-03-02 10:09:21,429 "GET /category/ HTTP/1.1" 200 389
+INFO 2026-03-02 10:09:21,436 "GET /author/ HTTP/1.1" 200 183
+INFO 2026-03-02 10:09:21,589 "GET /category/ HTTP/1.1" 200 389
+INFO 2026-03-02 10:09:21,596 "GET /author/ HTTP/1.1" 200 183
+INFO 2026-03-02 10:09:38,197 "POST /book/ HTTP/1.1" 201 41
+INFO 2026-03-02 10:09:38,425 "GET /book/ HTTP/1.1" 200 312
+INFO 2026-03-02 10:09:41,187 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:09:41,273 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:09:41,309 "GET /book/ HTTP/1.1" 200 312
+INFO 2026-03-02 10:09:41,335 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:09:41,335 "GET /category/ HTTP/1.1" 200 389
+INFO 2026-03-02 10:09:41,349 "GET /search/book/?name= HTTP/1.1" 200 2
+INFO 2026-03-02 10:09:41,408 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:09:41,630 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:09:41,681 "GET /book/ HTTP/1.1" 200 312
+INFO 2026-03-02 10:09:41,706 "GET /search/book/?name= HTTP/1.1" 200 2
+INFO 2026-03-02 10:09:41,723 "GET /category/ HTTP/1.1" 200 389
+INFO 2026-03-02 10:09:41,746 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:09:41,778 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:09:41,940 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:10:31,672 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:10:31,726 "GET /book/ HTTP/1.1" 200 312
+INFO 2026-03-02 10:10:31,805 "GET /category/ HTTP/1.1" 200 389
+INFO 2026-03-02 10:10:31,815 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:10:31,829 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:10:31,913 "GET /search/book/?name= HTTP/1.1" 200 2
+INFO 2026-03-02 10:10:32,056 "GET /book/ HTTP/1.1" 200 312
+INFO 2026-03-02 10:10:32,059 "GET /category/ HTTP/1.1" 200 389
+INFO 2026-03-02 10:10:32,086 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:10:32,131 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:10:32,164 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:10:32,263 "GET /search/book/?name= HTTP/1.1" 200 2
+INFO 2026-03-02 10:10:32,306 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:10:32,430 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:10:35,200 "GET /issue/search/?name= HTTP/1.1" 200 257
+INFO 2026-03-02 10:10:35,239 "GET /issue/ HTTP/1.1" 200 377
+INFO 2026-03-02 10:10:35,405 "GET /issue/search/?name= HTTP/1.1" 200 257
+INFO 2026-03-02 10:10:35,410 "GET /issue/ HTTP/1.1" 200 377
+INFO 2026-03-02 10:10:36,530 "GET /category/ HTTP/1.1" 200 389
+INFO 2026-03-02 10:10:36,598 "GET /search/book/?name= HTTP/1.1" 200 2
+INFO 2026-03-02 10:10:36,626 "GET /book/ HTTP/1.1" 200 312
+INFO 2026-03-02 10:10:37,035 "GET /search/book/?name= HTTP/1.1" 200 2
+INFO 2026-03-02 10:10:37,041 "GET /category/ HTTP/1.1" 200 389
+INFO 2026-03-02 10:10:37,057 "GET /book/ HTTP/1.1" 200 312
+INFO 2026-03-02 10:11:00,772 "GET /search/book/?name=history HTTP/1.1" 200 2
+INFO 2026-03-02 10:11:03,078 "GET /search/book/?name=sad HTTP/1.1" 200 91
+INFO 2026-03-02 10:11:07,358 "GET /search/book/?name= HTTP/1.1" 200 2
+INFO 2026-03-02 10:11:12,363 "GET /category/ HTTP/1.1" 200 389
+INFO 2026-03-02 10:11:12,370 "GET /cat/filter/?name= HTTP/1.1" 200 75
+INFO 2026-03-02 10:11:12,542 "GET /category/ HTTP/1.1" 200 389
+INFO 2026-03-02 10:11:12,542 "GET /cat/filter/?name= HTTP/1.1" 200 75
+INFO 2026-03-02 10:11:18,750 "OPTIONS /category/update/1/ HTTP/1.1" 200 0
+INFO 2026-03-02 10:11:18,943 "GET /category/ HTTP/1.1" 200 389
+INFO 2026-03-02 10:11:18,954 "PUT /category/update/1/ HTTP/1.1" 202 40
+INFO 2026-03-02 10:11:27,832 "GET /category/ HTTP/1.1" 200 388
+INFO 2026-03-02 10:11:27,847 "PUT /category/update/1/ HTTP/1.1" 202 40
+INFO 2026-03-02 10:11:34,876 "OPTIONS /category/update/2/ HTTP/1.1" 200 0
+INFO 2026-03-02 10:11:35,067 "GET /category/ HTTP/1.1" 200 388
+INFO 2026-03-02 10:11:35,074 "PUT /category/update/2/ HTTP/1.1" 202 40
+INFO 2026-03-02 10:11:39,760 "OPTIONS /category/update/3/ HTTP/1.1" 200 0
+INFO 2026-03-02 10:11:39,899 "GET /category/ HTTP/1.1" 200 387
+INFO 2026-03-02 10:11:39,915 "PUT /category/update/3/ HTTP/1.1" 202 40
+INFO 2026-03-02 10:11:42,547 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:11:42,554 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:11:42,596 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:11:42,612 "GET /category/ HTTP/1.1" 200 412
+INFO 2026-03-02 10:11:42,633 "GET /cat/filter/?name= HTTP/1.1" 200 74
+INFO 2026-03-02 10:11:42,865 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:11:42,903 "GET /category/ HTTP/1.1" 200 412
+INFO 2026-03-02 10:11:42,910 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:11:42,911 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:11:42,950 "GET /cat/filter/?name= HTTP/1.1" 200 74
+INFO 2026-03-02 10:11:43,061 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:11:43,155 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:11:48,326 "OPTIONS /category/update/4/ HTTP/1.1" 200 0
+INFO 2026-03-02 10:11:48,437 "GET /category/ HTTP/1.1" 200 412
+INFO 2026-03-02 10:11:48,447 "PUT /category/update/4/ HTTP/1.1" 202 40
+INFO 2026-03-02 10:11:50,926 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:11:50,943 "GET /category/ HTTP/1.1" 200 436
+INFO 2026-03-02 10:11:50,960 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:11:51,006 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:11:51,090 "GET /cat/filter/?name= HTTP/1.1" 200 74
+INFO 2026-03-02 10:11:51,174 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:11:51,174 "GET /category/ HTTP/1.1" 200 436
+INFO 2026-03-02 10:11:51,200 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:11:51,277 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:11:51,349 "GET /cat/filter/?name= HTTP/1.1" 200 74
+INFO 2026-03-02 10:11:51,442 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:11:51,556 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:11:55,490 "OPTIONS /category/delete/6/ HTTP/1.1" 200 0
+INFO 2026-03-02 10:11:55,715 "DELETE /category/delete/6/ HTTP/1.1" 200 30
+INFO 2026-03-02 10:11:56,218 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:11:56,236 "GET /cat/filter/?name= HTTP/1.1" 200 74
+INFO 2026-03-02 10:11:56,265 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:11:56,371 "GET /category/ HTTP/1.1" 200 369
+INFO 2026-03-02 10:11:56,387 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:11:56,442 "GET /cat/filter/?name= HTTP/1.1" 200 74
+INFO 2026-03-02 10:11:56,474 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:11:56,541 "GET /category/ HTTP/1.1" 200 369
+INFO 2026-03-02 10:11:56,545 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:11:56,578 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:11:56,669 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:11:56,876 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:11:58,657 "GET /category/ HTTP/1.1" 200 369
+INFO 2026-03-02 10:11:58,658 "GET /cat/filter/?name= HTTP/1.1" 200 74
+INFO 2026-03-02 10:11:58,661 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:11:58,708 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:11:58,748 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:11:58,950 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:11:58,985 "GET /category/ HTTP/1.1" 200 369
+INFO 2026-03-02 10:11:58,988 "GET /cat/filter/?name= HTTP/1.1" 200 74
+INFO 2026-03-02 10:11:59,022 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:11:59,040 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:11:59,154 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:11:59,285 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:12:09,724 "OPTIONS /category/ HTTP/1.1" 200 0
+INFO 2026-03-02 10:12:09,950 "GET /category/ HTTP/1.1" 200 439
+INFO 2026-03-02 10:12:09,953 "POST /category/ HTTP/1.1" 201 38
+INFO 2026-03-02 10:12:12,145 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:12:12,186 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:12:12,193 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:12:12,246 "GET /category/ HTTP/1.1" 200 439
+INFO 2026-03-02 10:12:12,285 "GET /cat/filter/?name= HTTP/1.1" 200 88
+INFO 2026-03-02 10:12:12,422 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:12:12,491 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:12:12,497 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:12:12,510 "GET /cat/filter/?name= HTTP/1.1" 200 88
+INFO 2026-03-02 10:12:12,594 "GET /category/ HTTP/1.1" 200 439
+INFO 2026-03-02 10:12:12,703 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:12:12,800 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:12:13,363 "GET /author/ HTTP/1.1" 200 183
+INFO 2026-03-02 10:12:13,537 "GET /author/ HTTP/1.1" 200 183
+INFO 2026-03-02 10:12:27,591 "OPTIONS /author/update/3/ HTTP/1.1" 200 0
+INFO 2026-03-02 10:12:27,794 "GET /author/ HTTP/1.1" 200 183
+ERROR 2026-03-02 10:12:28,708 Internal Server Error: /author/update/3/
+Traceback (most recent call last):
+  File "C:\Users\asad\Desktop\Library_management\env\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "tbl_author_author_name_key"
+DETAIL:  Key (author_name)=(max) already exists.
+CONTEXT:  SQL statement "update tbl_author set author_name=u_name ,updated_at = now() where author_id=u_id"
+PL/pgSQL function post_update_author(character varying,integer,character varying) line 7 at SQL statement
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\asad\Desktop\Library_management\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\asad\Desktop\Library_management\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\asad\Desktop\Library_management\env\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\asad\Desktop\Library_management\env\lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\asad\Desktop\Library_management\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\asad\Desktop\Library_management\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\asad\Desktop\Library_management\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\asad\Desktop\Library_management\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\asad\Desktop\Library_management\backend\libApp\Views\Author_Views.py", line 30, in put
+    Author_service.post_update_author('update',id,data["author_name"])
+  File "C:\Users\asad\Desktop\Library_management\backend\libApp\service\Author_service.py", line 11, in post_update_author
+    cursor.execute("select * from post_update_author(%s,%s,%s)",[p_action,a_id,a_name])
+  File "C:\Users\asad\Desktop\Library_management\env\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\asad\Desktop\Library_management\env\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\asad\Desktop\Library_management\env\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\asad\Desktop\Library_management\env\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\asad\Desktop\Library_management\env\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\asad\Desktop\Library_management\env\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "tbl_author_author_name_key"
+DETAIL:  Key (author_name)=(max) already exists.
+CONTEXT:  SQL statement "update tbl_author set author_name=u_name ,updated_at = now() where author_id=u_id"
+PL/pgSQL function post_update_author(character varying,integer,character varying) line 7 at SQL statement
+
+ERROR 2026-03-02 10:12:28,715 "PUT /author/update/3/ HTTP/1.1" 500 134836
+INFO 2026-03-02 10:12:29,648 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:12:29,695 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:12:29,707 "GET /author/ HTTP/1.1" 200 183
+INFO 2026-03-02 10:12:29,840 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:12:29,928 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:12:29,947 "GET /author/ HTTP/1.1" 200 183
+INFO 2026-03-02 10:12:30,034 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:12:30,055 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:12:30,171 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:12:30,291 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:12:37,644 "GET /author/ HTTP/1.1" 200 183
+INFO 2026-03-02 10:12:37,649 "PUT /author/update/3/ HTTP/1.1" 202 41
+INFO 2026-03-02 10:12:38,102 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:12:38,105 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:12:38,111 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:12:38,167 "GET /author/ HTTP/1.1" 200 183
+INFO 2026-03-02 10:12:38,338 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:12:38,346 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:12:38,358 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:12:38,427 "GET /author/ HTTP/1.1" 200 183
+INFO 2026-03-02 10:12:38,541 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:12:38,645 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:12:51,356 "OPTIONS /author/ HTTP/1.1" 200 0
+INFO 2026-03-02 10:12:51,549 "GET /author/ HTTP/1.1" 200 253
+INFO 2026-03-02 10:12:51,552 "POST /author/ HTTP/1.1" 201 41
+INFO 2026-03-02 10:12:55,036 "OPTIONS /author/delete/4/ HTTP/1.1" 200 0
+INFO 2026-03-02 10:12:55,234 "DELETE /author/delete/4/ HTTP/1.1" 200 30
+INFO 2026-03-02 10:12:55,724 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:12:55,730 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:12:55,734 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:12:55,760 "GET /author/ HTTP/1.1" 200 183
+INFO 2026-03-02 10:12:55,946 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:12:55,947 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:12:55,971 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:12:55,988 "GET /author/ HTTP/1.1" 200 183
+INFO 2026-03-02 10:12:56,133 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:12:56,251 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:12:57,706 "OPTIONS /image/ HTTP/1.1" 200 0
+INFO 2026-03-02 10:12:57,706 "OPTIONS /image/ HTTP/1.1" 200 0
+INFO 2026-03-02 10:12:57,924 "GET /image/ HTTP/1.1" 200 186
+INFO 2026-03-02 10:12:57,980 "GET /media/demo/book10.jfif HTTP/1.1" 304 0
+INFO 2026-03-02 10:12:58,009 "GET /media/demo/book2.jfif HTTP/1.1" 304 0
+INFO 2026-03-02 10:12:58,021 "GET /media/demo/book11.jfif HTTP/1.1" 304 0
+INFO 2026-03-02 10:12:58,092 "GET /image/ HTTP/1.1" 200 186
+INFO 2026-03-02 10:12:59,834 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:12:59,985 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:13:01,445 "GET /audit/ HTTP/1.1" 200 1741
+INFO 2026-03-02 10:13:01,467 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:13:01,666 "GET /audit/ HTTP/1.1" 200 1741
+INFO 2026-03-02 10:13:01,714 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:13:09,935 "GET /filter/Audit/?act=update HTTP/1.1" 200 722
+INFO 2026-03-02 10:13:16,270 "GET /filter/Audit/?act=create HTTP/1.1" 200 777
+INFO 2026-03-02 10:13:17,832 "GET /filter/Audit/?act=create HTTP/1.1" 200 777
+INFO 2026-03-02 10:13:22,205 "GET /filter/Audit/ HTTP/1.1" 200 1741
+INFO 2026-03-02 10:13:28,548 "GET /filter/Audit/?act=create HTTP/1.1" 200 777
+INFO 2026-03-02 10:13:30,627 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:13:30,633 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:13:30,650 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:13:30,695 "GET /audit/ HTTP/1.1" 200 1741
+INFO 2026-03-02 10:13:30,890 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:13:30,911 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:13:30,959 "GET /audit/ HTTP/1.1" 200 1741
+INFO 2026-03-02 10:13:30,968 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:13:31,128 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:13:31,209 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:13:31,247 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:13:31,316 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:13:35,662 "GET /filter/Audit/?act=return HTTP/1.1" 200 82
+INFO 2026-03-02 10:13:39,697 "GET /filter/Audit/?act=update HTTP/1.1" 200 722
+INFO 2026-03-02 10:13:45,400 "GET /filter/Audit/?act=create HTTP/1.1" 200 777
+INFO 2026-03-02 10:13:47,741 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:13:47,756 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:13:47,785 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:13:47,806 "GET /audit/ HTTP/1.1" 200 1741
+INFO 2026-03-02 10:13:48,005 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:13:48,022 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:13:48,063 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:13:48,063 "GET /audit/ HTTP/1.1" 200 1741
+INFO 2026-03-02 10:13:48,277 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:13:48,291 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:13:48,440 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:13:48,466 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:13:51,521 "GET /filter/Audit/?act=create HTTP/1.1" 200 777
+INFO 2026-03-02 10:13:57,585 "GET /filter/Audit/ HTTP/1.1" 200 1741
+INFO 2026-03-02 10:14:01,827 "GET /LoginAudit/ HTTP/1.1" 200 775
+INFO 2026-03-02 10:14:01,833 "GET /search/LoginAudit/?name= HTTP/1.1" 200 202
+INFO 2026-03-02 10:14:02,007 "GET /LoginAudit/ HTTP/1.1" 200 775
+INFO 2026-03-02 10:14:02,028 "GET /search/LoginAudit/?name= HTTP/1.1" 200 202
+INFO 2026-03-02 10:14:06,843 "GET /chart/ HTTP/1.1" 200 51
+INFO 2026-03-02 10:14:06,965 "GET /chart/ HTTP/1.1" 200 51
+INFO 2026-03-02 10:14:08,929 "GET /issue/ HTTP/1.1" 200 377
+INFO 2026-03-02 10:14:08,941 "GET /issue/search/?name= HTTP/1.1" 200 257
+INFO 2026-03-02 10:14:09,083 "GET /issue/ HTTP/1.1" 200 377
+INFO 2026-03-02 10:14:09,105 "GET /issue/search/?name= HTTP/1.1" 200 257
+INFO 2026-03-02 10:14:11,999 "GET /issue/overdue/ HTTP/1.1" 200 89
+INFO 2026-03-02 10:14:16,392 "GET /issue/ HTTP/1.1" 200 377
+INFO 2026-03-02 10:14:18,143 "GET /overdue/mail/ HTTP/1.1" 200 25
+INFO 2026-03-02 10:14:18,180 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:14:18,184 "GET /book/ HTTP/1.1" 200 311
+INFO 2026-03-02 10:14:18,327 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:14:18,335 "GET /book/ HTTP/1.1" 200 311
+INFO 2026-03-02 10:14:28,486 "GET /chart/ HTTP/1.1" 200 51
+INFO 2026-03-02 10:14:28,637 "GET /chart/ HTTP/1.1" 200 51
+INFO 2026-03-02 10:14:29,428 "GET /search/book/?name= HTTP/1.1" 200 2
+INFO 2026-03-02 10:14:29,432 "GET /book/ HTTP/1.1" 200 311
+INFO 2026-03-02 10:14:29,436 "GET /category/ HTTP/1.1" 200 439
+INFO 2026-03-02 10:14:29,656 "GET /category/ HTTP/1.1" 200 439
+INFO 2026-03-02 10:14:29,669 "GET /search/book/?name= HTTP/1.1" 200 2
+INFO 2026-03-02 10:14:29,670 "GET /book/ HTTP/1.1" 200 311
+INFO 2026-03-02 10:14:30,725 "GET /author/ HTTP/1.1" 200 183
+INFO 2026-03-02 10:14:30,909 "GET /author/ HTTP/1.1" 200 183
+INFO 2026-03-02 10:14:31,813 "GET /image/ HTTP/1.1" 200 186
+INFO 2026-03-02 10:14:32,019 "GET /image/ HTTP/1.1" 200 186
+INFO 2026-03-02 10:14:46,408 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:14:46,460 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:14:46,473 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:14:46,544 "GET /chart/ HTTP/1.1" 200 51
+INFO 2026-03-02 10:14:46,600 - Broken pipe from ('127.0.0.1', 60727)
+INFO 2026-03-02 10:14:46,774 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:14:46,825 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:14:46,883 "GET /chart/ HTTP/1.1" 200 51
+INFO 2026-03-02 10:14:46,927 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:14:47,087 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:14:47,255 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:14:49,082 "GET /image/ HTTP/1.1" 200 220
+INFO 2026-03-02 10:14:49,438 "GET /image/ HTTP/1.1" 200 220
+INFO 2026-03-02 10:14:51,277 "GET /media/demo/lib6.jfif HTTP/1.1" 304 0
+INFO 2026-03-02 10:14:51,281 "GET /media/demo/lib3.jfif HTTP/1.1" 304 0
+INFO 2026-03-02 10:14:51,313 "GET /media/demo/lib2.jfif HTTP/1.1" 200 17461
+INFO 2026-03-02 10:14:55,825 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:14:55,843 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:14:55,856 "GET /image/ HTTP/1.1" 200 220
+INFO 2026-03-02 10:14:55,857 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:14:56,091 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:14:56,121 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:14:56,148 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:14:56,166 "GET /image/ HTTP/1.1" 200 220
+INFO 2026-03-02 10:14:56,291 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:14:56,466 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:14:57,799 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:14:57,952 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:14:58,774 "GET /audit/ HTTP/1.1" 200 1816
+INFO 2026-03-02 10:14:58,776 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:14:58,935 "GET /audit/ HTTP/1.1" 200 1816
+INFO 2026-03-02 10:14:58,961 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:15:00,060 "GET /LoginAudit/ HTTP/1.1" 200 775
+INFO 2026-03-02 10:15:00,072 "GET /search/LoginAudit/?name= HTTP/1.1" 200 202
+INFO 2026-03-02 10:15:00,232 "GET /LoginAudit/ HTTP/1.1" 200 775
+INFO 2026-03-02 10:15:00,279 "GET /search/LoginAudit/?name= HTTP/1.1" 200 202
+INFO 2026-03-02 10:15:01,846 "GET /chart/ HTTP/1.1" 200 51
+INFO 2026-03-02 10:15:01,969 "GET /chart/ HTTP/1.1" 200 51
+INFO 2026-03-02 10:16:07,761 C:\Users\asad\Desktop\Library_management\backend\libApp\views.py changed, reloading.
+INFO 2026-03-02 10:16:10,892 Watching for file changes with StatReloader
+INFO 2026-03-02 10:16:22,244 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:16:22,259 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:16:22,289 "GET /chart/ HTTP/1.1" 200 51
+INFO 2026-03-02 10:16:22,420 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:16:22,568 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:16:22,570 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:16:22,821 "GET /chart/ HTTP/1.1" 200 51
+INFO 2026-03-02 10:16:22,982 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:16:23,213 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:16:23,380 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:16:24,039 "GET /issue/ HTTP/1.1" 200 377
+INFO 2026-03-02 10:16:24,058 "GET /issue/search/?name= HTTP/1.1" 200 257
+INFO 2026-03-02 10:16:24,188 "GET /issue/ HTTP/1.1" 200 377
+INFO 2026-03-02 10:16:24,223 "GET /issue/search/?name= HTTP/1.1" 200 257
+INFO 2026-03-02 10:16:25,582 "GET /category/ HTTP/1.1" 200 439
+INFO 2026-03-02 10:16:25,590 "GET /search/book/?name= HTTP/1.1" 200 2
+INFO 2026-03-02 10:16:25,597 "GET /book/ HTTP/1.1" 200 311
+INFO 2026-03-02 10:16:25,829 "GET /search/book/?name= HTTP/1.1" 200 2
+INFO 2026-03-02 10:16:25,862 "GET /book/ HTTP/1.1" 200 311
+INFO 2026-03-02 10:16:25,869 "GET /category/ HTTP/1.1" 200 439
+INFO 2026-03-02 10:16:26,516 "GET /category/ HTTP/1.1" 200 439
+INFO 2026-03-02 10:16:26,525 "GET /cat/filter/?name= HTTP/1.1" 200 88
+INFO 2026-03-02 10:16:26,675 "GET /category/ HTTP/1.1" 200 439
+INFO 2026-03-02 10:16:26,694 "GET /cat/filter/?name= HTTP/1.1" 200 88
+INFO 2026-03-02 10:16:27,778 "GET /author/ HTTP/1.1" 200 183
+INFO 2026-03-02 10:16:27,920 "GET /author/ HTTP/1.1" 200 183
+INFO 2026-03-02 10:16:28,803 "GET /image/ HTTP/1.1" 200 220
+INFO 2026-03-02 10:16:28,971 "GET /image/ HTTP/1.1" 200 220
+INFO 2026-03-02 10:16:30,874 "GET /book/ HTTP/1.1" 200 311
+INFO 2026-03-02 10:16:30,877 "GET /category/ HTTP/1.1" 200 439
+INFO 2026-03-02 10:16:30,885 "GET /search/book/?name= HTTP/1.1" 200 2
+INFO 2026-03-02 10:16:31,099 "GET /book/ HTTP/1.1" 200 311
+INFO 2026-03-02 10:16:31,133 "GET /search/book/?name= HTTP/1.1" 200 2
+INFO 2026-03-02 10:16:31,150 "GET /category/ HTTP/1.1" 200 439
+INFO 2026-03-02 10:17:08,947 C:\Users\asad\Desktop\Library_management\backend\libApp\Views\Book_Views.py changed, reloading.
+INFO 2026-03-02 10:17:11,543 Watching for file changes with StatReloader
+INFO 2026-03-02 10:17:50,619 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:17:50,628 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:17:50,741 "GET /category/ HTTP/1.1" 200 439
+INFO 2026-03-02 10:17:50,781 "GET /search/book/?name= HTTP/1.1" 200 2
+INFO 2026-03-02 10:17:50,820 "GET /book/ HTTP/1.1" 200 311
+INFO 2026-03-02 10:17:50,823 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:17:50,844 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:17:50,850 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:17:51,023 "GET /category/ HTTP/1.1" 200 439
+INFO 2026-03-02 10:17:51,066 "GET /search/book/?name= HTTP/1.1" 200 2
+INFO 2026-03-02 10:17:51,084 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:17:51,117 "GET /book/ HTTP/1.1" 200 311
+INFO 2026-03-02 10:17:51,136 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:17:51,249 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:23:29,238 "GET /search/LoginAudit/?name= HTTP/1.1" 200 202
+INFO 2026-03-02 10:23:29,244 "GET /LoginAudit/ HTTP/1.1" 200 775
+INFO 2026-03-02 10:23:29,412 "GET /search/LoginAudit/?name= HTTP/1.1" 200 202
+INFO 2026-03-02 10:23:29,426 "GET /LoginAudit/ HTTP/1.1" 200 775
+INFO 2026-03-02 10:23:30,756 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:23:30,762 "GET /audit/ HTTP/1.1" 200 1816
+INFO 2026-03-02 10:23:30,924 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:23:30,929 "GET /audit/ HTTP/1.1" 200 1816
+INFO 2026-03-02 10:23:44,918 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:23:45,081 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:23:47,967 "GET /category/ HTTP/1.1" 200 439
+INFO 2026-03-02 10:23:47,968 "GET /book/ HTTP/1.1" 200 311
+INFO 2026-03-02 10:23:47,991 "GET /search/book/?name= HTTP/1.1" 200 2
+INFO 2026-03-02 10:23:48,206 "GET /book/ HTTP/1.1" 200 311
+INFO 2026-03-02 10:23:48,238 "GET /search/book/?name= HTTP/1.1" 200 2
+INFO 2026-03-02 10:23:48,264 "GET /category/ HTTP/1.1" 200 439
+INFO 2026-03-02 10:23:49,242 "GET /author/ HTTP/1.1" 200 183
+INFO 2026-03-02 10:23:49,424 "GET /author/ HTTP/1.1" 200 183
+INFO 2026-03-02 10:23:50,486 "GET /cat/filter/?name= HTTP/1.1" 200 88
+INFO 2026-03-02 10:23:50,518 "GET /category/ HTTP/1.1" 200 439
+INFO 2026-03-02 10:23:50,671 "GET /cat/filter/?name= HTTP/1.1" 200 88
+INFO 2026-03-02 10:23:50,698 "GET /category/ HTTP/1.1" 200 439
+INFO 2026-03-02 10:23:53,231 "GET /category/ HTTP/1.1" 200 439
+INFO 2026-03-02 10:23:53,243 "GET /book/ HTTP/1.1" 200 311
+INFO 2026-03-02 10:23:53,244 "GET /search/book/?name= HTTP/1.1" 200 2
+INFO 2026-03-02 10:23:53,423 "GET /category/ HTTP/1.1" 200 439
+INFO 2026-03-02 10:23:53,435 "GET /book/ HTTP/1.1" 200 311
+INFO 2026-03-02 10:23:53,452 "GET /search/book/?name= HTTP/1.1" 200 2
+INFO 2026-03-02 10:50:15,544 "GET /overdue/mail/ HTTP/1.1" 200 25
+INFO 2026-03-02 10:55:48,681 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:55:48,684 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:55:48,684 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:55:48,701 "GET /book/ HTTP/1.1" 200 311
+INFO 2026-03-02 10:55:48,813 "GET /category/ HTTP/1.1" 200 439
+INFO 2026-03-02 10:55:48,866 "GET /getusers/ HTTP/1.1" 200 39
+INFO 2026-03-02 10:55:48,866 "GET /user/1/ HTTP/1.1" 200 70
+INFO 2026-03-02 10:55:48,898 "GET /book/ HTTP/1.1" 200 311
+INFO 2026-03-02 10:55:48,932 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:55:48,938 "GET /search/book/?name= HTTP/1.1" 200 2
+INFO 2026-03-02 10:55:49,025 "GET /category/ HTTP/1.1" 200 439
+INFO 2026-03-02 10:55:49,051 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 10:55:49,082 "GET /search/book/?name= HTTP/1.1" 200 2
+INFO 2026-03-02 10:55:49,169 "GET /issue/user/1/ HTTP/1.1" 200 195
+INFO 2026-03-02 11:02:59,087 "GET / HTTP/1.1" 200 32
+INFO 2026-03-02 11:06:14,258 C:\Users\asad\Desktop\Library_management\backend\libApp\Views\Image_Views.py changed, reloading.
+INFO 2026-03-02 11:06:17,167 Watching for file changes with StatReloader
+INFO 2026-03-02 11:06:23,966 C:\Users\asad\Desktop\Library_management\backend\libApp\service\Image_service.py changed, reloading.
+INFO 2026-03-02 11:06:26,761 Watching for file changes with StatReloader
+INFO 2026-03-02 14:55:55,484 "GET /user/1/ HTTP/1.1" 200 7126
+INFO 2026-03-02 14:55:55,521 "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2026-03-02 14:55:55,530 "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 304 0
+INFO 2026-03-02 14:55:55,530 "GET /static/rest_framework/css/prettify.css HTTP/1.1" 304 0
+INFO 2026-03-02 14:55:55,541 "GET /static/rest_framework/js/default.js HTTP/1.1" 304 0
+INFO 2026-03-02 14:55:55,542 "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 304 0
+INFO 2026-03-02 14:55:55,553 "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 304 0
+INFO 2026-03-02 14:55:55,553 "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 304 0
+INFO 2026-03-02 14:55:55,555 "GET /static/rest_framework/js/csrf.js HTTP/1.1" 304 0
+INFO 2026-03-02 14:55:55,557 "GET /static/rest_framework/css/default.css HTTP/1.1" 304 0
+INFO 2026-03-02 14:55:55,559 "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 304 0
+INFO 2026-03-02 14:55:55,563 "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2026-03-02 14:55:55,588 "GET /static/rest_framework/img/grid.png HTTP/1.1" 304 0
+WARNING 2026-03-02 14:56:08,712 Not Found: /getuser/
+WARNING 2026-03-02 14:56:08,712 "GET /getuser/ HTTP/1.1" 404 8966
+INFO 2026-03-02 14:56:23,013 "GET /getusers/ HTTP/1.1" 200 5355
+INFO 2026-03-02 14:57:00,332 "GET /category/ HTTP/1.1" 200 439
+INFO 2026-03-02 14:57:00,343 "GET /cat/filter/?name= HTTP/1.1" 200 88
+INFO 2026-03-02 14:57:00,523 "GET /category/ HTTP/1.1" 200 439
+INFO 2026-03-02 14:57:00,526 "GET /cat/filter/?name= HTTP/1.1" 200 88
+INFO 2026-03-02 14:57:01,762 "GET /author/ HTTP/1.1" 200 183
+INFO 2026-03-02 14:57:01,914 "GET /author/ HTTP/1.1" 200 183
+INFO 2026-03-02 14:57:03,068 "OPTIONS /image/ HTTP/1.1" 200 0
+INFO 2026-03-02 14:57:03,068 "OPTIONS /image/ HTTP/1.1" 200 0
+INFO 2026-03-02 14:57:03,266 "GET /image/ HTTP/1.1" 200 220
+INFO 2026-03-02 14:57:03,407 "GET /image/ HTTP/1.1" 200 220
+INFO 2026-03-02 16:16:44,514 "GET /issue/ HTTP/1.1" 200 377
+INFO 2026-03-02 16:16:44,527 "GET /issue/search/?name= HTTP/1.1" 200 257
+INFO 2026-03-02 16:16:44,719 "GET /issue/ HTTP/1.1" 200 377
+INFO 2026-03-02 16:16:44,725 "GET /issue/search/?name= HTTP/1.1" 200 257

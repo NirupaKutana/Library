@@ -1,63 +1,68 @@
 from django.contrib import admin
 from django.urls import path,include
 from libApp import views
+from libApp.Views import Book_Views,Category_Views,Author_Views,Image_Views 
+from libApp.Views import Login_Views,Issue_View,Audit_Views 
 urlpatterns = [
-    path("login/",views.LoginListView.as_view()),
-    path("token/refresh/",views.RefreshTokenView.as_view()),
+    path("",Login_Views.test_api),
+    path("getusers/",Login_Views.getUsersListView.as_view()),
+    path("user/",Login_Views.RegisterListView.as_view()),
+    path("user/<int:id>/",Login_Views.RegisterListView.as_view()),
+    path("verify-email/<str:token>/",Login_Views.VerifyEmailview.as_view()),
+    path("check-verification/", Login_Views.CheckVerificationView.as_view()),
+    path("resend-verify/", Login_Views.ResendEmailView.as_view()),
+
+    path("login/",Login_Views.LoginListView.as_view()),
+    path("token/refresh/",Login_Views.RefreshTokenView.as_view()),
   
-    path("forgot/",views.ForgotPasswordView.as_view()),
-    path("reset/",views.ResetPasswordView.as_view()),
+    path("forgot/",Login_Views.ForgotPasswordView.as_view()),
+    path("reset/",Login_Views.ResetPasswordView.as_view()),
+  
     
-    path("issue/",views.IssueBookView.as_view()),
-    path("return/",views.ReturnBookView.as_view()),
-    path("issue/search/",views.IssueSearchView.as_view()),
-    path("issue/user/<int:id>/",views.IssueUserViewList.as_view()),
-    path("issue/overdue/",views.OverdueListView.as_view()),
-    path("overdue/mail/",views.SendOverdueMailListView.as_view()),
+
+    path("book/",Book_Views.bookListView.as_view()),
+    path("book/delete/<int:id>/",Book_Views.bookListView.as_view()),
+    path("book/update/<int:id>/",Book_Views.bookListView.as_view()),
+    path("search/book/",Book_Views.bookSearchView.as_view()),
+
+    path("issue/",Issue_View.IssueBookView.as_view()),
+    path("issue/search/",Issue_View.IssueSearchView.as_view()),
+    path("issue/user/<int:id>/",Issue_View.IssueUserViewList.as_view()),
+    path("issue/overdue/",Issue_View.OverdueListView.as_view()),
+    path("overdue/mail/",Issue_View.SendOverdueMailListView.as_view()),
+    path("return/",Issue_View.ReturnBookView.as_view()),
 
 
-    path("",views.test_api),
-    path("user/",views.RegisterListView.as_view()),
-    path("verify-email/<str:token>/",views.VerifyEmailview.as_view()),
-    path("check-verification/", views.CheckVerificationView.as_view()),
-    path("resend-verify/", views.ResendEmailView.as_view()),
-    path("user/<int:id>/",views.RegisterListView.as_view()),
-    path("getusers/",views.getUsersListView.as_view()),
 
-    path("book/",views.bookListView.as_view()),
-    path("book/delete/<int:id>/",views.bookListView.as_view()),
-    path("book/update/<int:id>/",views.bookListView.as_view()),
-    path("search/book/",views.bookSearchView.as_view()),
-
-    path("category/",views.categoryListView.as_view()),
-    path("category/delete/<int:id>/",views.categoryListView.as_view()),
-    path("category/update/<int:id>/",views.categoryListView.as_view()),
-    path("cat/filter/",views.categorySearchView.as_view()),
+    path("category/",Category_Views.categoryListView.as_view()),
+    path("category/delete/<int:id>/",Category_Views.categoryListView.as_view()),
+    path("category/update/<int:id>/",Category_Views.categoryListView.as_view()),
+    path("cat/filter/",Category_Views.categorySearchView.as_view()),
    
 
 
-    path("author/",views.authorListView.as_view()),
-    path("author/delete/<int:id>/",views.authorListView.as_view()),
-    path("author/update/<int:id>/",views.authorListView.as_view()),
+    path("author/",Author_Views.authorListView.as_view()),
+    path("author/delete/<int:id>/",Author_Views.authorListView.as_view()),
+    path("author/update/<int:id>/",Author_Views.authorListView.as_view()),
 
 
-    path("image/",views.imageListView.as_view()),
-    path("image/<int:id>/",views.imageListView.as_view()),
-    path("image/update/<int:id>/",views.imageListView.as_view()),
-    path("image/pag/",views.imgPaginationView.as_view()),
+    path("image/",Image_Views.imageListView.as_view()),
+    path("image/<int:id>/",Image_Views.imageListView.as_view()),
+    path("image/update/<int:id>/",Image_Views.imageListView.as_view()),
+    path("image/pag/",Image_Views.imgPaginationView.as_view()),
 
-    path("contactUs/",views.contactUsListView.as_view()),
+    path("contactUs/",Login_Views.contactUsListView.as_view()),
 
-    path("chart/",views.ChartViewList.as_view()),
-    path("user/report/<int:id>/",views.UserReportView.as_view()),
+    path("chart/",Audit_Views.ChartViewList.as_view()),
+    path("user/report/<int:id>/",Audit_Views.UserReportView.as_view()),
+    
+    path("audit/",Audit_Views.AuditListView.as_view()),
+    path("LoginAudit/",Audit_Views.LoginAuditListView.as_view()),
+    path("search/LoginAudit/",Audit_Views.SearchUserLoginAuditView.as_view()),
 
-    path("audit/",views.AuditListView.as_view()),
-    path("LoginAudit/",views.LoginAuditListView.as_view()),
-    path("search/LoginAudit/",views.SearchUserLoginAuditView.as_view()),
-
-    path("usAudit/",views.UserAuditPDFView.as_view()),
-    path("filter/Audit/",views.FilterAuditView.as_view()),
-    path("audit/pdf/", views.FilterAuditPDFview.as_view()),
+    path("usAudit/",Audit_Views.UserAuditPDFView.as_view()),
+    path("filter/Audit/",Audit_Views.FilterAuditView.as_view()),
+    path("audit/pdf/",Audit_Views.FilterAuditPDFview.as_view()),
 
 
 ]
