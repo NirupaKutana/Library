@@ -1,8 +1,6 @@
 import os
-
 from rest_framework_simplejwt.tokens import AccessToken
 from rest_framework.exceptions import AuthenticationFailed
-
 from django.conf import settings
 from rest_framework import status
 from rest_framework.decorators import APIView

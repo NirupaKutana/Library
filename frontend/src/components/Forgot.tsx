@@ -26,8 +26,7 @@ const Forgot = ({onClose}:ForgotProps) => {
             console.log(err.response?.data?.error)
             toast.error(`${err.response?.data?.error}`)
          }
-         finally{setLoading(false)}
-       
+         finally{setLoading(false)}       
     }
   return (
     <div>

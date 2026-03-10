@@ -7,6 +7,7 @@ import Addbook from './Addbook';
 import { toast } from 'react-toastify';
 import Loader from './Loader';
 import Pagination from './Pagination';
+import API from '../Api/axios';
 
 const Books = () => {
     const BASE_URL = "http://127.0.0.1:8000";
@@ -29,7 +30,7 @@ const Books = () => {
 
     const fetchAllBook =() =>{
        setLoading(true)
-            axios.get(`${BASE_URL}/book/`,{
+            API.get(`/book/`,{
             headers: { Authorization: `Bearer ${localStorage.getItem("token")}`}
            })
            .then(res => {
@@ -81,7 +82,7 @@ const handleDelete = async(book_id : number)=>
   }
   return (
     <>
-     {Loading && <Loader/>}
+    {Loading && <Loader/>}
     <div className={isshow ? "book-container dimmed" : "" }>
     <div className="book-container">
       <div className="table-actions">

@@ -1,0 +1,107 @@
+/* ===== Full Screen Background ===== */
+.session-lock {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(
+    135deg,
+    #0f172a,
+    #1e293b,
+    #020617
+  );
+
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ===== Card ===== */
+.lock-card {
+  width: 360px;
+  padding: 40px 30px;
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.4);
+
+  text-align: center;
+  color: white;
+}
+
+/* ===== Title ===== */
+.lock-card h2 {
+  margin-bottom: 25px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* ===== Input ===== */
+.lock-card input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+
+  font-size: 15px;
+  margin-bottom: 20px;
+
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.lock-card input::placeholder {
+  color: #cbd5e1;
+}
+
+/* Focus Effect */
+.lock-card input:focus {
+  box-shadow: 0 0 0 2px #38bdf8;
+}
+
+/* ===== Button Group ===== */
+.btn-group {
+  display: flex;
+  gap: 10px;
+}
+
+/* ===== Continue Button ===== */
+.continue-btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+
+  background: #38bdf8;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.continue-btn:hover {
+  background: #0ea5e9;
+  transform: translateY(-1px);
+}
+
+/* ===== Logout Button ===== */
+.logout-btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+
+  background: #ef4444;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+  transform: translateY(-1px);
+}

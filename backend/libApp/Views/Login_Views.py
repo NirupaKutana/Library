@@ -18,7 +18,7 @@ from libApp.utils.jwt_utils import generate_access_token,generate_refresh_token 
 # from .middlewares.jwt_middleware import JWTAuthenticationMiddleware
 from libApp.serialize import UserSerializer,LoginSerializer ,ContactSerializer
 from django.http import JsonResponse
-
+from django.db import connection
 
 
 def test_api(request):
@@ -280,7 +280,26 @@ class ResetPasswordView(APIView):
             return Response({"error":"Password not updated"},status=status.HTTP_400_BAD_REQUEST)
         cache.clear()
         return Response({"message":"password Updated successfully"},status=status.HTTP_201_CREATED) 
-    
+
+# ---------------------------------------Session-------------------------------------------------------------
+class VerifyPasswordView(APIView):
+    def post(self,request):
+        password = request.data.get("password")
+        user_id = request.data.get("user_id")
+        print(user_id)
+        
+        with connection.cursor() as cursor :
+           cursor.execute("select user_password from tbl_users where user_id = %s",[user_id])
+           result = cursor.fetchone()
+          
+        
+        if not result :
+            return Response({"error":"User Not Found"},status=status.HTTP_403_FORBIDDEN)
+        stored_hash = result[0]
+        if not check_password(password,stored_hash):
+            return Response({"error":"Wrong Password"},status=status.HTTP_403_FORBIDDEN)
+        return Response({"success":"verification Done"},status=status.HTTP_200_OK)
+
 # ---------------------------------------ContactUs-------------------------------------------------------------
 class contactUsListView(APIView):
     def post(self,request):

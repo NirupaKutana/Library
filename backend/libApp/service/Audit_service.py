@@ -34,8 +34,6 @@ def insert_audit_log(user_id,action,module,description):
     with connection.cursor() as cursor:
         cursor.execute("select * from insert_audit_log(%s,%s,%s,%s)",[user_id,action,module,description])
 
-
-
 def get_filter_audit(sdate,edate,user,act):
     with connection.cursor() as cursor :
         cursor.execute("select * from get_filter_audit(%s,%s,%s,%s)",[sdate,edate,user,act])

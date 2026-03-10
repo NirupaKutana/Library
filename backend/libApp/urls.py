@@ -11,6 +11,7 @@ urlpatterns = [
     path("verify-email/<str:token>/",Login_Views.VerifyEmailview.as_view()),
     path("check-verification/", Login_Views.CheckVerificationView.as_view()),
     path("resend-verify/", Login_Views.ResendEmailView.as_view()),
+    path("session/verify/",Login_Views.VerifyPasswordView.as_view()),
 
     path("login/",Login_Views.LoginListView.as_view()),
     path("token/refresh/",Login_Views.RefreshTokenView.as_view()),

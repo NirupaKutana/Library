@@ -26,6 +26,7 @@ import Audit from '../components/Audit'
 import LoginAudit from '../components/LoginAudit'
 import UserList from '../components/UserList'
 import VerifyEmail from '../components/VerifyEmail'
+import SessionLock from '../components/SessionLock'
 
 
 const Approuter = () => {
@@ -68,7 +69,7 @@ const Approuter = () => {
             <Route path='/users' element={<><UserList/></>}></Route>
 
             {/* <Route path='/Pagination' element={<><Pagination/></>}></Route> */}
-
+            {/* <Route path='/session'element={<><SessionLock/></>}></Route> */}
         </Routes>
       
     </div>
