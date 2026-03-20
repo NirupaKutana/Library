@@ -72,9 +72,10 @@ useEffect(() => {
     {Loading && <Loader/>}
     <div className={isshow?"book-container dimmed":""}>
     <div className="book-container">
+      <h2>Categoy View</h2>
         <div className="table-actions">
                 
-                   <input type="text" className='srch' placeholder='🔍  Search Here..!' value={search} onChange={(e)=>setsearch(e.target.value)}/>
+        <input type="text" className='srch' placeholder='🔍  Search Here..!' value={search} onChange={(e)=>setsearch(e.target.value)}/>
                   
           
           {hasPermission("AddCategory") &&(
@@ -125,7 +126,7 @@ useEffect(() => {
         {isshow && (
         <>
         <div className="overlay">
-        <div className="modal">
+        <div className="catmodal">
           <button className='modal-close' onClick={()=>setshowmodel(false)}>&times;</button>
            <Addcategory category={selectedCategory}
                onSuccess={() => {

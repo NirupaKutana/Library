@@ -99,6 +99,8 @@ const handleReturn = async(id : number)=>
 return (
     <>
      {Loading && <Loader/>}
+      <h2>Issue Book</h2>
+
     <div className='action'>
     <input type="text" className='srch' placeholder='🔍  Search Here..!' value={search} onChange={(e)=>setsearch(e.target.value)}/>
     <button className="btn-issue" onClick={fetdata}>All Issue List</button>

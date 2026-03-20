@@ -1,96 +1,86 @@
-
-.addbook-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-  font-family: 'Times New Roman', Times, serif;
-}
-.addbook-container h3{
-  display: flex;
-   justify-content: center;
+.addbook-container { 
+  display: flex; 
+  justify-content: center; 
+  margin-top: 40px; 
+  font-family: 'Times New Roman', Times, serif; 
 }
 
-/* Form box */
-.addbook-container form {
-  display: flex;
-  flex-direction: column;
- 
-  width: 420px;
-  padding: 24px 28px;
-  background-color: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  font-family:'Times New Roman', Times, serif;
-  box-shadow:  #1f2d3a;
+.addbook-container h3{ 
+  display: flex; 
+  justify-content: center; 
 }
+/* Form box */ 
+.addbook-container form { 
+  display: flex; 
+  flex-direction: column; 
+  width: 420px; padding: 24px 28px; 
+  background-color: #ffffff; 
+  border: 1px solid #e0e0e0; 
+  border-radius: 8px; 
+  font-family:'Times New Roman', Times, serif; 
+  box-shadow: #1f2d3a; }
 
-/* Labels */
+  /* Labels */ 
+  .addbook-container label { 
+    display: flex; 
+    align-items: start;
+     margin-bottom: 6px;
+    font-size: 17px; 
+    font-weight: 600; 
+    color: #333;
+  }
 
-.addbook-container label {
-  display: flex;
-  align-items: start;
-  margin-bottom: 6px;
-  font-size: 17px;
-  font-weight: 600;
-  color: #333;
-}
-
-/* Inputs */
-.addbook-container input {
-  width: 100%;
+/* Inputs */ 
+.addbook-container input { 
+  width: 100%; 
   padding: 9px 10px;
-  margin-bottom: 18px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  transition: border-color 0.2s ease;
+   margin-bottom: 18px; 
+   font-size: 14px; 
+   border: 1px solid #ccc;
+    border-radius: 4px; 
+    transition: border-color 0.2s ease; 
+  }
+
+  .addbook-container input:focus { 
+    border-color: #2c3e50; outline: none; 
+  }
+  /* Select dropdown styling (match input fields) */ 
+  .addbook-container select { 
+    width: 420px; 
+    padding: 9px 10px; 
+    margin-bottom: 18px; 
+    font-size: 14px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    background-color: #ffffff; 
+    cursor: pointer;
+     transition: border-color 0.2s ease; 
+    }
+
+    /* Focus state for select */
+     .addbook-container select:focus {
+       border-color: #2c3e50;
+        outline: none; 
+      } 
+    /* Optional: improve option readability */
+     .addbook-container option {
+       font-size: 15px;
+       }
+
+/* Submit button */ 
+.addbook-container button { 
+  width: 100%; 
+  padding: 10px; 
+  font-size: 14px; 
+font-weight: 600; 
+color: #ffffff; 
+background-color: #2c3e50; 
+border: none; 
+border-radius: 5px; 
+cursor: pointer; 
+transition: background-color 0.2s ease, box-shadow 0.2s ease; 
 }
 
-.addbook-container input:focus {
-  border-color: #2c3e50;
-  outline: none;
-}
-
-/* Select dropdown styling (match input fields) */
-.addbook-container select {
-  width: 420px;
-  padding: 9px 10px;
-  margin-bottom: 18px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #ffffff;
-  cursor: pointer;
-  transition: border-color 0.2s ease;
-}
-
-/* Focus state for select */
-.addbook-container select:focus {
-  border-color: #2c3e50;
-  outline: none;
-}
-
-/* Optional: improve option readability */
-.addbook-container option {
-  font-size: 15px;
-}
-
-
-/* Submit button */
-.addbook-container button {
-  width: 100%;
-  padding: 10px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #ffffff;
-  background-color: #2c3e50;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.addbook-container button:hover {
+.addbook-container button:hover { 
   background-color: #1f2d3a;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-}
+   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); }

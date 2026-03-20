@@ -11,7 +11,7 @@ const ViewRoleRights = () => {
       fetchPermission(1);
     }, []); 
     // const [active,setActive]=useState("user");
-    const [active, setActive] = useState( "user");
+    const [active, setActive] = useState("user");
     const[data,setData]=useState<any[]>([]);
     const [currentPage,setCurrentPage] = useState(1);
     const itemPerPage = 6;
@@ -40,9 +40,9 @@ const ViewRoleRights = () => {
     // useEffect(() => {
     //  localStorage.setItem("activeRole", active);
     //  }, [active]);
-    // useEffect(()=>{
-    //    fetchRoleRights(2);
-    // },[]);
+    useEffect(()=>{
+       fetchRoleRights(2);
+    },[]);
     const updateLocalPermission = (permissionName :string ,isActive :boolean) =>{
          let permission = getPermission();
             const loggedInRole = localStorage.getItem("role");
@@ -88,6 +88,7 @@ const ViewRoleRights = () => {
 
   return (
     <div>
+      <h2>Update Role&Rights</h2>
         <div className="role-switch">
         <button onClick={()=>{setActive("user");fetchRoleRights(2)}}
         className={`role-btn ${active==="user" ? "active-role" : ""}`}>user</button>
@@ -103,7 +104,7 @@ const ViewRoleRights = () => {
                 <span className="right-name">{d.id}  {d.name}</span>
                  <button className={`toggle-btn ${d.active ? "on" : "off"}`}
                     onClick={() => {handleToggle(d.id)}}>
-                    {d.active ? "ON" : "OFF"}
+                    {d.active ? "Remove" : "Grant"}
                 </button>
             </li> )}
         </ul>

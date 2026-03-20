@@ -62,6 +62,8 @@ const {data,isLoading ,isError} = useQuery({
     <>
    
     <div className="book-container">
+      <h2>Author View</h2>
+
         <div className="table-actions">
            <input type="text" placeholder='🔍  Search Here..!' className='srch' value={search} onChange={(e)=>setsearch(e.target.value)} />
            {hasPermission("AddAuthor")  &&(
@@ -107,7 +109,7 @@ const {data,isLoading ,isError} = useQuery({
     {isshow && (
         <>
         <div className="overlay">
-        <div className="modal">
+        <div className="Authormodal">
           <button className='modal-close' onClick={()=>setshowmodel(false)}>&times;</button>
           <Addauthor author={selectedAuthor}
                onSuccess={() => {

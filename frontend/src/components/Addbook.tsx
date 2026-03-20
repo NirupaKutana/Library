@@ -100,32 +100,38 @@ const Addbook = ({book,onSuccess}:any) => {
     <div className="addbook-container">
       <form onSubmit={handlechange}>
         <h3>{isEdit?"Update Book":"Book Details"}</h3>
+       
         <label>Name :</label>
         <input type="text" placeholder='Bock Name' value={name} onChange={(e)=>setname(e.target.value)} />
+        
          
+       
+       
         <label >Category:</label>
         <select name="course_id" value={cat} onChange={(e)=>setcat(Number(e.target.value))}>
-          <option value="">--Select Category--</option>
+          <option value="">Select Category</option>
             {category.map((c:any)=>(
               <option key={c[0]} value={c[0]}>{c[1]} </option>
             ))}
         </select>
-
-
+        
+         
         <label>Author:</label>
         <select name='author_id' value={auth} onChange={(e)=>setauth(Number(e.target.value))}>
-          <option value="">--Select Author--</option>
+          <option value="">Select Author</option>
            {author.map((a:any)=>(
             <option key={a[0]} value={a[0]}>{a[1]}</option>
            ))}
         </select>
         
-
+          
         <label>Book Page:</label>
         <input type="number" min={0} placeholder='book page' value={page} onChange={(e)=>setpage(e.target.valueAsNumber)}/>
-
+         
+         
         <label >Copies:</label>
         <input type="number" placeholder='Copies'value={copy} onChange={(e)=>setcopy(e.target.valueAsNumber)} />
+        
         {isEdit &&(
           <>
           <label>Updated_By:</label>

@@ -150,10 +150,7 @@ useEffect(()=>{
             onClick={() => setActiveTab("Dashboard")}>
             Dashboard
           </li>  
-          <li className={activeTab === "userr" ? "active" : ""}
-            onClick={() => setActiveTab("userr")}>
-              Userrrrrrrr 
-          </li>
+          
         <li className={activeTab === "Librarian" ? "active" : ""}
             onClick={() => setActiveTab("Librarian")} >
             Librarian
@@ -278,10 +275,7 @@ useEffect(()=>{
           <Dashboard/>
           </>
         )}
-        {activeTab=="userr" &&
-        <>
-        <TanStack/>
-        </>}
+        
         {activeTab === "Users" && (
           <>
            <UserList/>

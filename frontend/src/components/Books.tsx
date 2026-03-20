@@ -167,7 +167,7 @@ const handleDelete = async(book_id : number)=>
    {isshow && (
     <>
     <div className='overlay'></div>
-    <div className='modal'>
+    <div className='bookmodal'>
       
       <button className='modal-close' onClick={()=>setshowmodel(false)}>&times;</button>
       <Addbook book ={selectedBook}
