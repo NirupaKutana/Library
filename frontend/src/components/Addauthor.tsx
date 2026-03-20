@@ -3,12 +3,28 @@ import '../style/Addauthor.css'
 import axios from 'axios'
 import { useNavigate,useLocation, Navigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import { useMutation } from '@tanstack/react-query'
+
+const saveAuthor = async({name,isEdit ,id} :any) =>{
+  const BASE_URL = "http://127.0.0.1:8000";
+  if(isEdit){
+    const res = await axios.put(`${BASE_URL}/author/update/${id}/`,{author_name:name});
+    console.log("Res",res.data)
+    return res.data
+  }
+  else
+  {
+      const res= await axios.post(`${BASE_URL}/author/`,{author_name:name});
+      return res.data
+  }
+ 
+}
 const Addauthor = ({ author, onSuccess }: any) => {
   const BASE_URL = "http://127.0.0.1:8000";
   const[name,setname]= useState("")
   const navigate=useNavigate()
   const isEdit = Boolean(author?.id)
-  
+  const id : any= author?.id;
   useEffect(()=>{
       if(author)
     {
@@ -19,47 +35,60 @@ const Addauthor = ({ author, onSuccess }: any) => {
     }
     },[author])
 
-  const handlechange = async (e:React.FormEvent)=>
-    {
-    e.preventDefault()  
-    if(isEdit)
-      {
-          axios.put(`${BASE_URL}/author/update/${author.id}/`,{
-           author_name:name 
-          }).then((res)=>{
-            
-            toast.success(res.data.success)
-            navigate("/profile", { state: { activeTab: "Author" } })
-            window.location.reload()
-          }).catch((err:any)=>{
-      
-            toast.error(err.response?.data?.error)
-          })
-      }
-    else
-      {
-        axios.post(`${BASE_URL}/author/`,{
-           author_name :name
-          }).then((res)=>{
-          toast.success(res.data.success)
-          navigate("/profile", { state: { activeTab: "Author" } })
-          }).catch((error)=>{
-              toast.error(error.response?.data?.error)
-          })
-      }
-      onSuccess()
-   }
-
+  const Mutation = useMutation({
+    mutationFn:saveAuthor,
+    onSuccess :(data)=>{
+      console.log("SUCCESS DATA:", data);
+      toast.success(data.success);
+      navigate("/profile", { state: { activeTab: "Author" } });
+      onSuccess?.();
+    },
+    onError :(error:any)=>{toast.error(error.response?.data?.error)},
+  })
   return (
     <div className='addbook-container'>
-       <form onSubmit={handlechange}>
+       <form onSubmit={(e)=>{e.preventDefault();Mutation.mutate({name,isEdit,id});}}>
         <h3>{isEdit ? "Upadte Author " : "Add Author Details"}</h3>
         <label htmlFor="">Name</label>
         <input type="text" value={name} onChange={(e)=>setname(e.target.value)}/>
-        <button type='submit'>Submit</button>
+        <button type='submit'disabled={Mutation.isPending}>{Mutation.isPending?"Saving..":"Submit"}</button>
        </form>
     </div>
   )
 }
 
 export default Addauthor
+
+
+
+
+  // const handlechange = async (e:React.FormEvent)=>
+  //   {
+  //   e.preventDefault()  
+  //   if(isEdit)
+  //     {
+  //         axios.put(`${BASE_URL}/author/update/${author.id}/`,{
+  //          author_name:name 
+  //         }).then((res)=>{
+            
+  //           toast.success(res.data.success)
+  //           navigate("/profile", { state: { activeTab: "Author" } })
+  //           window.location.reload()
+  //         }).catch((err:any)=>{
+      
+  //           toast.error(err.response?.data?.error)
+  //         })
+  //     }
+  //   else
+  //     {
+  //       axios.post(`${BASE_URL}/author/`,{
+  //          author_name :name
+  //         }).then((res)=>{
+  //         toast.success(res.data.success)
+  //         navigate("/profile", { state: { activeTab: "Author" } })
+  //         }).catch((error)=>{
+  //             toast.error(error.response?.data?.error)
+  //         })
+  //     }
+  //     onSuccess()
+  //  }

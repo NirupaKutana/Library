@@ -1,9 +1,11 @@
 .dashboard-container {
   padding: 30px;
+  margin-top: -30px;
   background: #f4f6f9;
   padding: 20px 30px;
   display: flex;
   flex-direction: column;
+  overflow-y: auto; 
 }
 
 .dashboard-title {
@@ -33,7 +35,7 @@
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-  height: 500px;
+  height: auto;
   width: 400px;
 }
 
@@ -45,4 +47,26 @@
   margin-bottom: 15px;
   font-weight: 600;
   color: #34495e;
+}
+
+
+
+.card-container {
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
+  gap: 20px;
+}
+
+.stat-card{
+  background:white;
+  padding:10px;
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  text-align:center;
+  transition:.3s;
+}
+
+.stat-card:hover{
+  transform:translateY(-5px);
 }

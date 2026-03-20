@@ -8,6 +8,33 @@ def post_user(u_name,u_email,u_pass,u_role,p_token):
             "user_id":data[0],
             "email":data[1]
         }
+    
+def post_Librarian(u_name,u_email,u_pass,u_role,p_token):
+    with connection.cursor() as cursor:
+        cursor.execute("select * from post_librarian_detail(%s,%s,%s,%s,%s)",[u_name,u_email,u_pass,u_role,p_token])
+        data = cursor.fetchone()
+        return {
+            "user_id":data[0],
+            "email":data[1]
+        }
+
+def get_librarian():
+    with connection.cursor() as cursor:
+        cursor.execute("select * from get_librarian()")
+        result = cursor.fetchall()
+        return result
+
+def update_librarian(id,u_name,u_email):
+    with connection.cursor() as cursor:
+        cursor.execute("select * from update_librarian_detail(%s,%s,%s)",[id,u_name,u_email])
+
+def delete_librarian(id):
+    with connection.cursor() as cursor :
+        cursor.execute("select * from delete_librarian(%s)",[id])
+
+def insert_user_role(u_id,r_id):
+    with connection.cursor() as cursor :
+        cursor.execute("select * from insert_user_role(%s,%s)",[u_id,r_id])
 
 def get_users():
     with connection.cursor() as cursor :
@@ -78,7 +105,9 @@ def custom_user_login(email,passw):
             "user_password":user[5],
             "role":user[6],
             "count":user[7],
-            "duration":user[8]
+            "duration":user[8],
+            "roles":user[9],
+            "permissions":user[10]
 
         }
 

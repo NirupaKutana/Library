@@ -9,21 +9,23 @@ from django.core.mail import send_mail
 
 SECRET_KEY = settings.SECRET_KEY
 
-def generate_access_token(user_id,email,role):
+def generate_access_token(user_id,email,roles,permissions):
     payload={
         "user_id":user_id,
         "user_email":email,
-        "role":role,
+        "role":roles,
+        "permissions":permissions,
         "type":"access",
         'exp' :datetime.now(timezone.utc) +timedelta(minutes=1),
         'iat' :datetime.now(timezone.utc)
     }
     return jwt.encode(payload,SECRET_KEY,algorithm='HS256')
-def generate_refresh_token(user_id,email,role):
+def generate_refresh_token(user_id,email,roles,permissions):
     payload={
          "user_id":user_id,
          "user_email":email,
-         "role":role,
+         "role":roles,
+         "permissions":permissions,
          "type":"refresh",
          'exp' :datetime.now(timezone.utc) +timedelta(days=7),
          'iat' :datetime.now(timezone.utc)

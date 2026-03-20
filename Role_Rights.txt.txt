@@ -1,0 +1,124 @@
+-------------------------------------------------------------------------------------------TABLE--------------------------------------------------------------
+
+create table tbl_roles(
+role_id serial primary key,
+role_name varchar(100) unique not null,
+description text
+);
+
+create table tbl_permissions(
+permission_id serial primary key,
+permission_name varchar(200) unique not null,
+description text
+);
+
+create table tbl_user_role(
+id serial primary key,
+user_id int references tbl_users(user_id) on delete cascade,
+role_id int references tbl_roles(role_id) on delete cascade,
+unique(user_id,role_id)
+);
+
+create table tbl_role_permission(
+id serial primary key,
+role_id int references tbl_roles(role_id) on delete cascade,
+permission_id int references tbl_permissions on delete cascade,
+unique(role_id,permission_id)
+)
+
+---------------------------------------------------------------------------------------FUNCTIONS SP------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------ADD-GET-UPDATe ROLE LIBRARIAN---------------------------------
+
+create or replace function post_librarian_detail(p_username varchar, p_email varchar, p_password varchar,
+p_role varchar,p_token varchar)
+returns table 
+(user_id int,user_email varchar)
+as $$
+BEGIN
+    INSERT INTO tbl_users(user_name, user_email, user_password, role,is_active,email_token)
+    VALUES (p_username, p_email, p_password,p_role,TRUE,p_token)
+    RETURNING tbl_users.user_id, tbl_users.user_email INTO user_id, user_email;
+
+    RETURN NEXT;
+END;
+$$ language plpgsql;
+
+create or replace function get_librarian()
+returns table(u_id int ,u_name varchar ,u_email varchar)
+as $$
+begin
+   return query select user_id,user_name,user_email from tbl_users where role = 'Librarian';
+end ;
+$$ language plpgsql;
+select * from get_librarian();
+
+create or replace function update_librarian_detail(p_id int ,p_username varchar, p_email varchar)
+returns void
+as $$
+BEGIN
+    update tbl_users set user_name = p_username ,user_email=p_email where user_id=p_id;
+END;
+$$ language plpgsql;
+
+-----------------------------------------------------------------------ADD ROLE IN TABLE BY ADMIN -----------------------------------------------------------
+
+create or replace function post_role(p_name varchar,p_des text)
+returns void
+as $$
+begin
+   insert into tbl_roles(role_name,description)values(p_name,p_des);
+end;
+$$ language plpgsql;
+
+
+
+create or replace function post_role(p_name varchar,p_des text)
+returns void
+as $$
+begin
+   insert into tbl_roles(role_name,description)values(p_name,p_des);
+end;
+$$ language plpgsql;
+
+-------------------------------------------------------------------------------------ADD GET PERMISSION IN TABLE BY ADMIN---------------------------------------
+
+create or replace function get_rights()
+returns table (permission_id int , permission_name varchar, description text)
+as $$
+begin
+   return query select * from tbl_permissions;
+end;
+$$ language plpgsql;
+select * from get_rights();
+
+create or replace function post_rights(p_name varchar ,p_des varchar)
+returns void 
+as $$ 
+begin 
+   insert into tbl_permissions(permission_name ,description)values(p_name,p_des);
+end;
+$$ language plpgsql;
+
+
+
+
+-------------------------------------------------------------------ADD INTO USER_ROLE TABLE WHEN USER CREATE----------------------------------------------------------------
+
+create or replace function insert_user_role(p_user_id int,p_role_id int)
+returns void as $$
+begin
+     insert into tbl_user_role(user_id,role_id)values(p_user_id,p_role_id);
+end;$$ language plpgsql;
+select * from tbl_user_role;
+select * from insert_user_role(12,3)
+
+------------------------------------------------------------------------------------ADD IN ROLE PERMINTION -------------------------------------------------------------------------------
+create or replace function insert_role_permission(p_role_id int,p_permission_id int)
+returns void as $$
+begin
+    insert into tbl_role_permission(role_id,permission_id)values(p_role_id,p_permission_id);
+end; $$ language plpgsql;
+select * from tbl_role_permission;
+select * from insert_role_permission(1,2)

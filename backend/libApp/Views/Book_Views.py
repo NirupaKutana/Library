@@ -11,6 +11,7 @@ class bookListView(APIView):
         return Response(data,status=status.HTTP_200_OK)
     # @admin_reqired
     
+    
     def post(self,request):
         # user_id = request.data.get("created_by")
         serial = BooksSerializer(data = request.data)

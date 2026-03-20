@@ -29,10 +29,15 @@ const Login = () => {
                     localStorage.setItem("access_token", response.data.access_token);
                     localStorage.setItem("refresh_token", response.data.refresh_token);
                     // optional: save user
-                    localStorage.setItem("role", response.data.user.role);
+                    localStorage.setItem("role", response.data.user.roles);
+                    localStorage.setItem("permissions", JSON.stringify(response.data.user.permissions));
+
                     localStorage.setItem("user", JSON.stringify(response.data.user));
-                    {localStorage.getItem("role")==="ADMIN" &&(
+                    {localStorage.getItem("role")==="ADMIN"  &&(
                        navigate("/profile")
+                    )}
+                    {localStorage.getItem("role")==="LIBRARIAN"&&(
+                        navigate("/profile")
                     )}
                     {localStorage.getItem("role")==="USER" &&(
                        navigate("/")

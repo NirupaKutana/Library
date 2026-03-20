@@ -1,19 +1,23 @@
 import React, { useEffect, useState } from "react";
 import "../style/Profile.css";
 import axios from "axios";
-import { NavLink, Route ,Routes, useLocation, useNavigate } from "react-router-dom";
+import {  useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Books from "./Books";
 import Category from "./Category";
 import Author from "./Author";
-import AddImage from "./AddImage";
+// import AddImage from "./AddImage";
 import Issue from "./Issue";
 import Dashboard from "./Dashboard";
 import Audit from "./Audit";
 import LoginAudit from "./LoginAudit";
 import UserList from "./UserList";
 import ImageFile from "./ImageFile";
-
+import Librarian from "./Librarian";
+import RoleRights from "./RoleRights";
+import { hasPermission } from "./RBAC";
+import ViewRoleRights from "./ViewRoleRights";
+import TanStack from "./TanStack";
 
 const Profile = () => {
   const location = useLocation()
@@ -65,9 +69,14 @@ useEffect(() => {
       const role = localStorage.getItem("role");
       if (role === "ADMIN") {
         setActiveTab("Dashboard");
-      } else {
-        setActiveTab("profile");
-      }
+      } 
+      else if (role==="LIBRARIAN") {
+        setActiveTab("Users");
+       } 
+      else{
+         setActiveTab("profile");
+      }  
+      
 }
 }, [location.state]);
 
@@ -130,54 +139,86 @@ useEffect(()=>{
 
 
           {/* adminnnn */}
-         {localStorage.getItem("role")==="ADMIN" &&(
+         {/* {localStorage.getItem("role")==="ADMIN" &&( */}
             <>
-            <li className={activeTab === "Dashboard" ? "active" : ""}
+    
+          
+       
+         {localStorage.getItem("role")==="ADMIN" &&
+         <>
+          <li className={activeTab === "Dashboard" ? "active" : ""}
             onClick={() => setActiveTab("Dashboard")}>
             Dashboard
+          </li>  
+          <li className={activeTab === "userr" ? "active" : ""}
+            onClick={() => setActiveTab("userr")}>
+              Userrrrrrrr 
           </li>
-          
+        <li className={activeTab === "Librarian" ? "active" : ""}
+            onClick={() => setActiveTab("Librarian")} >
+            Librarian
+        </li>
+         
+         <li className={activeTab === "Role-Right" ? "active" : ""}
+            onClick={() => setActiveTab("Role-Right")} >
+            Role Rights
+        </li>
+         <li className={activeTab === "View-RoleRight" ? "active" : ""}
+            onClick={() => setActiveTab("View-RoleRight")} >
+            View RoleRights
+        </li>
+        </>
+         }
+        {hasPermission("ViewUsers") &&
+         <li className={activeTab === "Users" ? "active" : ""}
+            onClick={() => setActiveTab("Users")} >
+            User List
+         </li>}
+      
+         {hasPermission("IssueBook") &&
         <li className={activeTab === "issue" ? "active" : ""}
           onClick={() => setActiveTab("issue")} >
             Issue Books
-          </li>
+        </li>}
          
+         {hasPermission("AddBook") &&
         <li className={activeTab === "Book" ? "active" : ""}
             onClick={() => setActiveTab("Book")}>
             Books 
-          </li>
-           
+        </li>
+        } 
           
-        
-          <li className={activeTab === "Category" ? "active" : ""}
+         {hasPermission("AddCategory") &&
+        <li className={activeTab === "Category" ? "active" : ""}
             onClick={() => setActiveTab("Category")}>
             Category
-          </li>
-          <li className={activeTab === "Author" ? "active" : ""}
+        </li>}
+
+         {hasPermission("AddAuthor") &&
+        <li className={activeTab === "Author" ? "active" : ""}
             onClick={() => setActiveTab("Author")}>
             Author
-          </li>
-          <li className={activeTab === "AddImage" ? "active" : ""}
+        </li>}
+
+        {hasPermission("AddImage") &&
+        <li className={activeTab === "AddImage" ? "active" : ""}
             onClick={() => setActiveTab("AddImage")}>
             Book Image
-          </li>
+        </li>}
 
-          <li className={activeTab === "Users" ? "active" : ""}
-          onClick={() => setActiveTab("Users")} >
-            User List
-          </li>
-
-          
+          {hasPermission("ViewAudit") &&
           <li className={activeTab === "Audit" ? "active" : ""}
             onClick={() => setActiveTab("Audit")}>
             Audit Logs
-          </li>
+          </li>}
 
+          {hasPermission("ViewLoginAudit") &&
           <li className={activeTab === "LoginAudit" ? "active" : ""}
             onClick={() => setActiveTab("LoginAudit")}>
               Login Audit
-          </li>
-          </>)}
+          </li>}
+          </>
+          {/* )} */}
           </ul>
         
           
@@ -210,8 +251,6 @@ useEffect(()=>{
           <div className="content-card">
          
             <h2>Issued Books</h2>
-            
-            {/* Static for now */}
             <div className="book-item">
               {issuedata.map((i:any)=>(
               <div key={i[0]}>
@@ -239,7 +278,33 @@ useEffect(()=>{
           <Dashboard/>
           </>
         )}
-         
+        {activeTab=="userr" &&
+        <>
+        <TanStack/>
+        </>}
+        {activeTab === "Users" && (
+          <>
+           <UserList/>
+          </>
+        )}
+
+        {activeTab === "Librarian" && (
+          <>
+           <Librarian/>
+          </>
+        )}
+
+        {activeTab === "Role-Right" && (
+          <>
+           <RoleRights/>
+          </>
+        )}
+        {activeTab === "View-RoleRight" && (
+          <>
+           <ViewRoleRights/>
+          </>
+        )}
+
         {activeTab === "issue" && (
           <Issue/>
         )}
@@ -256,11 +321,7 @@ useEffect(()=>{
         {activeTab === "Author" && (
           <Author/>
         )}
-        {activeTab === "Users" && (
-          <>
-           <UserList/>
-          </>
-        )}
+        
 
         {activeTab === "Audit" && userList &&(
           <><Audit/></>

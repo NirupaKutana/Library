@@ -4,7 +4,6 @@ import uuid
 
 from django.core.mail import send_mail
 from django.core.cache import cache
-from django.shortcuts import redirect
 from datetime import timedelta
 from django.utils import timezone
 from django.conf import settings
@@ -23,7 +22,7 @@ from django.db import connection
 
 def test_api(request):
     return JsonResponse({"massage":"You are allowed !"})
-# ---------------------------------------Users-------------------------------------------------------------
+# ---------------------------------------Users Registration-------------------------------------------------------------
 class getUsersListView(APIView):
     def get(self,request):
         data = Login_service.get_users()
@@ -66,6 +65,7 @@ class RegisterListView(APIView):
         if not is_exist:
             user=Login_service.post_user(data["user_name"],data["user_email"],hash_pass,role,token)
             email = user["email"]
+            Login_service.insert_user_role(user["user_id"],2)
             Audit_service.insert_login_audit(data["user_email"],user["user_id"],"REGISTATION", "REGISTER SUCCESSFULLY")
         
         verify_link = f"http://127.0.0.1:8000/verify-email/{token}/"
@@ -124,7 +124,46 @@ class ResendEmailView(APIView):
         )
 
         return Response({"message": "Verification link resent"})
+
+# ---------------------------------------Librarian Registration-------------------------------------------------------------
+class LibrarianRegisterView(APIView):
+    def get(self,request,id=None):
+        data = Login_service.get_librarian()
+        if not data :
+            return Response({"error":"Data not found"},status=status.HTTP_403_FORBIDDEN)
+        return Response(data,status=status.HTTP_200_OK)
     
+    def post(self,request):
+        serial = UserSerializer(data=request.data)
+        if not serial.is_valid():
+            return Response(serial.errors,status=400)
+        data=serial.validated_data 
+        role ='LIBRARIAN'
+        
+        pasw = "Libary@123"
+        passw=make_password(pasw)
+        token = str(uuid.uuid4())
+        user=Login_service.post_Librarian(data["user_name"],data["user_email"],passw,role,token)
+        # email = user["email"]
+        Login_service.insert_user_role(user["user_id"],3)
+        Audit_service.insert_login_audit(data["user_email"],user["user_id"],"REGISTATION", "LIBRARIAN REGISTER SUCCESSFULLY")
+        return Response({
+            "message": "Librarian registered successfully",
+            "user_id": user["user_id"],
+            "email": user["email"]
+        }, status=201)
+
+    def put(self,request,id):  
+        serial = UserSerializer(data=request.data)
+        serial.is_valid(raise_exception=True)
+        data=serial.validated_data
+        Login_service.update_librarian(id,data["user_name"],data["user_email"])
+        return Response({"success":"Updated sucessfully..!"},status=status.HTTP_201_CREATED)
+    
+    def delete(self,request,id):
+        Login_service.delete_librarian(id)
+        return Response({"message":"deleted successfully..!"},status=status.HTTP_200_OK)
+ 
 
 # ---------------------------------------Login-------------------------------------------------------------
 class LoginListView(APIView):
@@ -210,8 +249,8 @@ class LoginListView(APIView):
                 Audit_service.insert_login_audit(email,user["user_id"],"LOGIN", "FAILED_WRONG_PASSWORD")
                 return Response({"error":f"Wrong Password you can try {remaining} more time"},status=status.HTTP_403_FORBIDDEN)
         
-        access_token = generate_access_token(user["user_id"],user["user_email"],user["role"]) 
-        refresh_token =generate_refresh_token(user["user_id"],user["user_email"],user["role"])
+        access_token = generate_access_token(user["user_id"],user["user_email"],user["roles"],user["permissions"]) 
+        refresh_token =generate_refresh_token(user["user_id"],user["user_email"],user["roles"],user["permissions"])
         Login_service.update_count(user["user_email"],0)
         Login_service.update_duration(user["user_email"],None)
         
@@ -286,7 +325,7 @@ class VerifyPasswordView(APIView):
     def post(self,request):
         password = request.data.get("password")
         user_id = request.data.get("user_id")
-        print(user_id)
+        # print(user_id)
         
         with connection.cursor() as cursor :
            cursor.execute("select user_password from tbl_users where user_id = %s",[user_id])

@@ -2,7 +2,7 @@
 .dashboard-container {
   display: flex;
   height: 100vh;        /* full screen */
-  overflow: hidden;     /* prevent whole page scroll */
+  overflow: auto;     /* prevent whole page scroll */
   background: #f4f6f9;
 }
 

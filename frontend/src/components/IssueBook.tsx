@@ -77,7 +77,6 @@ const handlesubmit = async(e:React.FormEvent)=>{
                 ))}
             </select>
         </div>
-
       <div className="form-group">
         <label>Book Name : </label>
         <div className="checkbox-list">

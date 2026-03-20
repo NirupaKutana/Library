@@ -2,11 +2,14 @@ from django.contrib import admin
 from django.urls import path,include
 from libApp import views
 from libApp.Views import Book_Views,Category_Views,Author_Views,Image_Views 
-from libApp.Views import Login_Views,Issue_View,Audit_Views 
+from libApp.Views import Login_Views,Issue_View,Audit_Views,RoleRights_Views 
 urlpatterns = [
     path("",Login_Views.test_api),
     path("getusers/",Login_Views.getUsersListView.as_view()),
     path("user/",Login_Views.RegisterListView.as_view()),
+    path("register/librarian/",Login_Views.LibrarianRegisterView.as_view()),
+    path("register/librarian/<int:id>/",Login_Views.LibrarianRegisterView.as_view()),
+
     path("user/<int:id>/",Login_Views.RegisterListView.as_view()),
     path("verify-email/<str:token>/",Login_Views.VerifyEmailview.as_view()),
     path("check-verification/", Login_Views.CheckVerificationView.as_view()),
@@ -64,6 +67,13 @@ urlpatterns = [
     path("usAudit/",Audit_Views.UserAuditPDFView.as_view()),
     path("filter/Audit/",Audit_Views.FilterAuditView.as_view()),
     path("audit/pdf/",Audit_Views.FilterAuditPDFview.as_view()),
+
+    path("role/",RoleRights_Views.RoleListView.as_view()),
+    path("right/",RoleRights_Views.RightsListView.as_view()),
+    path("right/<int:id>/",RoleRights_Views.RightsListView.as_view()),
+
+    path("role/rights/",RoleRights_Views.RoleRightsListView.as_view()),
+    path("role/rights/<int:id>/",RoleRights_Views.RoleRightsListView.as_view()),
 
 
 ]

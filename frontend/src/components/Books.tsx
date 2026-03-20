@@ -8,6 +8,7 @@ import { toast } from 'react-toastify';
 import Loader from './Loader';
 import Pagination from './Pagination';
 import API from '../Api/axios';
+import { hasAnyPermission, hasPermission } from './RBAC';
 
 const Books = () => {
     const BASE_URL = "http://127.0.0.1:8000";
@@ -85,6 +86,7 @@ const handleDelete = async(book_id : number)=>
     {Loading && <Loader/>}
     <div className={isshow ? "book-container dimmed" : "" }>
     <div className="book-container">
+      <h2>Book View</h2>
       <div className="table-actions">
            <select className="filter-select" value={search} onChange={(e)=>setsearch(e.target.value)}>
                   <option value="">None</option>
@@ -92,7 +94,7 @@ const handleDelete = async(book_id : number)=>
                   <option key={data[0]}>{data[1]}</option>
                   ))}
               </select>
-           {localStorage.getItem("role") === "ADMIN" && (
+           {hasPermission("AddBook")  && (
             <>
             <button className="add-book-btn" onClick={()=>{setshowmodel(true); setSelectedBook(null)}}>+ Add Book</button>
            </>
@@ -107,17 +109,19 @@ const handleDelete = async(book_id : number)=>
                 <th>Author</th>
                 <th>Book Page</th>
                
-                {localStorage.getItem("role")==="ADMIN" &&(
+                {hasPermission("AddBook") &&(
                <>
                 <th>Copies</th>
                 </>)}
 
-                 <th>Available</th>
-                {localStorage.getItem("role")==="ADMIN" &&(
-               <>
-                <th>Status</th>
+                <th>Available</th>
+              {hasPermission("AddBook") &&(
+              
+                <th>Status</th>)}
+
+                {hasAnyPermission(["UpdateBook","DeleteBook"]) &&(
                 <th>Action</th>
-                </>)}
+                )}
                 
                 
         </tr>
@@ -131,19 +135,21 @@ const handleDelete = async(book_id : number)=>
                 <td>{data[3]}</td>
                 <td>{data[4]}</td>
                 <td>{data[5]}</td>
-                {localStorage.getItem("role")==="ADMIN" &&(
+                {hasPermission("AddBook")&&(
                  <>
                     <td>{data[6]}</td>
                     <td>{data[7]}</td>
+                    </>)}
                     <td className="action-col">
-
+                     {hasPermission("UpdateBook")&&(
                     <button className="btn btn-update" onClick={()=>{setshowmodel(true);
                       setSelectedBook({id:data[0],name :data[1],c_id:data[2],a_id:data[3],page:data[4],copy:data[5]})
-                    }}>Update</button>
-                    <button className="btn btn-delete" onClick={()=>handleDelete(data[0])}>Delete</button>
+                    }}>Update</button>)}
+                    {hasPermission("DeleteBook")&&(
+                    <button className="btn btn-delete" onClick={()=>handleDelete(data[0])}>Delete</button>)}
                     </td>
-                  </>
-                )}
+                  
+             
               
               </tr>
         ))}

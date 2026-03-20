@@ -1,0 +1,106 @@
+/* ===== PAGE BACKGROUND ===== */
+.library-container {
+  min-height: 100vh;
+
+  display: flex;
+ 
+  justify-content: center;
+  align-items: center;
+
+  background: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* ===== FORM CARD ===== */
+.library-form {
+  width: 400px;
+  padding: 35px;
+  margin-top: 100px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+
+  border-radius: 14px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  animation: fadeIn 0.5s ease;
+}
+
+/* ===== TITLE ===== */
+.library-form h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: 600;
+}
+
+
+/* ===== LABEL ===== */
+.library-form label {
+  font-size: 14px;
+  color: #555;
+  font-weight: 500;
+}
+
+
+/* ===== INPUT ===== */
+.library-form input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 14px;
+
+  transition: all 0.3s ease;
+}
+
+/* input focus effect */
+.library-form input:focus {
+  border-color: #091133;
+  box-shadow: 0 0 0 3px rgba(102,126,234,0.2);
+}
+
+
+/* ===== BUTTON ===== */
+.library-form button {
+  margin-top: 10px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+
+  background: rgb(33, 33, 50);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+/* hover animation */
+.library-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+
+/* click effect */
+.library-form button:active {
+  transform: scale(0.98);
+}
+
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

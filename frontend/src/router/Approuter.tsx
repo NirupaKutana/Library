@@ -26,8 +26,7 @@ import Audit from '../components/Audit'
 import LoginAudit from '../components/LoginAudit'
 import UserList from '../components/UserList'
 import VerifyEmail from '../components/VerifyEmail'
-import SessionLock from '../components/SessionLock'
-
+import AddLibrarian from '../components/AddLibrarian'
 
 const Approuter = () => {
   return (
@@ -39,7 +38,7 @@ const Approuter = () => {
             {/* <Route path='/profile/addbook' element ={<><AdminRouter><Header/><Addbook/></AdminRouter></>} /> */}
             
             <Route path='/issue' element={<><Header/><Issue/><Footer/></>}></Route>
-            <Route path='/profile/issuebook' element={<><AdminRouter><IssueBook/></AdminRouter></>}></Route>
+            <Route path='/profile/issuebook' element={<><AdminRouter permision="IssueBook"><IssueBook/></AdminRouter></>}></Route>
            
     
             <Route path='/categories' element={<><Header/> <Category/><Footer/></>}/>
@@ -68,8 +67,8 @@ const Approuter = () => {
             <Route path='/LoginAudit' element={<><LoginAudit/></>}></Route>
             <Route path='/users' element={<><UserList/></>}></Route>
 
-            {/* <Route path='/Pagination' element={<><Pagination/></>}></Route> */}
-            {/* <Route path='/session'element={<><SessionLock/></>}></Route> */}
+            <Route path='/add' element={<><AddLibrarian/></>}></Route>
+           
         </Routes>
       
     </div>

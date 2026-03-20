@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 
-const useIdeleTimer = (onIdel:()=>void,timeout=1 * 60 * 1000) => {
+const useIdeleTimer = (onIdel:()=>void,timeout=10 * 60 * 1000) => {
     const timer = useRef<NodeJS.Timeout |null>(null);
     const resetTimer = ()=>
     {

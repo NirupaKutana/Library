@@ -6,6 +6,7 @@ import Addcategory from './Addcategory'
 import { toast } from 'react-toastify'
 import Loader from './Loader'
 import Pagination from './Pagination'
+import { hasAnyPermission, hasPermission } from './RBAC'
 
 const Category = () => {
     const BASE_URL = "http://127.0.0.1:8000";
@@ -76,7 +77,7 @@ useEffect(() => {
                    <input type="text" className='srch' placeholder='🔍  Search Here..!' value={search} onChange={(e)=>setsearch(e.target.value)}/>
                   
           
-          {localStorage.getItem("role")==="ADMIN" &&(
+          {hasPermission("AddCategory") &&(
             <button className="add-book-btn" onClick={() => {setSelectedCategory(null);   // important
               setshowmodel(true);  }}>
             +Add Category </button>
@@ -88,7 +89,7 @@ useEffect(() => {
          <tr>
             <th>Category Id</th>
             <th>Category Name</th>
-            {localStorage.getItem("role")==="ADMIN" &&(
+            {hasAnyPermission(["UpadeteCategory","DeleteCategory"]) &&(
             <th>Action</th>
             )}
          </tr>
@@ -99,15 +100,16 @@ useEffect(() => {
         <tr key={index}>
             <td>{data[0]}</td>
             <td>{data[1]}</td>
-           {localStorage.getItem("role")==="ADMIN" &&(
+           
             <td className="action-col">
+              {hasPermission("UpdeteCategory") &&(
               <button className="btn btn-update" onClick={() => 
               {setSelectedCategory({ id: data[0], name: data[1] });setshowmodel(true);}}>
-                 Update </button>
+                 Update </button>)}
                {/* <NavLink to='addcategory/' state={{id:data[0],name:data[1]}}><button className="btn btn-update">Update</button></NavLink> */}
-                <button className="btn btn-delete" onClick={()=>handleDelete(data[0])}>Delete</button>
+                {hasPermission("DeleteCategory")&&
+                <button className="btn btn-delete" onClick={()=>handleDelete(data[0])}>Delete</button>}
             </td>
-           )}
         </tr>
         )}
            

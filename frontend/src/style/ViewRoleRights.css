@@ -1,0 +1,150 @@
+/* ===== Role Switch Container ===== */
+
+.role-switch {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+/* ===== Base Button ===== */
+
+.role-btn {
+  padding: 8px 22px;
+  border-radius: 999px; /* pill shape */
+  border: 1px solid #d1d5db;
+  background: white;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+/* Hover Effect */
+
+.role-btn:hover {
+  background: #f3f4f6;
+  color: black;
+  transform: translateY(-1px);
+}
+
+/* Active Role */
+
+.active-role {
+  background: linear-gradient(135deg, #4b4877, #2e2f47);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 4px 10px rgba(79, 70, 229, 0.35);
+}
+
+/* Click animation */
+
+.role-btn:active {
+  transform: scale(0.96);
+}
+
+/* ===== Wrapper ===== */
+
+.rights-wrapper {
+  max-width: 800px;
+  margin: 25px auto;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 10px;
+}
+
+/* ===== List ===== */
+
+.rights-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ===== Permission Card ===== */
+
+.right-item {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: white;
+  padding: 14px 18px 14px 26px; /* extra left space for bar */
+  margin-bottom: 12px;
+  border-radius: 10px;
+
+  font-size: 15px;
+  font-weight: 500;
+  color: #2c3e50;
+
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: all 0.25s ease;
+}
+
+/* Hover Effect */
+
+.right-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+/* Left indicator bar */
+
+.right-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  width: 5px;
+  background: #323051;
+  border-radius: 4px 0 0 4px;
+}
+
+
+/* Permission Name */
+
+.right-name {
+  flex: 1;
+  text-align: left;
+  font-weight: 500;
+  color: #374151;
+}
+
+/* ===== Toggle Button ===== */
+
+.toggle-btn {
+  border: none;
+  padding: 6px 16px;
+  border-radius: 20px;
+   margin-left: auto;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* OFF state */
+
+.toggle-btn.off {
+  background: #e5e7eb;
+  color: #6b7280;
+}
+
+/* ON state */
+
+.toggle-btn.on {
+  background: #22c55e;
+  color: white;
+  box-shadow: 0 3px 8px rgba(34,197,94,0.4);
+}
+
+/* click animation */
+
+.toggle-btn:active {
+  transform: scale(0.92);
+}

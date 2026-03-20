@@ -11,13 +11,19 @@ const Dashboard = () => {
      name: string
      value: number
     }
+    const[bookData,setBookData]=useState<PieDataType[]>([])
     const [piedata ,setPiedata] = useState<PieDataType[]>([])
     const[chardata,setChartdata] = useState<PieDataType[]>([])
     useEffect(() => {
     axios.get("http://127.0.0.1:8000/chart/")
       .then(res => {
         const data = res.data
-
+        setBookData([
+             {name:"📚Total Books",value:data.copy},
+             {name:"✅Available Book",value:data.avl_qty},
+            { name: "📖Issue Book", value: data.issue },
+            { name: "🔄Return Book", value: data.return }
+        ]);
         setPiedata([
           { name: "Total Books", value: data.copy },
           { name: "Available", value: data.avl_qty },
@@ -41,6 +47,15 @@ const Dashboard = () => {
   return (
     <div className="dashboard-container">
         <h2 className="dashboard-title">Library Dashboard</h2>
+
+    <div className="card-container">
+     {bookData.map((d,index)=>(
+     <div className="stat-card" key={index}>
+      <h4>{d.name}</h4>
+      <h2>{d.value}</h2>
+     </div>
+    ))}
+    </div>
     <div className='chart-cards'>
     <div className="chart-card">
         <h3>Books Overview</h3>
