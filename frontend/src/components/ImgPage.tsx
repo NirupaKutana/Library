@@ -21,6 +21,22 @@ const ImgPage = () => {
      .catch(err=>toast.error(err.response?.data?.error))
     },[currentpage])
     const totalPages = Math.ceil(image.length/itemsPerPage)
+
+    const downloadPDF= (pdf:string) =>{
+       if(!pdf)
+       {
+        toast.error("PDF Not Found..!");
+        return;
+       }
+       const pdfUrl = `http://127.0.0.1:8000/media/${pdf}`;
+       window.open(pdfUrl, "_blank", "noopener,noreferrer");
+      //  const link = document.createElement("a");
+      //  link.href = `http://127.0.0.1:8000/media/${pdf}`;
+      //  link.setAttribute("download",pdf);
+      //  document.body.appendChild(link);
+      //  link.click();
+      //  document.body.removeChild(link);
+    };
   return (
     <div  className="home-gallery">
     
@@ -30,6 +46,8 @@ const ImgPage = () => {
      <div className="image-card"  key={data[0]}>
      <img src={`http://127.0.0.1:8000/media/${data[1]}`} alt={data[1]} />
      <h3>{data[2]}</h3>
+     {localStorage.getItem("access_token") &&
+     <button className='ibtn' onClick={()=>{downloadPDF(data[3])}}>Download</button>}
      </div>
      
      )}

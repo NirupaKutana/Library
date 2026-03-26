@@ -44,14 +44,15 @@ class ImageSerializer(serializers.Serializer):
     image_id = serializers.IntegerField(required=False)
     image_file =serializers.ImageField()
     image_name=serializers.CharField(max_length=200)
+    image_pdf = serializers.FileField()
 
 class RoleRightsSerializer(serializers.Serializer):
       id = serializers.IntegerField(required=False)
       role_id=serializers.IntegerField()
-      permission_id=serializers.ImageField()
+      permission_id=serializers.IntegerField()
 
 class RoleSerializer(serializers.Serializer):
-     role_id =serializers.ImageField(required=False)
+     role_id =serializers.IntegerField(required=False)
      role_name=serializers.CharField(max_length=250)
      description=serializers.CharField(max_length=300)
 

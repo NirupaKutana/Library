@@ -31,9 +31,7 @@ const Books = () => {
 
     const fetchAllBook =() =>{
        setLoading(true)
-            API.get(`/book/`,{
-            headers: { Authorization: `Bearer ${localStorage.getItem("token")}`}
-           })
+            API.get(`/book/`)
            .then(res => {
               setbookdata(res.data)
          }).catch(err => console.log(err))
@@ -47,7 +45,7 @@ const Books = () => {
 
 
     useEffect(()=>{
-         axios.get(`${BASE_URL}/category/`).then(res=>{
+         API.get(`/category/`).then(res=>{
          setcategory(res.data)
          }).catch(err=>console.log(err))
   },[])
@@ -57,10 +55,10 @@ const Books = () => {
     },[search])
 
   const fetchcat = ((name :string)=>{
-      axios.get(`${BASE_URL}/search/book/?name=${encodeURIComponent(name)}`)
+      API.get(`/search/book/?name=${encodeURIComponent(name)}`)
      .then(res=>{
           setfilterdata(res.data)
-          navigate("/profile", { state: { activeTab: "Book" } })
+          // navigate("/profile", { state: { activeTab: "Book" } })
         }).catch(err=>console.log(err))
   })
 
@@ -69,7 +67,7 @@ const handleDelete = async(book_id : number)=>
      
       try
       {
-        const res = await axios.delete(`${BASE_URL}/book/delete/${book_id}/`,{
+        const res = await API.delete(`/book/delete/${book_id}/`,{
         data: { book_id: book_id }
         })
         toast.warning(res.data.Detail)

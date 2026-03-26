@@ -12,9 +12,10 @@
 /* ===== WRAPPER ===== */
 
 .contact-wrapper {
-  margin-top: -200px;
+  margin-top: 40px; 
   width: 100%;
   display: flex;
+  gap: 20px;
 }
 
 /* ===== LEFT SIDE ===== */
@@ -63,6 +64,10 @@
   align-items: center;
   justify-content: center;
   padding: 60px;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 400px;
+  height: 300px;
 }
 
 /* ===== FORM ===== */

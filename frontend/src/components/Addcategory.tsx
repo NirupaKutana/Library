@@ -4,6 +4,7 @@ import axios from 'axios'
 import { useLocation,useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { error } from 'console'
+import API from '../Api/axios'
 const Addcategory = ({ category, onSuccess }: any) => {
     const BASE_URL = "http://127.0.0.1:8000";
     const[name,setname]=useState("");
@@ -24,7 +25,7 @@ const Addcategory = ({ category, onSuccess }: any) => {
       e.preventDefault()
       if(isEdit)
       {
-          axios.put(`${BASE_URL}/category/update/${category.id}/`,{
+          API.put(`/category/update/${category.id}/`,{
                 category_name :name
           }).then((res)=>{
             toast.success(res.data.Detail) 
@@ -37,7 +38,7 @@ const Addcategory = ({ category, onSuccess }: any) => {
       }
       else
       {
-          axios.post(`${BASE_URL}/category/`,{
+          API.post(`/category/`,{
           category_name : name
           }).then((res)=>{
             toast.success(res.data.Detail)

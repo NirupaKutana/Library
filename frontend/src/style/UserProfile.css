@@ -24,7 +24,7 @@
 /* Top section */
 .sidebar-top {
   text-align: center;
-  margin-bottom: 40px;
+  margin-top: 20px;
   flex-shrink: 0;
 }
 
@@ -128,6 +128,7 @@
 
 /* ===== CONTENT ===== */
 .content-area {
+   
   margin-left: 260px;   /* same as sidebar width */
   flex: 1;
   padding: 40px;
@@ -153,7 +154,23 @@
     transform: translateY(0);
   }
 }
+.tonav 
+{
+    padding: 20px 30px;
+    width: 100%;
+    background: linear-gradient(180deg, #32404f, #333f4d);
+    color: white;
+    
+}
 
+   
+.tonav a {
+  color: #ffffff;
+  margin-left: 1150px;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 1;
+}
 .content-card h2 {
   margin-bottom: 20px;
 }

@@ -7,7 +7,15 @@ import { toast } from 'react-toastify'
 import Loader from './Loader'
 import Pagination from './Pagination'
 import { hasAnyPermission, hasPermission } from './RBAC'
-
+import API from '../Api/axios'
+// const fetchCategory = () =>{
+//   const res = API.get(`/category/`);
+//   return res
+// }
+// const deleteAathor = async(id:number) =>{
+//   const res = await API.delete(`/author/delete/${id}/`)
+//   return res.data
+// }
 const Category = () => {
     const BASE_URL = "http://127.0.0.1:8000";
     const [categorydata,setcategorydata] = useState([]);
@@ -28,7 +36,7 @@ const Category = () => {
   
   const fetchAllCategories = () => {
    setLoading(true)
-  axios.get(`${BASE_URL}/category/`)
+  API.get(`/category/`)
     .then(res => setcategorydata(res.data))
     .catch(err=>console.log(err))
     .finally(()=>
@@ -44,10 +52,10 @@ useEffect(() => {
     },[search])
 
     const fetchcategory = (name :string) =>{
-       axios.get(`${BASE_URL}/cat/filter/?name=${encodeURIComponent(name)}`)
+       API.get(`/cat/filter/?name=${encodeURIComponent(name)}`)
        .then(res=>{
         setfilterdata(res.data)
-        navigate("/profile", { state: { activeTab: "Category" } })
+        // navigate("/profile", { state: { activeTab: "Category" } })
 
        }).catch(err=>console.log(err))
     }
@@ -55,7 +63,7 @@ useEffect(() => {
   const handleDelete = async(c_id : number) =>{
   
        try
-       {   const res = await axios.delete(`${BASE_URL}/category/delete/${c_id}/`,{
+       {   const res = await API.delete(`/category/delete/${c_id}/`,{
                 data :{c_id}
             })
             toast.warning(res.data.Detail)

@@ -1,9 +1,10 @@
 .home-gallery {
   
-  padding: 60px 80px;
+  padding: 60px 5px;
   background: linear-gradient(135deg, white, white);
   min-height: 100vh;
   font-family: "Poppins", sans-serif;
+  margin-bottom: -270px;
 }
 
 
@@ -45,11 +46,18 @@
 }
 
 /* Title */
-.image-card h4 {
-  padding: 12px;
+.image-card h3 {
+  padding: 5px;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 500;
   color: #34495e;
+}
+.ibtn
+{
+  color: white;
+  background-color: black;
+  padding: 7px 65px;
+  border-radius: 10px;
 }
 
 /* Pagination */

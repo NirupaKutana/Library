@@ -9,22 +9,20 @@ import Addauthor from './Addauthor'
 import Pagination from './Pagination'
 import { hasAnyPermission, hasPermission } from './RBAC'
 import { QueryClient, useMutation, useQueries, useQuery, useQueryClient } from '@tanstack/react-query'
-
+import API from '../Api/axios'
 const fetchAuthor = async() =>{
-  const res = await axios.get(`http://127.0.0.1:8000/author/`);
+  const res = await API.get(`/author/`);
   return res.data
 }
 const deleteAathor = async(id:number) =>{
-  const res = await axios.delete(`http://127.0.0.1:8000/author/delete/${id}/`)
+  const res = await API.delete(`/author/delete/${id}/`)
   return res.data
 }
 const Author = () => {
-  const BASE_URL = "http://127.0.0.1:8000";
   const[authordata,setauthordata]=useState([]);
   const [search,setsearch]=useState("");
   const[filterdata,setfilterdata] =useState([])
   const IsSearch = search.trim().length>0;
-  // const [Loading,setLoading] = useState(false);
   const [isshow,setshowmodel]=useState<boolean>(false);
   const navigate = useNavigate()
   const [selectedAuthor, setSelectedAuthor] = useState<any>(null);

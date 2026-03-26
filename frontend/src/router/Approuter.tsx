@@ -27,28 +27,29 @@ import LoginAudit from '../components/LoginAudit'
 import UserList from '../components/UserList'
 import VerifyEmail from '../components/VerifyEmail'
 import AddLibrarian from '../components/AddLibrarian'
-
+import UserProfile from '../components/UserProfile'
 const Approuter = () => {
   return (
     <div>
         
         <Routes>
-            <Route path='' element={<> <Header/> <Home/><ImgPage/><ContactUs/><Footer/></>}/>
-            <Route path='/books' element={<> <Header/> <Books/><Footer/> </>}/>
+            <Route path='' element={<> <Header/><Home/><ContactUs/><Footer/></>}/>
+            <Route path='/books' element={<><Header/><Books/></>}/>
             {/* <Route path='/profile/addbook' element ={<><AdminRouter><Header/><Addbook/></AdminRouter></>} /> */}
             
-            <Route path='/issue' element={<><Header/><Issue/><Footer/></>}></Route>
+            <Route path='/issue' element={<><Header/><Issue/></>}></Route>
             <Route path='/profile/issuebook' element={<><AdminRouter permision="IssueBook"><IssueBook/></AdminRouter></>}></Route>
            
     
-            <Route path='/categories' element={<><Header/> <Category/><Footer/></>}/>
+            <Route path='/categories' element={<><Header/><Category/></>}/>
             {/* <Route path='/profile/addcategory' element={<><AdminRouter><Addcategory/></AdminRouter></>}/> */}
 
-            <Route path='/authors' element={<> <Header/><Author/><Footer/></>} />
+            <Route path='/authors' element={<> <Header/><Author/></>} />
             {/* <Route path='/profile/addauthor' element={<><AdminRouter><Addauthor/></AdminRouter></>}/> */}
 
             <Route path='/dashboard' element={<><Dashboard/></>}></Route>
-            <Route path='/profile' element={<><Header/> <Profile/></>}/>
+            <Route path='/profile' element={<><Profile/></>}/>
+            <Route path='Uprofile' element={<><UserProfile/></>}></Route>
             <Route path='/SignUp' element={<><Header/><Signup/></>}/>
             <Route path='/Verify' element={<><Header/><VerifyEmail/></>}/>
 
@@ -67,7 +68,7 @@ const Approuter = () => {
             <Route path='/LoginAudit' element={<><LoginAudit/></>}></Route>
             <Route path='/users' element={<><UserList/></>}></Route>
 
-            <Route path='/add' element={<><AddLibrarian/></>}></Route>
+            <Route path='/add' element={<><AdminRouter permision={"add"}><AddLibrarian/></AdminRouter></>}></Route>
            
         </Routes>
       

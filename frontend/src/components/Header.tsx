@@ -15,7 +15,7 @@ const Header = () => {
         <NavLink to="/books">Books</NavLink> 
         <NavLink to="/categories">Category</NavLink>        
         <NavLink to="/authors">Author</NavLink>        
-        <NavLink to='/profile'> profile </NavLink>
+        <NavLink to='/Uprofile'> profile </NavLink>
 
       </nav>
     </header>

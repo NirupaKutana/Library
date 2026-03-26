@@ -17,7 +17,7 @@ import Librarian from "./Librarian";
 import RoleRights from "./RoleRights";
 import { hasPermission } from "./RBAC";
 import ViewRoleRights from "./ViewRoleRights";
-import TanStack from "./TanStack";
+
 
 const Profile = () => {
   const location = useLocation()
@@ -85,14 +85,7 @@ const handleLogout = () => {
     navigate("/");
 };
 
-const handleUserReport = async(e:React.FormEvent)=>{
-  e.preventDefault() 
-      const user = localStorage.getItem("user");
-      if (!user) return;
-      const parseUser = JSON.parse(user);
-      window.open(`http://127.0.0.1:8000/user/report/${parseUser.user_id}/`)
 
-};
 
 useEffect(()=>{
     axios.get(`http://127.0.0.1:8000/getusers/`).then(res=>{
@@ -104,7 +97,8 @@ useEffect(()=>{
     const user = localStorage.getItem("user");
     if (!user) return;
     const parseUser = JSON.parse(user);
-    axios.get(`http://127.0.0.1:8000/issue/user/1/`)
+    const id =parseUser.user_id
+    axios.get(`http://127.0.0.1:8000/issue/user/${id}/`)
     .then(res=>{
       setIssue(res.data)  
     })
@@ -123,27 +117,12 @@ useEffect(()=>{
         </div>
 
         <ul className="sidebar-menu">
-          {/* userrrrr */}
-          {localStorage.getItem("role")==="USER" &&(
-            <>
-          <li className={activeTab === "profile" ? "active" : ""}
-            onClick={() => setActiveTab("profile")}>
-            Profile
-          </li>
-           <li className={activeTab === "issued" ? "active" : ""}
-          onClick={() => setActiveTab("issued")} >
-            Issued Books
-          </li>
-         </>
-          )}
+          
 
 
           {/* adminnnn */}
          {/* {localStorage.getItem("role")==="ADMIN" &&( */}
             <>
-    
-          
-       
          {localStorage.getItem("role")==="ADMIN" &&
          <>
           <li className={activeTab === "Dashboard" ? "active" : ""}
@@ -177,14 +156,15 @@ useEffect(()=>{
           onClick={() => setActiveTab("issue")} >
             Issue Books
         </li>}
-         
-         {hasPermission("AddBook") &&
+
+      
+         {hasPermission("AddBook") && 
         <li className={activeTab === "Book" ? "active" : ""}
             onClick={() => setActiveTab("Book")}>
             Books 
         </li>
-        } 
-          
+}
+      
          {hasPermission("AddCategory") &&
         <li className={activeTab === "Category" ? "active" : ""}
             onClick={() => setActiveTab("Category")}>
@@ -226,50 +206,7 @@ useEffect(()=>{
 
       {/* Content Area */}
       <div className="content-area">
-         {localStorage.getItem("role")==="USER" &&(
-          <>
-        {activeTab === "profile" && userdata && (
-          <div className="content-card">
-            <h2>Profile Details</h2>
-
-            <div className="info-row">
-              <span>Name</span>
-              <span>{userdata.user_name}</span>
-            </div>
-
-            <div className="info-row">
-              <span>Email</span>
-              <span>{userdata.user_email}</span>
-            </div>
-          </div>
-        )}
         
-        {activeTab === "issued" && (
-          <div className="content-card">
-         
-            <h2>Issued Books</h2>
-            <div className="book-item">
-              {issuedata.map((i:any)=>(
-              <div key={i[0]}>
-              <div>
-                <h4>{i[2]}</h4>
-                <p>Issued Date: {new Date(i[3]).toLocaleDateString("en-GB",{
-                day: "2-digit",month: "short",year: "numeric",})}</p>
-              </div>
-              {i[6]==="ISSUED"&&(<span className="status">{i[6]}</span>)}
-              {i[6]==="RETURNED" &&(<span className="status pending">{i[6]}</span>)}
-              
-              </div>
-            ))}
-           
-            </div>
-             <button className="tbnnn" onClick={handleUserReport}>Generate Report</button>
-          </div>
-        )}
-        </>
-        )}
-
-       
         {activeTab === "Dashboard" && (
           <>
           <Dashboard/>

@@ -4,9 +4,9 @@ import axios from 'axios'
 import { NavLink } from 'react-router-dom'
 import { useNavigate,useLocation } from 'react-router-dom'
 import { toast } from 'react-toastify'
-
+import API from '../Api/axios'
 const Addbook = ({book,onSuccess}:any) => {
-  const BASE_URl = "http://127.0.0.1:8000";
+  const BASE_URL = "http://127.0.0.1:8000";
   const [name ,setname] =useState<string>("")
   const [cat,setcat] = useState<number >()
   const[auth,setauth] = useState<number>()
@@ -17,12 +17,10 @@ const Addbook = ({book,onSuccess}:any) => {
   const navigate = useNavigate()
   // const location = useLocation()
   const isEdit = Boolean(book)
-
-  
   const[category,setCategory] = useState([])
   const[author,setauthor]=useState([])
   useEffect(()=>{
-    axios.get(`${BASE_URl}/category/`)
+    API.get(`/category/`)
     .then(res=>{
       setCategory(res.data)
     }).catch(err=>console.log(err))
@@ -30,7 +28,7 @@ const Addbook = ({book,onSuccess}:any) => {
   },[])
 
   useEffect(()=>{
-    axios.get(`${BASE_URl}/author/`)
+    API.get(`/author/`)
     .then(res=>{
         setauthor(res.data)
     }).catch(err=>console.log(err))
@@ -52,7 +50,7 @@ const Addbook = ({book,onSuccess}:any) => {
     e.preventDefault()
     if(isEdit)
     {
-        axios.put(`${BASE_URl}/book/update/${book.id}/`,{
+        API.put(`/book/update/${book.id}/`,{
           book_name:name,
           category_id :cat,
           author_id:auth,
@@ -71,7 +69,7 @@ const Addbook = ({book,onSuccess}:any) => {
     else
       {
          try{
-            const res = await axios.post(`${BASE_URl}/book/`,{
+            const res = await API.post(`/book/`,{
             book_name :name,
             category_id:cat,
             author_id :auth,

@@ -60,14 +60,14 @@ const ImageFile = () => {
                         const newtoken = await refreshAccessToken();
                         fetchImage();
                     
-                        // if(newtoken){
-                        //     const retry = await axios.get("http://127.0.0.1:8000/image/",{
-                        //         headers :{
-                        //             Authorization:`Bearer${newtoken}`
-                        //         },
-                        //     });
-                        //     setImgData(retry.data)
-                        // }
+                        if(newtoken){
+                            const retry = await axios.get("http://127.0.0.1:8000/image/",{
+                                headers :{
+                                    Authorization:`Bearer${newtoken}`
+                                },
+                            });
+                            setImgData(retry.data)
+                        }
                     }
                 }
                 finally{setLoading(false)}
@@ -104,6 +104,7 @@ const ImageFile = () => {
             <div className="image-card-view" key={data[0]}>
                 <img src={`http://127.0.0.1:8000/media/${data[1]}`} alt={data[1]} />
                 <h4>{data[2]}</h4><br />
+                
                 {localStorage.getItem("role")==="ADMIN" &&(
                 <button onClick={()=>handleDelete(data[0])}>Delete</button>
                 )}

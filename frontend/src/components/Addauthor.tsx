@@ -4,23 +4,23 @@ import axios from 'axios'
 import { useNavigate,useLocation, Navigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { useMutation } from '@tanstack/react-query'
-
+import API from '../Api/axios'
 const saveAuthor = async({name,isEdit ,id} :any) =>{
-  const BASE_URL = "http://127.0.0.1:8000";
+ 
   if(isEdit){
-    const res = await axios.put(`${BASE_URL}/author/update/${id}/`,{author_name:name});
+    const res = await API.put(`/author/update/${id}/`,{author_name:name});
     console.log("Res",res.data)
     return res.data
   }
   else
   {
-      const res= await axios.post(`${BASE_URL}/author/`,{author_name:name});
+      const res= await API.post(`/author/`,{author_name:name});
       return res.data
   }
  
 }
 const Addauthor = ({ author, onSuccess }: any) => {
-  const BASE_URL = "http://127.0.0.1:8000";
+ 
   const[name,setname]= useState("")
   const navigate=useNavigate()
   const isEdit = Boolean(author?.id)
