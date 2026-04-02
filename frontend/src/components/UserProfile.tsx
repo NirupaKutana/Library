@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import '../style/UserProfile.css'
 import { NavLink } from 'react-router-dom';
-
+import EditUser from './EditUser';
 const UserProfile = () => {
     const location = useLocation()
   const [userdata, setUserData] = useState<any>(null);
@@ -13,7 +13,13 @@ const UserProfile = () => {
   const[issue,setIssue] = useState([]);
   const navigate = useNavigate();
   const [issuedata,setIssuedata] = useState([]);
-  
+  const [isshow,setIsShow]=useState<Boolean>(false);
+  const [editUser,setEditUser]=useState<any>(null);
+    const logout = () =>{
+       localStorage.clear();
+       window.location.reload()
+       navigate("/");
+     }
     useEffect(() => {
         const token = localStorage.getItem("access_token");
         if (!token) {
@@ -87,6 +93,7 @@ useEffect(()=>{
 
 
   return (
+  <>
    <div className="dashboard-container">
 
       {/* Sidebar */}
@@ -118,16 +125,19 @@ useEffect(()=>{
       </div>
       
       <div className='tonav'>
-        {/* <h5>📚 Library System</h5> */}
+       
         <NavLink to="/">🏡 Home</NavLink>
+        <NavLink to="/"  onClick={logout}>Logout</NavLink>
+        {/* <button className='btn-logoutt'><img className='imgg' src="\Image\image.png" onClick={logout}/></button> */}
+
         </div>
       {/* Content Area */}
-      <div className="content-area">
+      <div className="content-areaa">
         
          {localStorage.getItem("role")==="USER" &&(
           <>
         {activeTab === "profile" && userdata && (
-          <div className="content-card">
+          <div className="content-cardd">
             <h2>Profile Details</h2>
 
             <div className="info-row">
@@ -139,11 +149,14 @@ useEffect(()=>{
               <span>Email</span>
               <span>{userdata.user_email}</span>
             </div>
+            
+            <button className='edit-tbnnn' onClick={()=>{setIsShow(true);setEditUser({id:userdata.user_id,name:userdata.user_name});}}>
+               ✏️EDIT</button>
           </div>
         )}
         
         {activeTab === "issued" && (
-          <div className="content-card">
+          <div className="content-cardd">
          
             <h2>Issued Books</h2>
             
@@ -171,14 +184,27 @@ useEffect(()=>{
 
             </div>
             ))}
-          <button className="tbnnn" onClick={handleUserReport}>Generate Report</button>
+          <button className="tbnnn" onClick={handleUserReport}>Get Report</button>
           </div>
         )}
         </>
         )}
 
       </div>
+      
     </div>
+    <>
+    {isshow &&(
+      <>
+          <div className='overlay'></div>
+          <div className='modal-edit'>
+            <button className='modal-close' onClick={()=>setIsShow(false)}>&times;</button>
+            <EditUser user={editUser}/>
+          </div>
+      </>
+    )}
+    </>
+  </>
   )
 }
 

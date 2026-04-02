@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import '../style/Addauthor.css'
-import axios from 'axios'
 import { useNavigate,useLocation, Navigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { useMutation } from '@tanstack/react-query'
 import API from '../Api/axios'
 const saveAuthor = async({name,isEdit ,id} :any) =>{
- 
-  if(isEdit){
-    const res = await API.put(`/author/update/${id}/`,{author_name:name});
-    console.log("Res",res.data)
-    return res.data
-  }
+  if(isEdit)
+    {
+      const res = await API.put(`/author/update/${id}/`,{author_name:name})
+      return res.data
+    }
+    
+  
   else
   {
       const res= await API.post(`/author/`,{author_name:name});
@@ -38,13 +38,23 @@ const Addauthor = ({ author, onSuccess }: any) => {
   const Mutation = useMutation({
     mutationFn:saveAuthor,
     onSuccess :(data)=>{
-      console.log("SUCCESS DATA:", data);
       toast.success(data.success);
       navigate("/profile", { state: { activeTab: "Author" } });
       onSuccess?.();
     },
-    onError :(error:any)=>{toast.error(error.response?.data?.error)},
+    onError :(err:any)=>{
+                 const data = err.response.data
+                
+                 if (typeof data === "object") {
+                 Object.values(data).forEach((msg: any) => {
+                  toast.error(Array.isArray(msg) ? msg[0] : msg);
+                });
+              } else {
+                toast.error("Something went wrong");
+              }
+                },
   })
+  
   return (
     <div className='addbook-container'>
        <form onSubmit={(e)=>{e.preventDefault();Mutation.mutate({name,isEdit,id});}}>

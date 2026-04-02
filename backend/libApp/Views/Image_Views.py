@@ -6,18 +6,18 @@ from rest_framework import status
 from rest_framework.decorators import APIView
 from rest_framework.response import Response
 from libApp.service import Image_service ,Audit_service
-from libApp.serialize import ImageSerializer
+from libApp.Serializer.Image_Serializer import ImageSerializer
 from libApp.utils.jwt_utils import JWT_Required
 
-# ---------------------------------------ImageView-------------------------------------------------------------
+# -------------@JWT_Required--------------------------ImageView-------------------------------------------------------------
 
 class imageListView(APIView):
-    @JWT_Required
+     
     def get(self,request,id=None):
         data=Image_service.get_image()
         return Response(data,status=status.HTTP_200_OK)
 
-    @JWT_Required
+  
     def post(self,request):
         serial=ImageSerializer(data=request.data)
         if serial.is_valid() :

@@ -5,6 +5,8 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css"
+import './style/theme.css'
+import { ThemeProvider } from './Context/ThemeProvider';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 const queryClient =new  QueryClient();
 const root = ReactDOM.createRoot(
@@ -12,7 +14,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    
+    <ThemeProvider>
     <BrowserRouter>
     <QueryClientProvider client={queryClient}>
        <App />
@@ -26,7 +28,7 @@ root.render(
        />
        
     </BrowserRouter>
-    
+    </ThemeProvider>
   </React.StrictMode>
 );
 

@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap');
+
+/* ─── TOKENS ─────────────────────────────────────────── */
+:root {
+  --navy:       #2c3e50;
+  --navy-dark:  #1a252f;
+  --accent:     #5b8dee;
+  --bg:         #f0f3f8;
+  --surface:    #ffffff;
+  --surface-alt:#f7f9fc;
+  --border:     #e2e8f0;
+  --text-h:     #1a2332;
+  --text-b:     #3d4f63;
+  --text-muted: #7f8fa4;
+  --radius:     12px;
+  --radius-lg:  16px;
+  --shadow-md:  0 4px 18px rgba(44,62,80,0.09), 0 1px 4px rgba(44,62,80,0.05);
+  --ease:       0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ─── SECTION WRAPPER ───────────────────────────────── */
+.about-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+
+  /* ✅ FIX 1: generous space above so it doesn't sit flush on ImgPage */
+  margin: 56px 32px 48px;
+
+  font-family: 'DM Sans', system-ui, sans-serif;
+}
+
+/* ================================================================
+   LEFT COLUMN
+================================================================ */
+.about-left {
+  padding: 52px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  justify-content: center;
+  border-right: 1px solid var(--border);
+}
+
+/* ─── ABOUT US TAG ──────────────────────────────────── */
+.about-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: #eef3fd;
+  padding: 5px 13px;
+  border-radius: 20px;
+  width: fit-content;
+  margin-bottom: 20px;
+}
+
+/* ─── HEADING BLOCK with underline ─────────────────── */
+.about-heading-block {
+  margin-bottom: 24px;
+}
+
+.about-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--text-h);
+  line-height: 1.22;
+  letter-spacing: -0.5px;
+  margin: 0 0 14px;
+}
+
+/* ✅ FIX 2: proper decorative underline below the heading */
+.about-title-underline {
+  width: 64px;
+  height: 3px;
+  border-radius: 2px;
+
+  /* two-tone bar — navy + accent side by side */
+  background: linear-gradient(90deg, var(--navy) 50%, var(--accent) 50%);
+}
+
+/* accent word inside heading */
+.about-title-accent {
+  color: var(--navy);
+  position: relative;
+  display: inline-block;
+}
+
+/* ✅ FIX 3: proper CSS underline on the accent word */
+.about-title-accent::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 2.5px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+/* ─── BODY COPY ──────────────────────────────────────── */
+.about-body {
+  font-size: 14.5px;
+  color: var(--text-b);
+  line-height: 1.8;
+  margin: 0 0 28px;
+}
+
+/* ─── STATS STRIP ────────────────────────────────────── */
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.about-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 12px;
+  background: var(--surface-alt);
+  border-right: 1px solid var(--border);
+  text-align: center;
+  transition: background var(--ease);
+}
+
+.about-stat:last-child { border-right: none; }
+.about-stat:hover { background: #eef3fd; }
+
+.stat-num {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-h);
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.stat-lbl {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-muted);
+}
+
+/* ─── HIGHLIGHT PILLS (replaces verbose feature rows) ── */
+.about-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.highlight-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-b);
+  transition: background var(--ease), border-color var(--ease), color var(--ease);
+  cursor: default;
+}
+
+.highlight-pill:hover {
+  background: #eef3fd;
+  border-color: #b8d0f5;
+  color: var(--navy);
+}
+
+/* ─── CTA BUTTONS ────────────────────────────────────── */
+.about-cta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about-btn-primary {
+  padding: 11px 26px;
+  background: var(--navy);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.2px;
+  box-shadow: 0 2px 10px rgba(44,62,80,0.22);
+  transition: background var(--ease), transform var(--ease), box-shadow var(--ease);
+}
+
+.about-btn-primary:hover {
+  background: var(--navy-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(44,62,80,0.3);
+}
+
+.about-btn-primary:active { transform: translateY(0); }
+
+.about-btn-ghost {
+  padding: 11px 22px;
+  background: transparent;
+  color: var(--text-b);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--ease), border-color var(--ease);
+}
+
+.about-btn-ghost:hover {
+  background: var(--surface-alt);
+  border-color: #c5d0de;
+}
+
+/* ================================================================
+   RIGHT COLUMN — photo
+================================================================ */
+.about-right {
+  background: var(--surface-alt);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.about-img-wrapper {
+  flex: 1;
+  padding: 40px 32px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* actual <img> once you swap the placeholder */
+.about-library-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  display: block;
+}
+
+/* placeholder */
+.about-img-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  border: 1.5px dashed var(--border);
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.placeholder-icon {
+  font-size: 40px;
+  line-height: 1;
+}
+
+.placeholder-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 0;
+}
+
+.placeholder-hint {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 0;
+  text-align: center;
+  padding: 0 16px;
+}
+
+/* ─── BOTTOM STRIP ───────────────────────────────────── */
+.about-right-footer {
+  border-top: 1px solid var(--border);
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  background: var(--surface);
+}
+
+.about-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #eef3fd;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.about-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.about-meta strong {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.about-meta span {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.about-badge {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 700;
+  color: #065f46;
+  background: #d1fae5;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
+}
+
+/* ─── RESPONSIVE ─────────────────────────────────────── */
+@media (max-width: 960px) {
+  .about-section {
+    grid-template-columns: 1fr;
+    margin: 36px 16px 40px;
+  }
+  .about-left {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 40px 28px;
+  }
+  .about-right { min-height: 320px; }
+  .about-img-wrapper { padding: 28px 24px; }
+}
+
+@media (max-width: 560px) {
+  .about-left { padding: 32px 18px; }
+  .about-title { font-size: 26px; }
+  .about-right-footer { padding: 16px 18px; }
+}

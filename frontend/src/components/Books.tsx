@@ -11,7 +11,6 @@ import API from '../Api/axios';
 import { hasAnyPermission, hasPermission } from './RBAC';
 
 const Books = () => {
-    const BASE_URL = "http://127.0.0.1:8000";
     const [Loading,setLoading] = useState(false);
     const [category,setcategory]=useState([]);
     const[bookdata,setbookdata] = useState([]);
@@ -34,6 +33,7 @@ const Books = () => {
             API.get(`/book/`)
            .then(res => {
               setbookdata(res.data)
+              console.log("dhsknka",res.data)
          }).catch(err => console.log(err))
          .finally(()=>{
           setLoading(false)
@@ -84,8 +84,9 @@ const handleDelete = async(book_id : number)=>
     {Loading && <Loader/>}
     <div className={isshow ? "book-container dimmed" : "" }>
     <div className="book-container">
-      <h2>Book View</h2>
-      <div className="table-actions">
+     <h2>Book View</h2>
+      <div className="book-table-actions">
+    
            <select className="filter-select" value={search} onChange={(e)=>setsearch(e.target.value)}>
                   <option value="">None</option>
                   {category.map((data:any)=>(
@@ -100,33 +101,26 @@ const handleDelete = async(book_id : number)=>
      </div>
       <table className="book-table">
         <thead> 
-          <tr>  {localStorage.getItem("role")==="ADMIN" &&(
+          <tr>{localStorage.getItem("role")==="ADMIN" &&(
                 <th>Book ID</th>)}
                 <th>NAME</th>
                 <th>Category</th>
                 <th>Author</th>
-                <th>Book Page</th>
-               
+                <th>Book Page</th>        
                 {hasPermission("AddBook") &&(
-               <>
+                <>
                 <th>Copies</th>
                 </>)}
-
                 <th>Available</th>
-              {hasPermission("AddBook") &&(
-              
+                {hasPermission("AddBook") &&(
                 <th>Status</th>)}
-
                 {hasAnyPermission(["UpdateBook","DeleteBook"]) &&(
                 <th>Action</th>
                 )}
-                
-                
         </tr>
         </thead>
         <tbody>{dataToshow.map((data :any,index)=>(
-              <tr key={index}>
-                {localStorage.getItem("role")==="ADMIN" &&(
+              <tr key={index}>{localStorage.getItem("role")==="ADMIN" &&(
                 <td>{data[0]}</td>)}
                 <td>{data[1]}</td>
                 <td>{data[2]}</td>
@@ -146,13 +140,8 @@ const handleDelete = async(book_id : number)=>
                     {hasPermission("DeleteBook")&&(
                     <button className="btn btn-delete" onClick={()=>handleDelete(data[0])}>Delete</button>)}
                     </td>
-                  
-             
-              
               </tr>
         ))}
-         <tr></tr>
-
         </tbody>
       </table>
       <Pagination 

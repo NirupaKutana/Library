@@ -114,13 +114,14 @@ tbody tr:nth-child(even) {
  
 }
 
-/* UPDATE BUTTON */
+/* UPDATE BUTTON */ 
 .up-btn {
-  background: #9fbbe7;
-  color: white;
+  background-color: #e3f2fd;
+  color: #1565c0;
   border: none;
   padding: 7px 18px;
   font-size: 13px;
+  /* border: solid black 1px; */
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -128,15 +129,15 @@ tbody tr:nth-child(even) {
 }
 
 .up-btn:hover {
-  background: #5986e9;
+  background: #d9e0f0;
   transform: translateY(-1px);
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
 /* DELETE BUTTON */
 .de-btn {
-  background: #c35858;
-  color: white;
+  background-color: #fdecea;
+  color: #c62828;
   border: none;
   padding: 7px 18px;
   font-size: 13px;
@@ -147,7 +148,7 @@ tbody tr:nth-child(even) {
 }
 
 .de-btn:hover {
-  background: #dc2626;
+  background: #e7e1e1;
   transform: translateY(-1px);
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
@@ -187,8 +188,11 @@ tbody tr:nth-child(even) {
   font-size: 22px;
   cursor: pointer;
   color: #888;
+  border-radius: 50%;
   transition: color 0.2s;
 }
 .modal-close:hover {
-  color: #e63946;
+  background: #fdf0ef;
+  color: #c0392b;
+  border-color: #f1c0bc;
 }

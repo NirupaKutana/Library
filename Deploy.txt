@@ -1,0 +1,3 @@
+DATABASE EXTERNAL KEY
+
+postgresql://library_db_t8uo_user:WDGrj0akgfA6aUsmRtx3r0wOWFp2OVc2@dpg-d750fap5pdvs738f2agg-a.singapore-postgres.render.com/library_db_t8uo

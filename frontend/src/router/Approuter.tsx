@@ -28,48 +28,49 @@ import UserList from '../components/UserList'
 import VerifyEmail from '../components/VerifyEmail'
 import AddLibrarian from '../components/AddLibrarian'
 import UserProfile from '../components/UserProfile'
+import ProtectRouter from '../components/ProtectRouter'
+import NotFound from '../components/NotFound'
+import LearnForm from '../components/LearnForm'
 const Approuter = () => {
   return (
     <div>
         
         <Routes>
             <Route path='' element={<> <Header/><Home/><ContactUs/><Footer/></>}/>
-            <Route path='/books' element={<><Header/><Books/></>}/>
+
+            <Route path='/books' element={<><ProtectRouter><Header/><Books/></ProtectRouter></>}/>
             {/* <Route path='/profile/addbook' element ={<><AdminRouter><Header/><Addbook/></AdminRouter></>} /> */}
-            
-            <Route path='/issue' element={<><Header/><Issue/></>}></Route>
+            <Route path='/issue' element={<><ProtectRouter><AdminRouter permision="IssueBook"><Header/><Issue/></AdminRouter></ProtectRouter></>}></Route>
             <Route path='/profile/issuebook' element={<><AdminRouter permision="IssueBook"><IssueBook/></AdminRouter></>}></Route>
            
     
-            <Route path='/categories' element={<><Header/><Category/></>}/>
+            <Route path='/categories' element={<><ProtectRouter><Header/><Category/></ProtectRouter></>}/>
             {/* <Route path='/profile/addcategory' element={<><AdminRouter><Addcategory/></AdminRouter></>}/> */}
-
-            <Route path='/authors' element={<> <Header/><Author/></>} />
+            <Route path='/authors' element={<> <ProtectRouter><Header/><Author/></ProtectRouter></>} />
             {/* <Route path='/profile/addauthor' element={<><AdminRouter><Addauthor/></AdminRouter></>}/> */}
+           
+            <Route path='/image/page' element={<><ProtectRouter><ImgPage/></ProtectRouter></>}></Route>
+            <Route path='/contact'element={<><ProtectRouter><ContactUs/></ProtectRouter></>}></Route>
+
+            <Route path='/image' element={<><AdminRouter permision={"AddImage"}><Header/><ImageFile/></AdminRouter></>}/>
+            {/* <Route path='/image/addimage' element={<><AdminRouter><Header/><AddImage/><Footer/></AdminRouter></>}/> */}
 
             <Route path='/dashboard' element={<><Dashboard/></>}></Route>
-            <Route path='/profile' element={<><Profile/></>}/>
-            <Route path='Uprofile' element={<><UserProfile/></>}></Route>
+            <Route path='/profile' element={<><ProtectRouter><Profile/></ProtectRouter></>}/>
+            <Route path='Uprofile' element={<><ProtectRouter><UserProfile/></ProtectRouter></>}></Route>
             <Route path='/SignUp' element={<><Header/><Signup/></>}/>
+            <Route path='/login' element={<><Header/><Login/><Footer/></>}></Route>
+            <Route path='/reset/:token' element={<><ResetPassword/></>}></Route>
             <Route path='/Verify' element={<><Header/><VerifyEmail/></>}/>
 
+            <Route path='/audit' element={<><AdminRouter permision={"ViewAudit"}><Audit/></AdminRouter></>}></Route>
+            <Route path='/LoginAudit' element={<><AdminRouter permision={"ViewLoginAudit"}><LoginAudit/></AdminRouter></>}></Route>
+            <Route path='/users' element={<><AdminRouter permision={"ViewUsers"}><UserList/></AdminRouter></>}></Route>
+            <Route path='/add' element={<><AddLibrarian/></>}></Route>
             
-            <Route path='/image' element={<><Header/><ImageFile/></>}/>
-            {/* <Route path='/image/addimage' element={<><AdminRouter><Header/><AddImage/><Footer/></AdminRouter></>}/> */}
-            <Route path='/image/page' element={<><ImgPage/></>}></Route>
-
-            <Route path='/contact'element={<><ContactUs/></>}></Route>
-            <Route path='/login' element={<><Header/><Login/><Footer/></>}></Route>
-            {/* <Route path='/forgot' element={<><Forgot/></>}></Route> */}
-            <Route path='/reset/:token' element={<><ResetPassword/></>}></Route>
-  
             <Route path='/unauthorized' element={<Unauthorized/>}></Route>
-            <Route path='/audit' element={<><Audit/></>}></Route>
-            <Route path='/LoginAudit' element={<><LoginAudit/></>}></Route>
-            <Route path='/users' element={<><UserList/></>}></Route>
-
-            <Route path='/add' element={<><AdminRouter permision={"add"}><AddLibrarian/></AdminRouter></>}></Route>
-           
+            <Route path='*' element={<NotFound />} />
+            <Route path='/learn' element={<LearnForm/>}></Route>
         </Routes>
       
     </div>

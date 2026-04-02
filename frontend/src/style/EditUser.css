@@ -1,0 +1,75 @@
+/* Container */
+.edit-user-container {
+  width: 100%;
+  max-width: 420px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Title (optional if you add heading later) */
+.edit-user-container h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #222;
+  text-align: center;
+}
+
+/* Form Group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+/* Label */
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+/* Input */
+.form-group input {
+  padding: 10px 12px;
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+/* Input Focus */
+.form-group input:focus {
+  border-color: #38374d;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.15);
+}
+
+/* Save Button */
+.save-btn {
+  width: 100%;
+  padding: 11px;
+  background: linear-gradient(135deg, #444360, #303042);
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* Hover */
+.save-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(79, 70, 229, 0.25);
+}
+
+/* Active click */
+.save-btn:active {
+  transform: scale(0.98);
+}

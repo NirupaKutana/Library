@@ -3,7 +3,10 @@ from django.db import connection
 def get_all_books():
     with connection.cursor() as cursor :
         cursor.execute( "select * from get_all_books_detail()" )
-        data=cursor.fetchall()
+        data = cursor.fetchall()
+        # rows=cursor.fetchall()
+        # column = [col[0] for col in cursor.description]
+        # data = [dict(zip(column,row)) for row in rows]
         return data
     
 def post_update_book(p_action,b_id,b_name,c_id,a_id,page,copy,up_by,up_r):

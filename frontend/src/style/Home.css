@@ -1,87 +1,115 @@
-/* ===== MAIN WRAPPER ===== */
-
+/* ─── HOME WRAPPER ───────────────────────────────────── */
 .home-wrapper {
   display: flex;
-  gap: 30px;
-  padding: 40px;
+  gap: 24px;
+  padding: 32px 32px 40px;
   align-items: flex-start;
+  min-height: calc(100vh - 96px);
+  background: var(--bg, #f0f3f8);
 }
 
-/* ================= LEFT CARD ================= */
-
+/* ─── LEFT SIDEBAR CARD ──────────────────────────────── */
 .tab-card {
-  margin-top: px;
-  width: 240px;
-  height: 500px;
-  background: white;
-  border-radius: 15px;
-  padding: 25px;
-  border: 1px solid black;
-  /* box-shadow: 0 8px 25px rgba(0,0,0,0.08); */
+  width: 230px;
+  flex-shrink: 0;
+  background: var(--surface, #ffffff);
+  border-radius: 18px;
+  padding: 20px 16px 24px;
+  border: 1px solid var(--border, #e2e8f0);
+  box-shadow: 0 2px 12px rgba(44,62,80,0.07), 0 1px 3px rgba(44,62,80,0.05);
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  /* border-left: 5px solid #2c3e50; */
+  gap: 6px;
+  position: sticky;
+  top: 24px;
 }
 
-/* Title */
+/* ─── SIDEBAR TITLE ──────────────────────────────────── */
 .card-title {
-  font-size: 26px;
-  margin-top: 50px;
-  margin-bottom: 10px;
-  color: #2c3e50;
-  text-align: center;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--navy, #2c3e50);
+  text-align: left;
+  margin: 4px 4px 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border, #e2e8f0);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: -0.2px;
 }
 
-/* Buttons */
+.card-title::before {
+  content: '📚';
+  font-size: 17px;
+}
+
+/* ─── SIDEBAR BUTTONS ────────────────────────────────── */
 .side-btn {
-  padding: 12px;
+  width: 100%;
+  padding: 11px 14px;
   border: none;
   border-radius: 10px;
-  background: #f3f5f8;
-  font-size: 16px;
-  font-weight: 600;
-  gap: 10px;
+  background: transparent;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
   cursor: pointer;
   text-align: left;
-  transition: all 0.3s ease;
-  color: #2c3e50;
+  color: var(--text-b, #3d4f63);
+  transition: background 0.18s ease, color 0.18s ease, transform 0.15s ease;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  letter-spacing: 0.1px;
 }
 
-/* Hover */
 .side-btn:hover {
-  background: #e8edf4;
-  transform: translateX(6px);
+  background: #f1f5fb;
+  color: var(--navy, #2c3e50);
+  transform: translateX(4px);
 }
 
-/* Active button */
+/* ─── ACTIVE SIDEBAR BUTTON ──────────────────────────── */
 .side-btn.active {
-  background: linear-gradient(135deg,#2c3e50,#34495e);
-  color: white;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+  background: var(--navy, #2c3e50);
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(44,62,80,0.22);
+  transform: none;
 }
 
-/* ================= RIGHT CONTENT ================= */
+.side-btn.active:hover {
+  background: var(--navy-dark, #1a252f);
+  transform: translateX(2px);
+}
 
+/* ─── RIGHT CONTENT CARD ─────────────────────────────── */
 .content-card {
   flex: 1;
-  background: white;
-  border-radius: 15px;
-  padding: 30px;
-  border: 1px solid black;
-  /* box-shadow: 0 8px 25px rgba(0,0,0,0.08); */
-  min-height: 450px;
-  animation: fadeIn 0.4s ease;
+  background: var(--surface, #ffffff);
+  border-radius: 18px;
+  padding: 28px 30px;
+  border: 1px solid var(--border, #e2e8f0);
+  box-shadow: 0 2px 12px rgba(44,62,80,0.07), 0 1px 3px rgba(44,62,80,0.04);
+  min-height: 520px;
+  animation: fadeSlideIn 0.3s ease;
 }
 
-/* Animation */
-@keyframes fadeIn {
+/* ─── FADE-IN ANIMATION ──────────────────────────────── */
+@keyframes fadeSlideIn {
   from {
     opacity: 0;
-    transform: translateY(15px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to   { opacity: 1; transform: translateY(0); }
 }

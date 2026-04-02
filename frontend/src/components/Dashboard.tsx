@@ -19,10 +19,10 @@ const Dashboard = () => {
       .then(res => {
         const data = res.data
         setBookData([
-             {name:"📚Total Books",value:data.copy},
-             {name:"✅Available Book",value:data.avl_qty},
-            { name: "📖Issue Book", value: data.issue },
-            { name: "🔄Return Book", value: data.return }
+             {name:"Total Books",value:data.copy},
+             {name:"Available Book",value:data.avl_qty},
+            { name: "Issue Book", value: data.issue },
+            { name: "Return Book", value: data.return }
         ]);
         setPiedata([
           { name: "Total Books", value: data.copy },

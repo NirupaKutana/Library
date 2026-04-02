@@ -2,7 +2,7 @@ from rest_framework import status
 from rest_framework.decorators import APIView
 from rest_framework.response import Response
 from libApp.service import Category_service ,Audit_service 
-from libApp.serialize import CategorySerializer
+from libApp.Serializer import Category_Serializer
 
 # ---------------------------------------Category-------------------------------------------------------------
 class categoryListView(APIView):
@@ -11,8 +11,8 @@ class categoryListView(APIView):
         return Response(data, status=status.HTTP_200_OK)
     
     def post(self,request) :
-        serial = CategorySerializer(data = request.data)
-        serial.is_valid()
+        serial = Category_Serializer.CategoryCreateSerializer(data = request.data)
+        serial.is_valid(raise_exception=True)
         data = serial.validated_data
         if not data["category_name"]:
             return Response({"error":"categoy name required"})
@@ -21,8 +21,8 @@ class categoryListView(APIView):
         return Response({"Detail":"Data inserted sucessfully"}, status=status.HTTP_201_CREATED)
     
     def put(self,request,id):
-        serial=CategorySerializer(data=request.data)
-        serial.is_valid()
+        serial=Category_Serializer.CategoryUpdateSerializer(data=request.data)
+        serial.is_valid(raise_exception=True)
         data = serial.validated_data
         if not data["category_name"]:
             return Response({"error":"categoy name required"})

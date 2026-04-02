@@ -7,7 +7,7 @@ from rest_framework.response import Response
 from datetime import datetime
 from libApp.utils import jwt_utils
 from libApp.service import Issue_service ,Audit_service
-
+from libApp.Serializer.Issue_Serializer import IssueBookSerializer 
 # ---------------------------------------ISSUE BOOK-------------------------------------------------------------
 class IssueBookView(APIView):
     def get(self,request):

@@ -109,8 +109,8 @@ tbody tr:nth-child(even) {
 
 /* UPDATE BUTTON */
 .u-btn {
-  background: #9fbbe7;
-  color: white;
+  background-color: #e3f2fd;
+  color: #1565c0;
   border: none;
   padding: 7px 18px;
   font-size: 13px;
@@ -121,15 +121,15 @@ tbody tr:nth-child(even) {
 }
 
 .u-btn:hover {
-  background: #5986e9;
+  background: #b5c7ef;
   transform: translateY(-1px);
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
 /* DELETE BUTTON */
 .d-btn {
-  background: #c35858;
-  color: white;
+  background-color: #fdecea;
+  color: #c62828;
   border: none;
   padding: 7px 18px;
   font-size: 13px;
@@ -140,7 +140,7 @@ tbody tr:nth-child(even) {
 }
 
 .d-btn:hover {
-  background: #dc2626;
+  background: #f6baba;
   transform: translateY(-1px);
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }

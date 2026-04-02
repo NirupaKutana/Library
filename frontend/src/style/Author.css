@@ -1,13 +1,13 @@
 /*---------------------------------add Category css--------------------------------------------------------------------------- */
 /* Container for top-right button */
-.table-actions {
+.author-table-actions {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 12px;
 }
 
 /* Add Book button */
-.add-book-btn {
+.add-author-btn {
   padding: 7px 16px;
   font-size: 14px;
   font-weight: 500;
@@ -20,13 +20,13 @@
 }
 
 /* Hover effect */
-.add-book-btn:hover {
+.add-author-btn:hover {
   background-color: #1f2d3a;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 /* Focus (keyboard accessibility) */
-.add-book-btn:focus {
+.add-author-btn:focus {
   outline: none;
   box-shadow: 0 0 0 2px rgba(44, 62, 80, 0.3);
 }
@@ -34,14 +34,22 @@
 
 /*---------------------------------category Table css--------------------------------------------------------------------------- */
 
-.book-container {
+.author-container {
   max-width: 1000px;     /* not full page */
   margin: 20px auto;    /* centered */
   padding: 10px;
   
 }
-
-.book-table {
+.author-container h2
+{
+  margin-top: -10px;
+  text-align: start;
+  margin-bottom: -10px;
+  font-size: 26px;
+  font-weight: 600;
+  color: #2f3f50;
+}
+.author-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
@@ -53,11 +61,11 @@
 }
 
 /* Table Header */
-.book-table thead {
+.author-table thead {
   background-color: #2c3e50;
 }
 
-.book-table th {
+.author-table th {
   color: #ffffff;
   padding: 12px 10px;
   text-align: center;
@@ -69,7 +77,7 @@
 }
 
 /* Table Body */
-.book-table td {
+.author-table td {
   padding: 10px;
   height: 40px;
   font-size: 15px;
@@ -79,12 +87,12 @@
 }
 
 /* Zebra striping */
-.book-table tbody tr:nth-child(even) {
+.author-table tbody tr:nth-child(even) {
   background-color: #f8f9fa;
 }
 
 /* Hover effect */
-.book-table tbody tr:hover {
+.author-table tbody tr:hover {
   background-color: #eef5ff;
 }
 
@@ -110,7 +118,7 @@
 
 /* Responsive scrolling */
 @media (max-width: 768px) {
-  .book-table {
+  .author-table {
     display: block;
     overflow-x: auto;
     white-space: nowrap;
@@ -156,7 +164,7 @@
 
 /* ---------------------------- */
 /* When modal is open */
-.book-container.dimmed {
+.author-container.dimmed {
   opacity: 0.35;          /* fade background */
   filter: blur(2px);     /* soft blur */
   pointer-events: none;  /* disable clicks */

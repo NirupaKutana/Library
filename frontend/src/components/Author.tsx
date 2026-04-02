@@ -59,17 +59,17 @@ const {data,isLoading ,isError} = useQuery({
   return (
     <>
    
-    <div className="book-container">
+    <div className="author-container">
       <h2>Author View</h2>
 
-        <div className="table-actions">
+        <div className="author-table-actions">
            <input type="text" placeholder='🔍  Search Here..!' className='srch' value={search} onChange={(e)=>setsearch(e.target.value)} />
            {hasPermission("AddAuthor")  &&(
-            <button className="add-book-btn" onClick={() => {setSelectedAuthor(null);   
+            <button className="add-author-btn" onClick={() => {setSelectedAuthor(null);   
               setshowmodel(true);  }}>+Add Author</button>
            )}
           </div>
-        <table className="book-table">
+        <table className="author-table">
           <thead>
             <tr>
                 <th>Author Id</th>

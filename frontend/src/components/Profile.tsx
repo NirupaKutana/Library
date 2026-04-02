@@ -15,7 +15,7 @@ import UserList from "./UserList";
 import ImageFile from "./ImageFile";
 import Librarian from "./Librarian";
 import RoleRights from "./RoleRights";
-import { hasPermission } from "./RBAC";
+import { hasPermission ,hasAllPermissions} from "./RBAC";
 import ViewRoleRights from "./ViewRoleRights";
 
 
@@ -28,7 +28,6 @@ const Profile = () => {
   const navigate = useNavigate();
   const [issuedata,setIssuedata] = useState([]);
   
-
   
   useEffect(() => {
     const token = localStorage.getItem("access_token");
@@ -118,13 +117,14 @@ useEffect(()=>{
 
         <ul className="sidebar-menu">
           
-
+   
 
           {/* adminnnn */}
          {/* {localStorage.getItem("role")==="ADMIN" &&( */}
             <>
          {localStorage.getItem("role")==="ADMIN" &&
          <>
+         
           <li className={activeTab === "Dashboard" ? "active" : ""}
             onClick={() => setActiveTab("Dashboard")}>
             Dashboard
@@ -158,20 +158,20 @@ useEffect(()=>{
         </li>}
 
       
-         {hasPermission("AddBook") && 
+         {hasAllPermissions(["AddBook","ViewBook"]) && 
         <li className={activeTab === "Book" ? "active" : ""}
             onClick={() => setActiveTab("Book")}>
             Books 
         </li>
 }
       
-         {hasPermission("AddCategory") &&
+         {hasAllPermissions(["AddCategory","ViewCategory"]) &&
         <li className={activeTab === "Category" ? "active" : ""}
             onClick={() => setActiveTab("Category")}>
             Category
         </li>}
 
-         {hasPermission("AddAuthor") &&
+         {hasAllPermissions(["AddAuthor","ViewAuthor"]) &&
         <li className={activeTab === "Author" ? "active" : ""}
             onClick={() => setActiveTab("Author")}>
             Author
@@ -197,7 +197,7 @@ useEffect(()=>{
           </>
           {/* )} */}
           </ul>
-        
+ 
           
         <div className="sidebar-bottom">
           <button onClick={handleLogout}>Logout</button>

@@ -8,23 +8,26 @@ import Loader from './Loader'
 import Pagination from './Pagination'
 import { hasAnyPermission, hasPermission } from './RBAC'
 import API from '../Api/axios'
-// const fetchCategory = () =>{
-//   const res = API.get(`/category/`);
-//   return res
-// }
-// const deleteAathor = async(id:number) =>{
-//   const res = await API.delete(`/author/delete/${id}/`)
-//   return res.data
-// }
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+
+const fetchCategory = async() =>{
+  const res = await API.get(`/category/`);
+  return res.data
+}
+const deleteCategory = async(id:number) =>{
+  const res = await API.delete(`/category/delete/${id}/`,{ data :{id}});
+  return res.data
+}
+const fetchSearch = async(name :string) => {
+   const res = await API.get(`/cat/filter/?name=${encodeURIComponent(name)}`);
+   return res.data
+}
 const Category = () => {
-    const BASE_URL = "http://127.0.0.1:8000";
-    const [categorydata,setcategorydata] = useState([]);
+    const [categorydata,setcategorydata] = useState<any>([]);
     const [isshow,setshowmodel]=useState<boolean>(false);
     const [search,setsearch] = useState("");
-    const [filterdata,setfilterdata] = useState([]);
+    const [filterdata,setfilterdata] = useState<any>([]);
     const isSearch = search.trim().length > 0;  
-    const [Loading,setLoading] =useState(false)
-    const navigate = useNavigate()
     const [selectedCategory, setSelectedCategory] = useState<any>(null);
     const [currentPage,setCurrentPage]=useState(1);
     const itemPerPage = 6;
@@ -33,67 +36,50 @@ const Category = () => {
     const currentUsers = categorydata.slice(indexOfFirst,indexOfLast) ;
     const datatoSHow = isSearch ? filterdata : currentUsers;
 
-  
-  const fetchAllCategories = () => {
-   setLoading(true)
-  API.get(`/category/`)
-    .then(res => setcategorydata(res.data))
-    .catch(err=>console.log(err))
-    .finally(()=>
-         {setLoading(false)})
-};
-
+const queryclient = useQueryClient();
+const {data :allCategory,isLoading :isMainLoading,isError:isMianError} = useQuery({
+    queryKey : ["category"],
+    queryFn : fetchCategory,
+});
+const {data:searchData,isLoading:isSearchLoading,isError:isSearchError} = useQuery({
+   queryKey:["searchCategory",search],
+   queryFn:()=>fetchSearch(search),
+   enabled :search.trim().length>0,
+});
 useEffect(() => {
-  fetchAllCategories();
-}, []);
-
-    useEffect(()=>{
-            fetchcategory(search)
-    },[search])
-
-    const fetchcategory = (name :string) =>{
-       API.get(`/cat/filter/?name=${encodeURIComponent(name)}`)
-       .then(res=>{
-        setfilterdata(res.data)
-        // navigate("/profile", { state: { activeTab: "Category" } })
-
-       }).catch(err=>console.log(err))
-    }
-
-  const handleDelete = async(c_id : number) =>{
-  
-       try
-       {   const res = await API.delete(`/category/delete/${c_id}/`,{
-                data :{c_id}
-            })
-            toast.warning(res.data.Detail)
-            navigate("/profile", { state: { activeTab: "Category" } })
-            window.location.reload();
-       }
-       catch(err:any)
-       {
-         toast.error(err.res?.data?.error)
-       }
+  if(search.trim().length>0){
+    setfilterdata(searchData || []);
   }
+  else if (allCategory)
+  {
+    setcategorydata(allCategory);
+  }
+},[allCategory,searchData,search]);
+
+const deleteMutation = useMutation({
+  mutationFn : deleteCategory ,
+  onSuccess :(data)=>{queryclient.invalidateQueries({queryKey:["category"]});
+                  toast.warning(data.Detail)},
+});
+
+{if(isMainLoading) return <Loader/>}
   return (
     <>
-    {Loading && <Loader/>}
-    <div className={isshow?"book-container dimmed":""}>
-    <div className="book-container">
+    <div className={isshow?"category-container dimmed":""}>
+    <div className="category-container">
       <h2>Categoy View</h2>
-        <div className="table-actions">
+        <div className="category-table-actions">
                 
         <input type="text" className='srch' placeholder='🔍  Search Here..!' value={search} onChange={(e)=>setsearch(e.target.value)}/>
                   
           
           {hasPermission("AddCategory") &&(
-            <button className="add-book-btn" onClick={() => {setSelectedCategory(null);   // important
+            <button className="add-category-btn" onClick={() => {setSelectedCategory(null);   // important
               setshowmodel(true);  }}>
-            +Add Category </button>
-          // <button  className="add-book-btn" onClick={()=>setshowmodel(true)}>+Add Category</button> 
+            +Add Category </button> 
           )}
           </div>
-      <table className="book-table">
+      <table className="category-table">
         <thead>
          <tr>
             <th>Category Id</th>
@@ -117,7 +103,7 @@ useEffect(() => {
                  Update </button>)}
                {/* <NavLink to='addcategory/' state={{id:data[0],name:data[1]}}><button className="btn btn-update">Update</button></NavLink> */}
                 {hasPermission("DeleteCategory")&&
-                <button className="btn btn-delete" onClick={()=>handleDelete(data[0])}>Delete</button>}
+                <button className="btn btn-delete" onClick={()=>deleteMutation.mutate(data[0])}>Delete</button>}
             </td>
         </tr>
         )}
@@ -139,7 +125,8 @@ useEffect(() => {
            <Addcategory category={selectedCategory}
                onSuccess={() => {
                setshowmodel(false);
-               fetchAllCategories();
+               queryclient.invalidateQueries({queryKey:["category"]});
+              //  fetchAllCategories();
           }}/>
           </div>
           </div>

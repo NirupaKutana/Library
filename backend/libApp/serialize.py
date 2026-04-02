@@ -17,7 +17,7 @@ class IssueBookSerializer(serializers.Serializer):
     issue_date = serializers.DateTimeField(required=False)
     dua_date = serializers.DateTimeField(required=False)
     return_date = serializers.DateTimeField(required=False)
-    status = serializers.DateTimeField(required=False)
+    status = serializers.CharField(required=False)
 
 class CategorySerializer (serializers.Serializer):
     category_id=serializers.IntegerField(required=False)
@@ -32,7 +32,7 @@ class UserSerializer(serializers.Serializer):
     user_id=serializers.IntegerField(required=False)
     # user_image=serializers.ImageField(required=False)
     user_name=serializers.CharField(max_length=200)
-    user_email=serializers.EmailField()
+    user_email=serializers.EmailField(required=False)
     user_password=serializers.CharField(required=False)
 
 class LoginSerializer(serializers.Serializer):
@@ -64,5 +64,5 @@ class RightSerializer(serializers.Serializer):
 class ContactSerializer(serializers.Serializer):
     contact_id = serializers.IntegerField(required=False)
     contact_name=serializers.CharField(max_length=100)
-    contact_email=serializers.CharField(max_length=100)
+    contact_email=serializers.EmailField(max_length=100)
     contact_msg=serializers.CharField(max_length=400)

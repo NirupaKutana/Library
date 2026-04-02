@@ -6,6 +6,7 @@ import { useState } from 'react';
 import Books from './Books';
 import Category from './Category';
 import Author from './Author';
+import AboutUs from './AboutUs';
 const Home = () => {
     const [activeTab, setActiveTab] = useState("books");
   return (
@@ -54,6 +55,8 @@ const Home = () => {
        
       </div>)}
        <ImgPage/>
+       
+       <AboutUs/>
   </>
  
   )

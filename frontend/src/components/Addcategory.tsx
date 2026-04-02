@@ -1,17 +1,29 @@
 import React, { useEffect, useState } from 'react'
 import '../style/Addcategory.css'
-import axios from 'axios'
-import { useLocation,useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
-import { error } from 'console'
 import API from '../Api/axios'
+import { useMutation } from '@tanstack/react-query'
+
+const handleChange = async ({isEdit,id,name}:any)=>{
+  if(isEdit)
+    {
+      const res = await API.put(`/category/update/${id}/`,{category_name :name});
+      return res.data
+    }
+    else 
+    {
+      const res = await API.post(`/category/`,{category_name : name});
+      return res.data
+    } 
+
+}
 const Addcategory = ({ category, onSuccess }: any) => {
-    const BASE_URL = "http://127.0.0.1:8000";
     const[name,setname]=useState("");
     const navigate = useNavigate();
     const isEdit = Boolean(category?.id);
-
-    // ----------------------------------fatching and set data from book table
+    const id = category?.id;
+  
   useEffect(() => {
   if (category) {
     setname(category.name);
@@ -20,40 +32,27 @@ const Addcategory = ({ category, onSuccess }: any) => {
   }
 }, [category]);
 
-
-    const handlechange = async (e:React.FormEvent) =>{
-      e.preventDefault()
-      if(isEdit)
-      {
-          API.put(`/category/update/${category.id}/`,{
-                category_name :name
-          }).then((res)=>{
-            toast.success(res.data.Detail) 
-            navigate("/profile", { state: { activeTab: "Category" } })
-            
-          }).catch((err :any)=>
-          {
-              toast.error(err.response?.data?.error)
-          })
-      }
-      else
-      {
-          API.post(`/category/`,{
-          category_name : name
-          }).then((res)=>{
-            toast.success(res.data.Detail)
-             navigate("/profile", { state: { activeTab: "Category" } })
-          }).catch((error)=>{
-              
-             toast.error(error.response?.data?.error)
-          })
-      }
-      onSuccess(); // this closes modal + refresh list
+const Mutation = useMutation({
+  mutationFn:handleChange,
+  onSuccess: (data)=>{
+      toast.success(data.success || data.Detail || "Success!");
+      navigate("/profile", { state: { activeTab: "Category" } });
+      onSuccess?.();
+      },
+  onError:(err:any)=>{
+    const data = err.response.data
+    if(typeof data ==="object")
+    {
+      Object.values(data).forEach((msg:any)=>{toast.error(Array.isArray(msg)?msg[0] :msg)})
     }
+    else {
+      toast.error("Something went wrong");
+    }},
+});
 
   return (
     <div className='addbook-container'>
-       <form onSubmit={handlechange}>
+       <form onSubmit={(e)=>{e.preventDefault();Mutation.mutate({isEdit,id,name});}}>
         <h2>{isEdit ? "Update category" : "Add category"}</h2>
         <label htmlFor="">Name</label>
         <input type="text" value={name} onChange={(e)=>setname(e.target.value)}/>

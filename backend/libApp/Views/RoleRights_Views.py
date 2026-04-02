@@ -3,7 +3,7 @@ from rest_framework import status
 from rest_framework.decorators import APIView
 from rest_framework.response import Response
 from libApp.service import RoleRights_service
-from libApp.serialize import RoleSerializer,RightSerializer,RoleRightsSerializer
+from libApp.Serializer.RoleRights_Serializer import RoleSerializer,RightSerializer,RoleRightsSerializer
 class RoleListView(APIView):
     def post(self,request):
         role = request.data.get("role_name")

@@ -1,12 +1,9 @@
-import React, { use, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../style/Addbook.css'
-import axios from 'axios'
-import { NavLink } from 'react-router-dom'
-import { useNavigate,useLocation } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import API from '../Api/axios'
 const Addbook = ({book,onSuccess}:any) => {
-  const BASE_URL = "http://127.0.0.1:8000";
   const [name ,setname] =useState<string>("")
   const [cat,setcat] = useState<number >()
   const[auth,setauth] = useState<number>()

@@ -15,7 +15,7 @@ from libApp.service import Login_service,Audit_service
 from libApp.utils.jwt_utils import generate_access_token,generate_refresh_token ,JWT_Required ,decode_token
 
 # from .middlewares.jwt_middleware import JWTAuthenticationMiddleware
-from libApp.serialize import UserSerializer,LoginSerializer ,ContactSerializer
+from libApp.Serializer.Login_Serializer import UserSerializer,LoginSerializer ,ContactSerializer
 from django.http import JsonResponse
 from django.db import connection
 
@@ -78,6 +78,14 @@ class RegisterListView(APIView):
         )
 
         return Response({"Detail":"Registration successfully!"},status=status.HTTP_200_OK)
+
+    def put(self,request,id):
+        serial = UserSerializer(data= request.data)
+        serial.is_valid(raise_exception=True)
+        data = serial.validated_data
+        Login_service.edit_profilr(id,data["user_name"])
+        return Response({"success":"Updated successfully"},status=status.HTTP_200_OK)
+
 
 class VerifyEmailview(APIView):
     def get(self,request,token):

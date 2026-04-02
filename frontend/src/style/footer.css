@@ -1,102 +1,228 @@
-.footer {
-  margin-top: 80px;
-  font-family: "Segoe UI", sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@600&display=swap');
+
+/* ─── TOKENS ─────────────────────────────────────────── */
+:root {
+  --footer-cta-bg:    #2c3e50;
+  --footer-body-bg:   #18232e;
+  --footer-deep-bg:   #101820;
+  --footer-border:    rgba(255,255,255,0.07);
+  --footer-text:      rgba(255,255,255,0.55);
+  --footer-text-h:    #ffffff;
+  --footer-accent:    #5b8dee;
+  --radius:           10px;
+  --transition:       0.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* ===== CTA SECTION ===== */
+/* ═══════════════════════════════════════════════════════
+   FOOTER SHELL
+═══════════════════════════════════════════════════════ */
+.footer {
+  margin-top: 80px;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: var(--footer-body-bg);
+  position: relative;
+}
+
+/* thin top separator line */
+.footer::before {
+  content: '';
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(91,141,238,0.4), transparent);
+}
+
+/* ═══════════════════════════════════════════════════════
+   CTA STRIP
+═══════════════════════════════════════════════════════ */
 .footer-cta {
-  background: #2f3f50;   /* Matches your navbar */
-  color: white;
-  padding: 5px 60px;
+  background: var(--footer-cta-bg);
+  padding: 28px 64px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* border-radius: 20px 20px 0 0; */
+  gap: 24px;
+  border-bottom: 1px solid var(--footer-border);
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle diagonal pattern overlay */
+.footer-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255,255,255,0.015) 0px,
+    rgba(255,255,255,0.015) 1px,
+    transparent 1px,
+    transparent 12px
+  );
+  pointer-events: none;
 }
 
 .footer-cta h2 {
-  font-size: 25px;
-  font-weight: 500;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--footer-text-h);
+  margin: 0;
+  letter-spacing: -0.2px;
+  position: relative;
 }
 
+/* ─── CTA BUTTON ─────────────────────────────────────── */
 .footer-btn {
-  padding: 12px 30px;
-  border: 1px solid white;
-  background: transparent;
-  color: white;
-  border-radius: 6px;
+  flex-shrink: 0;
+  padding: 10px 26px;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.06);
+  color: var(--footer-text-h);
+  border-radius: var(--radius);
   cursor: pointer;
-  transition: 0.3s ease;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  transition: background var(--transition), border-color var(--transition),
+              color var(--transition), transform var(--transition);
+  position: relative;
 }
 
 .footer-btn:hover {
-  background: white;
-  color: #2f3f50;
+  background: #ffffff;
+  border-color: #ffffff;
+  color: var(--footer-cta-bg);
+  transform: translateY(-1px);
 }
 
-/* ===== MAIN SECTION ===== */
+.footer-btn:active {
+  transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════════════════════
+   MAIN GRID
+═══════════════════════════════════════════════════════ */
 .footer-main {
-  background: #1c252e;  /* Dark black-blue */
-  color: #ccc;
-  padding: 60px;
+  background: var(--footer-body-bg);
+  padding: 56px 64px 48px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
   gap: 40px;
+  border-bottom: 1px solid var(--footer-border);
 }
 
-.footer-column h3,
+/* ─── COLUMN HEADINGS ────────────────────────────────── */
+.footer-column h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--footer-text-h);
+  margin: 0 0 10px;
+  letter-spacing: -0.1px;
+}
+
 .footer-column h4 {
-  color: white;
-  margin-bottom: 15px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: rgba(255,255,255,0.4);
+  margin: 0 0 16px;
 }
 
-.footer-column p {
-  font-size: 14px;
-  color: #aaa;
-  margin-bottom: 8px;
+/* brand column taglines */
+.footer-column.brand p {
+  font-size: 13px;
+  color: var(--footer-text);
+  margin: 0 0 7px;
+  line-height: 1.6;
 }
 
+/* brand accent dot */
+.footer-column.brand h3::after {
+  content: ' ·';
+  color: var(--footer-accent);
+}
+
+/* ─── LISTS ──────────────────────────────────────────── */
 .footer-column ul {
   list-style: none;
   padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .footer-column ul li {
-  margin-bottom: 10px;
-  font-size: 14px;
+  font-size: 13.5px;
+  color: var(--footer-text);
   cursor: pointer;
-  transition: 0.3s ease;
+  padding: 5px 8px 5px 0;
+  border-radius: 6px;
+  transition: color var(--transition), padding-left var(--transition);
+  line-height: 1.4;
 }
 
 .footer-column ul li:hover {
-  color: white;
+  color: var(--footer-text-h);
   padding-left: 6px;
 }
 
-/* ===== BOTTOM ===== */
-.footer-bottom {
-  background: #141a20;
-  color: #888;
-  text-align: center;
-  padding: 18px;
-  font-size: 13px;
+/* NavLink wrapper reset */
+.footer-column a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 900px) {
-  .footer-main {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.footer-column a li {
+  color: var(--footer-text);
+}
 
+.footer-column a:hover li {
+  color: var(--footer-text-h);
+  padding-left: 6px;
+}
+
+/* ═══════════════════════════════════════════════════════
+   BOTTOM BAR
+═══════════════════════════════════════════════════════ */
+.footer-bottom {
+  background: var(--footer-deep-bg);
+  color: rgba(255,255,255,0.28);
+  text-align: center;
+  padding: 16px 24px;
+  font-size: 12.5px;
+  letter-spacing: 0.2px;
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    padding: 48px 40px 40px;
+  }
+  .footer-cta { padding: 26px 40px; }
+}
+
+@media (max-width: 900px) {
   .footer-cta {
     flex-direction: column;
-    gap: 20px;
+    gap: 18px;
     text-align: center;
+    padding: 28px 32px;
   }
 }
 
 @media (max-width: 600px) {
   .footer-main {
     grid-template-columns: 1fr;
+    padding: 36px 28px 32px;
   }
+  .footer-cta { padding: 24px 24px; }
+  .footer-cta h2 { font-size: 18px; }
 }

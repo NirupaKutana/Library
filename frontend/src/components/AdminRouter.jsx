@@ -8,7 +8,5 @@ const AdminRouter = ({permision,children}) => {
         return <Navigate to={"/unauthorized"} replace/>
     }
   return children
-    
 }
-
 export default AdminRouter

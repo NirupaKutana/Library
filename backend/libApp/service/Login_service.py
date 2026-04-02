@@ -1,5 +1,10 @@
 from django.db import connection
 # ---------------------------------------Users-------------------------------------------------------------
+def edit_profilr(id,name):
+    with connection.cursor() as cursor :
+        cursor.execute("select * from edit_profile_detail(%s,%s)",[id,name])
+        return cursor.fetchone()
+
 def post_user(u_name,u_email,u_pass,u_role,p_token):
     with connection.cursor() as cursor:
         cursor.execute("select * from post_user_detail(%s,%s,%s,%s,%s)",[u_name,u_email,u_pass,u_role,p_token])
