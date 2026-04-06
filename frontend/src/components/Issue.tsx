@@ -1,8 +1,8 @@
-import axios from 'axios'
+import API from '../Api/axios'
 import '../style/issue.css'
-import React, { act, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import IssueBook from './IssueBook'
 import Pagination from './Pagination'
 import Loader from './Loader';
@@ -26,7 +26,7 @@ const fetdata =async()=>{
   
   try{
       setLoading(true)
-      const res = await axios.get("http://127.0.0.1:8000/issue/")
+      const res = await API.get("/issue/")
       setIssuedata(res.data)
       
   }
@@ -42,7 +42,7 @@ const fetdata =async()=>{
 const Overduedata = async() =>{
     try
     {  
-       const res = await axios.get('http://127.0.0.1:8000/issue/overdue/')
+       const res = await API.get('/issue/overdue/')
        setIssuedata(res.data)
     }
     catch(err:any)
@@ -53,7 +53,7 @@ const Overduedata = async() =>{
 const fetchsearchdata =async(name : string)=>{
     try
     {
-       const res = await axios.get(`http://127.0.0.1:8000/issue/search/?name=${encodeURIComponent(name)}`)
+       const res = await API.get(`/issue/search/?name=${encodeURIComponent(name)}`)
        setsearchdata(res.data)
        navigate("/profile",{state :{activeTab:"issue"}})
 
@@ -73,7 +73,7 @@ useEffect(()=>{
 },[search])
 
 const sendMail =()=>{
-    axios.get("http://127.0.0.1:8000/overdue/mail/")
+    API.get("/overdue/mail/")
     .then(res=>{
         toast.success(res.data.message)
     })
@@ -83,7 +83,7 @@ const handleReturn = async(id : number)=>
         
         try
         {
-            const res = await axios.post("http://127.0.0.1:8000/return/",{
+            const res = await API.post("/return/",{
             issue_id : id})
             toast.success(res.data.message)
             navigate("/profile",{state :{activeTab:"issue"}})

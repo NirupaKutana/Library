@@ -1,9 +1,7 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import '../style/forgot.css'
-import axios from 'axios'
+import API from '../Api/axios'
 import { toast } from 'react-toastify'
-import { error } from 'console'
-import { NavLink } from 'react-router-dom'
 import Loader from './Loader'
 interface ForgotProps {
         onClose :() =>void;
@@ -16,7 +14,7 @@ const Forgot = ({onClose}:ForgotProps) => {
         setLoading(true)
         try 
         {
-            const response = await axios.post("http://127.0.0.1:8000/forgot/",{
+            const response = await API.post("/forgot/",{
             user_email :Email})
             console.log(response)
             toast.success(`${response.data.message}`)

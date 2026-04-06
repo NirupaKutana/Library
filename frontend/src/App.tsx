@@ -10,9 +10,11 @@ import { fetchPermission } from './components/RBAC';
 
 function App() {
   
-  
-  const[Locked,setLocked]=useState(false);
+  const token =localStorage.getItem("access_token") ;
+ 
+  const[Locked,setLocked]=useState(localStorage.getItem("sessionLocked") === "true");
   useIdeleTimer(()=>{
+    localStorage.setItem("sessionLocked", "true");
     setLocked(true);
   },10*60*1000);
   
@@ -21,10 +23,12 @@ function App() {
     window.location.href ="/login";
   };
 
-  if(Locked)
+  if(Locked && token)
   {
     return(
-      <SessionLock onSuccess={()=>setLocked(false)}
+      <SessionLock onSuccess={() => {
+       localStorage.removeItem("sessionLocked");
+       setLocked(false);}}
       onLogout={logout}/>
     );
   }

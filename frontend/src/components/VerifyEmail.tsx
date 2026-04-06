@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react'
+
 import '../style/VerifyEmail.css'
-import { useLocation, useNavigate } from 'react-router-dom'
+import {  useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify';
-import axios from 'axios';
+import API from '../Api/axios';
 const VerifyEmail = () => {
    const navigate = useNavigate()
    const email = localStorage.getItem("verify_email")
    console.log("verify_email",email)
    const handleLogin = async()=>{
     try{
-      const res = await axios.post("http://127.0.0.1:8000/check-verification/",{email});
+      const res = await API.post("/check-verification/",{email});
       if (res.data.is_active) {
         navigate("/login");
       } else {
@@ -23,7 +23,7 @@ const VerifyEmail = () => {
    }
    const handleResend = ()=>{
     try{
-       const res = axios.post("http://127.0.0.1:8000/resend-verify/",{email})
+       const res = API.post("/resend-verify/",{email})
        toast.success(`${res}`)
 
     }

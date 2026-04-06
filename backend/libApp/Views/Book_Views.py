@@ -1,13 +1,15 @@
 from rest_framework import status
-from rest_framework.decorators import APIView
+from rest_framework.views import APIView
 from rest_framework.response import Response
 from libApp.service import Book_service,Audit_service
 from libApp.Serializer import Book_Serializer
-from libApp.utils.jwt_utils import admin_reqired
+from libApp.utils.jwt_utils import JWTAuthentication
+from rest_framework.permissions import AllowAny
 # ---------------------------------------Books-------------------------------------------------------------
 class bookListView(APIView):
-    # permission_classes = [IsJWTAuthenticated]
+    # permission_classes = [AllowAny]
     # @admin_reqired
+    authentication_classes = [JWTAuthentication]
     def get(self,request):
         data = Book_service.get_all_books()
         # serial = Book_Serializer.BookResponseSerializer(data,many=True)

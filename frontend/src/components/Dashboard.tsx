@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import {Bar, BarChart , Pie, PieChart, ResponsiveContainer  ,Cell,Tooltip,Legend, CartesianGrid, XAxis, YAxis} from 'recharts'
 import '../style/Dashboard.css'
-import axios from 'axios'
+import API from '../Api/axios'
 import { useNavigate } from 'react-router-dom'
 
 const Dashboard = () => {
@@ -15,7 +15,7 @@ const Dashboard = () => {
     const [piedata ,setPiedata] = useState<PieDataType[]>([])
     const[chardata,setChartdata] = useState<PieDataType[]>([])
     useEffect(() => {
-    axios.get("http://127.0.0.1:8000/chart/")
+    API.get("/chart/")
       .then(res => {
         const data = res.data
         setBookData([

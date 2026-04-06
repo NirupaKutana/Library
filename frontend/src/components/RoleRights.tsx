@@ -1,10 +1,10 @@
 import '../style/RoleRights.css'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import AddRole from './AddRole'
 import AddRights from './AddRights'
 import AddRoleRights from './AddRoleRights'
 import { toast } from 'react-toastify'
-import axios from 'axios'
+import API from '../Api/axios'
 import { useNavigate } from 'react-router-dom'
 import Loader from './Loader'
 import Pagination from './Pagination'
@@ -24,7 +24,7 @@ const RoleRights = () => {
   const navigate=useNavigate()
   const fetchRights=()=>{
         setLoading(true)
-        axios.get("http://127.0.0.1:8000/right/").then((res)=>{       
+        API.get("/right/").then((res)=>{       
         setRight(res.data);
         navigate("/profile", { state: { activeTab: "Role-Right" } });
 
@@ -34,7 +34,7 @@ const RoleRights = () => {
          })
   }
   const handleDelete = (right_id:number) =>{
-    axios.delete(`http://127.0.0.1:8000/right/${right_id}/`).then((res=>{
+    API.delete(`/right/${right_id}/`).then((res=>{
       toast.warning("Deleted Successfuly..!");
     }));
     

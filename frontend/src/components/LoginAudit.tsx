@@ -1,5 +1,5 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import API from '../Api/axios';
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import '../style/LoginAudit.css';
 import Pagination from './Pagination';
@@ -22,7 +22,7 @@ const LoginAudit = () => {
 
        useEffect(()=>{
          setLoading(true)
-         axios.get("http://127.0.0.1:8000/LoginAudit/")
+         API.get("/LoginAudit/")
          .then(res=>{
             setLogs(res.data);
             navigate("/profile", { state: { activeTab: "LoginAudit" } }) 
@@ -31,8 +31,8 @@ const LoginAudit = () => {
         
        const serachAudit = async(name :string)=>
        {
-          console.log("searchname:",name);
-        const res = await axios.get(`http://127.0.0.1:8000/search/LoginAudit/?name=${encodeURIComponent(name)}`)
+        
+        const res = await API.get(`/search/LoginAudit/?name=${encodeURIComponent(name)}`)
         
           setFilterdata(res.data);
         

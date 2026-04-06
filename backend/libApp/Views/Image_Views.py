@@ -7,12 +7,14 @@ from rest_framework.decorators import APIView
 from rest_framework.response import Response
 from libApp.service import Image_service ,Audit_service
 from libApp.Serializer.Image_Serializer import ImageSerializer
-from libApp.utils.jwt_utils import JWT_Required
+from libApp.utils.jwt_utils import JWTAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 # -------------@JWT_Required--------------------------ImageView-------------------------------------------------------------
 
 class imageListView(APIView):
-     
+    # permission_classes = [IsAuthenticated]
+    authentication_classes = [JWTAuthentication]
     def get(self,request,id=None):
         data=Image_service.get_image()
         return Response(data,status=status.HTTP_200_OK)
@@ -60,6 +62,7 @@ class imageListView(APIView):
     
 
 class imgPaginationView(APIView):
+    # authentication_classes = [JWTAuthentication]
     def get(self,request):
         p_page=int(request.query_params.get('page',1))
         page_size=int(request.query_params.get('page_size',4))

@@ -57,7 +57,7 @@ MIDDLEWARE = [
 
     # 'libApp.middlewares.simple_middleware.RequestLoggingMiddleware',
     # 'libApp.middlewares.simple_middleware.MethodRestrictionMiddleware',
-     # 'libApp.middlewares.simple_middleware.PerformanceMiddleware',
+    # 'libApp.middlewares.simple_middleware.PerformanceMiddleware',
     # 'libApp.middlewares.jwt_middleware.JWTAuthenticationMiddleware',
 ]
 # MIDDLEWARE.append('libApp.middlewares.simple_middleware.workingHoursMiddleware')

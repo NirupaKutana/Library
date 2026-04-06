@@ -1,4 +1,4 @@
-import axios from 'axios';
+import API from '../Api/axios';
 import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -30,7 +30,7 @@ const UserProfile = () => {
         if (user) {
           const parseUser = JSON.parse(user);
           const id = parseUser.user_id;
-          axios.get(`http://127.0.0.1:8000/user/${id}/`)
+          API.get(`/user/${id}/`)
             .then((res) => {
               setUserData(res.data);
             })
@@ -44,7 +44,7 @@ const UserProfile = () => {
         const parseUser = JSON.parse(user);
         const id = parseUser.user_id;
     
-        axios.get(`http://127.0.0.1:8000/issue/user/${id}/`)
+        API.get(`/issue/user/${id}/`)
         .then(res=>{
         setIssuedata(res.data)
         }).catch((err:any)=>{ toast.error(err.response?.data?.error)})
@@ -75,7 +75,7 @@ const handleUserReport = async(e:React.FormEvent)=>{
 };
 
 useEffect(()=>{
-    axios.get(`http://127.0.0.1:8000/getusers/`).then(res=>{
+    API.get(`/getusers/`).then(res=>{
     setUserList(res.data);
   })
 },[])
@@ -85,7 +85,7 @@ useEffect(()=>{
     if (!user) return;
     const parseUser = JSON.parse(user);
     const id = parseUser.user_id
-    axios.get(`http://127.0.0.1:8000/issue/user/${id}/`)
+    API.get(`/issue/user/${id}/`)
     .then(res=>{
       setIssue(res.data)  
     })
@@ -151,7 +151,7 @@ useEffect(()=>{
             </div>
             
             <button className='edit-tbnnn' onClick={()=>{setIsShow(true);setEditUser({id:userdata.user_id,name:userdata.user_name});}}>
-               ✏️EDIT</button>
+               EDIT</button>
           </div>
         )}
         

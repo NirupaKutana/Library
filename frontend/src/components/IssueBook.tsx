@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import '../style/issuebook.css'
-import axios from 'axios'
+import API from '../Api/axios'
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
-import { error } from 'console'
+
 
 const IssueBook = ({onSuccess}:any) => {
 const [user,setUser] = useState<number>()
@@ -17,7 +17,7 @@ const navigate = useNavigate()
 
 
 const fetchuser = async ()=>{
-    const res = await axios.get("http://127.0.0.1:8000/getusers/")
+    const res = await API.get("/getusers/")
     try
     {
         setUserdata(res.data)
@@ -26,7 +26,7 @@ const fetchuser = async ()=>{
 }
 
 const fetbook = async ()=>{
-    const res = await axios.get("http://127.0.0.1:8000/book/")
+    const res = await API.get("/book/")
     try
     {
         setBookdata(res.data)
@@ -42,7 +42,7 @@ const handlesubmit = async(e:React.FormEvent)=>{
     e.preventDefault()
     
     try{
-     const res = await axios.post("http://127.0.0.1:8000/issue/",{
+     const res = await API.post("/issue/",{
       user_id:user,
       book_ids: selectedBooks,
       issue_date:issue 

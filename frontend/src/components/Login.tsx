@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import '../style/Login.css'
 import { NavLink, useNavigate } from 'react-router-dom'
-import axios from 'axios'
+import API from '../Api/axios'
 import { toast } from 'react-toastify'
 import Forgot from './Forgot'
 const Login = () => {
@@ -18,7 +18,7 @@ const Login = () => {
             // setError("")
             try 
             {
-                const response = await axios.post("http://127.0.0.1:8000/login/",{
+                const response = await API.post("/login/",{
                 user_email :email,
                 user_password:password})
                 if(response.data.access_token)

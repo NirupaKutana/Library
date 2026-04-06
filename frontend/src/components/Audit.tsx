@@ -1,5 +1,5 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import API from '../Api/axios';
+import { useEffect, useState } from 'react'
 import '../style/Audit.css'
 import { useNavigate } from 'react-router-dom';
 import Pagination from './Pagination';
@@ -22,7 +22,7 @@ const Audit = () => {
        const currentUsers = logs.slice(indexOfFirst,indexOfLast) ;
        useEffect(()=>{
         setLoading(true)
-         axios.get("http://127.0.0.1:8000/audit/")
+         API.get("/audit/")
          .then(res=>{
             setLogs(res.data);
             navigate("/profile", { state: { activeTab: "Audit" } })
@@ -30,7 +30,7 @@ const Audit = () => {
        },[])
 
       useEffect(()=>{
-       axios.get("http://127.0.0.1:8000/getusers/")
+        API.get("/getusers/")
        .then(res=>{
            setUserData(res.data)       
            
@@ -39,7 +39,7 @@ const Audit = () => {
     },[])
 
     const filterAudit =()=>{
-       axios.get(`http://127.0.0.1:8000/filter/Audit/`,{
+       API.get(`/filter/Audit/`,{
         params:{
           sdate: sdate ? sdate.toISOString().split("T")[0] : null,
           edate: edate ? edate.toISOString().split("T")[0] : null,
@@ -52,7 +52,7 @@ const Audit = () => {
        })
     }
     const downloadPDF = () => {
-    axios.get("http://127.0.0.1:8000/audit/pdf/", {
+    API.get("/audit/pdf/", {
     params: {
       sdate: sdate ? sdate.toISOString().split("T")[0] : null,
       edate: edate ? edate.toISOString().split("T")[0] : null,

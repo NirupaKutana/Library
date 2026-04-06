@@ -1,8 +1,7 @@
-import React, { use, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import '../style/Books.css' 
-import axios from 'axios';
 // import { error } from 'console';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Addbook from './Addbook';
 import { toast } from 'react-toastify';
 import Loader from './Loader';
@@ -33,7 +32,7 @@ const Books = () => {
             API.get(`/book/`)
            .then(res => {
               setbookdata(res.data)
-              console.log("dhsknka",res.data)
+              
          }).catch(err => console.log(err))
          .finally(()=>{
           setLoading(false)

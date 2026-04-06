@@ -1,12 +1,11 @@
-import { useQueries, useQuery } from '@tanstack/react-query';
+import {  useQuery } from '@tanstack/react-query';
 import axios from 'axios'
-import React from 'react'
 import Loader from './Loader';
-import { useNavigate } from 'react-router-dom';
+import API from '../Api/axios';
 
 
 const fetchUsers = async () =>{
-    const res = await axios.get("http://127.0.0.1:8000/book/");
+    const res = await API.get("/book/");
     return res.data
 }
 

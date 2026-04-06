@@ -1,7 +1,5 @@
-import React, { useEffect ,useState} from 'react'
+import { useEffect ,useState} from 'react'
 import '../style/Category.css'
-import axios from 'axios'
-import { NavLink, useNavigate } from 'react-router-dom'
 import Addcategory from './Addcategory'
 import { toast } from 'react-toastify'
 import Loader from './Loader'

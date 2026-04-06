@@ -3,6 +3,7 @@ import '../style/AddLibrarian.css'
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import API from '../Api/axios';
 const AddLibrarian = ({librarian,onSuccess}:any) => {
     const [name,setname] = useState("");
     const [email ,setemail] = useState("");
@@ -20,7 +21,7 @@ const AddLibrarian = ({librarian,onSuccess}:any) => {
            e.preventDefault();
           if(isEdit){
            
-            axios.put(`http://127.0.0.1:8000/register/librarian/${librarian.id}/`,{
+            API.put(`/register/librarian/${librarian.id}/`,{
               user_name:name,
               user_email:email
             }).then((res)=>{
@@ -32,7 +33,7 @@ const AddLibrarian = ({librarian,onSuccess}:any) => {
             })
           }
           else{
-            axios.post("http://127.0.0.1:8000/register/librarian/",{
+            API.post("/register/librarian/",{
             user_name:name,
             user_email:email}).then((res)=>{
                   toast.success(res.data.message);

@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import '../style/UserList.css'
-import axios from 'axios'
+import API from '../Api/axios'
 import { useNavigate } from 'react-router-dom'
 import Pagination from './Pagination'
 import Loader from './Loader'
@@ -21,7 +21,7 @@ const UserList = () => {
 
     useEffect(()=>{
        setLoading(true)
-       axios.get("http://127.0.0.1:8000/getusers/")
+        API.get("/getusers/")
        .then(res=>{
            setUserData(res.data)
             navigate("/profile", { state: { activeTab: "Users" } })

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../style/AddRoleRights.css'
 import { toast } from 'react-toastify';
-import axios from 'axios';
+import API from '../Api/axios';
 import { useNavigate } from 'react-router-dom';
 const AddRoleRights = () => {
     const[roleData,setRoleData]= useState([]);
@@ -12,7 +12,7 @@ const AddRoleRights = () => {
     const fetchRole =async()=>{
         try
         {
-           const res = await axios.get("http://127.0.0.1:8000/role/");
+           const res = await API.get("/role/");
            setRoleData(res.data);
         }
         catch(err:any)
@@ -24,7 +24,7 @@ const AddRoleRights = () => {
     const fetchRight =async()=>{
         try
         {
-           const res = await axios.get("http://127.0.0.1:8000/right/");
+           const res = await API.get("/right/");
            setRightData(res.data);
         }
         catch(err:any)
@@ -42,7 +42,7 @@ const AddRoleRights = () => {
         e.preventDefault();
         try
         {
-            const res = await axios.post("http://127.0.0.1:8000/role/rights/",{
+            const res = await API.post("/role/rights/",{
             role_id:role,
             permission_ids:right
             });

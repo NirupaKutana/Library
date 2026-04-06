@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import '../style/Signup.css'
-import axios from 'axios'
+import API from '../Api/axios';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
@@ -28,7 +28,7 @@ const Signup = () => {
     const signupAPI=async()=>
     {
         
-         axios.post(`http://127.0.0.1:8000/user/`,{
+         API.post(`/user/`,{
           user_name :name,
           user_email:email,
           user_password:password,

@@ -1,10 +1,8 @@
-import React, { useEffect,useState } from 'react'
+import { useEffect,useState } from 'react'
 import '../style/Imagefile.css'
-import { NavLink, useNavigate } from 'react-router-dom'
-import axios from 'axios'
-import { Api } from './Token' 
+import {  useNavigate } from 'react-router-dom'
+import API from '../Api/axios'
 import AddImage from './AddImage'
-import { refreshAccessToken } from './RefreshToken'
 import Loader from './Loader'
 import Pagination from './Pagination'
 import { toast } from 'react-toastify'
@@ -12,7 +10,6 @@ const ImageFile = () => {
     const[imgdata,setImgData] =useState<any[]>([]);
     const [isshow,setshowmodel] = useState<Boolean>(false);
     const navigate = useNavigate()
-    const BASE_URL = 'http://127.0.0.1:8000/image/'
     const[Loading,setLoading] = useState(false);
     const [currentPage,setCurrentPage]=useState(1);
     const itemPerPage = 3;
@@ -20,75 +17,30 @@ const ImageFile = () => {
     const indexOfFirst = indexOfLast - itemPerPage;
     const currentUsers = imgdata.slice(indexOfFirst,indexOfLast) ;
     
-        // const fetchImage = async () => {
-        //     try {
-        //         const res = await Api("http://127.0.0.1:8000/image/");
-        //         const data= res.data
-        //     } catch (err) {
-        //         console.error(err);
-        //     }
-        //     };
-        //     useEffect(() => {
-        //    fetchImage();
-        //   }, []);
-        // useEffect(()=>{
-        //        axios.get('http://127.0.0.1:8000/image/',{
-        //         headers: {
-        //              Authorization: `Bearer ${localStorage.getItem("access_token")}`
-        //          }
-                
-        //     }).then(res=>{
-        //         setImgData(res.data)
-        //     }).catch(er=>console.log(er))
-        // },[])
+      
        useEffect(()=>{
         const fetchImage = async() =>
         {       
                 setLoading(true)
                 try{
-                    const res = await axios.get('http://127.0.0.1:8000/image/',{
-                      headers: {
-                            Authorization: `Bearer ${localStorage.getItem("access_token")}`,
-                            },
-                        })
+                    const res = await API.get(`/image/`);
                     setImgData(res.data);
                     navigate("/profile", { state: { activeTab: "AddImage" } })
                 }catch(err :any)
-                {
-                    if(err.response?.status === 401)
-                    {
-                        const newtoken = await refreshAccessToken();
-                        fetchImage();
-                    
-                        if(newtoken){
-                            const retry = await axios.get("http://127.0.0.1:8000/image/",{
-                                headers :{
-                                    Authorization:`Bearer${newtoken}`
-                                },
-                            });
-                            setImgData(retry.data)
-                        }
-                    }
-                }
+                {   toast.error("Failed to load images");}
                 finally{setLoading(false)}
         };
         fetchImage();
-
-       },[])
+       },[]);
        const handleDelete = (id : number)=>{
-            axios.delete(`${BASE_URL}${id}/`,{
-                 headers: {
-                   Authorization: `Bearer ${localStorage.getItem("token")}`
-                }
-            }).then(res=>{
+                API.delete(`/image/${id}/`).then(res=>{
                 toast.success(res.data.detail)
                 navigate("/profile", { state: { activeTab: "AddImage" } })
                 window.location.reload();
             }).catch((err:any)=>{
                 toast.error(err.response?.data?.err)
-            })
-            
-        }
+            })   
+        };
   
   return (
     <>  
@@ -121,7 +73,6 @@ const ImageFile = () => {
     </div>
     </div>  
   
-     
     {isshow && (
     <>
     <div className='overlay'></div>
@@ -137,3 +88,26 @@ const ImageFile = () => {
 }
 
 export default ImageFile
+
+
+  // const fetchImage = async () => {
+        //     try {
+        //         const res = await Api("http://127.0.0.1:8000/image/");
+        //         const data= res.data
+        //     } catch (err) {
+        //         console.error(err);
+        //     }
+        //     };
+        //     useEffect(() => {
+        //    fetchImage();
+        //   }, []);
+        // useEffect(()=>{
+        //        axios.get('http://127.0.0.1:8000/image/',{
+        //         headers: {
+        //              Authorization: `Bearer ${localStorage.getItem("access_token")}`
+        //          }
+                
+        //     }).then(res=>{
+        //         setImgData(res.data)
+        //     }).catch(er=>console.log(er))
+        // },[])

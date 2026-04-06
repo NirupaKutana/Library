@@ -1,5 +1,5 @@
-import axios from 'axios';
-import React, { useState } from 'react'
+import API from '../Api/axios';
+import { useState } from 'react'
 import { toast } from 'react-toastify';
 import '../style/SessionLock.css'
 interface props{
@@ -13,10 +13,11 @@ const SessionLock = ({onSuccess,onLogout}:props) => {
 
   const verify = async ()=>{
     try{
-        await axios.post("http://127.0.0.1:8000/session/verify/",{
+        await API.post("/session/verify/",{
             password: password,   // password from input state
             user_id: user.user_id
         });
+        localStorage.setItem("lastActivity", Date.now().toString());
         onSuccess();
     }
     catch(err:any)

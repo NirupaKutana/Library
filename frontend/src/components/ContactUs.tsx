@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import '../style/contactUs.css'
 import { toast } from 'react-toastify'
-import axios from 'axios'
+import API from '../Api/axios'
 const ContactUs = () => {
     const[name,setName] = useState("")
     const[email,setEmail] = useState("")
@@ -12,7 +12,7 @@ const ContactUs = () => {
         e.preventDefault()
         try
         {
-           const res = await axios.post("http://127.0.0.1:8000/contactUs/",{
+           const res = await API.post("/contactUs/",{
             contact_name :name,
             contact_email:email,
             contact_msg:msg

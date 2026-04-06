@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import '../style/addimage.css'
-import axios from 'axios'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import API from '../Api/axios'
 interface AddImageProps {
     onSuccess: () => void;
     }
@@ -13,7 +13,6 @@ const AddImage = ({onSuccess}:AddImageProps) => {
     const[imageData,setImageData]=useState([]);
     const navigate = useNavigate();
      
-    const BASE_URL = 'http://127.0.0.1:8000/image/'
 
     const handlesubmit =(e:React.FormEvent) =>{
         e.preventDefault();
@@ -27,20 +26,12 @@ const AddImage = ({onSuccess}:AddImageProps) => {
             data.append("image_pdf",pdf);
         }
         data.append("image_name",name);
-        axios.post(`${BASE_URL}`,data,{
-            headers :{
-                
-               Authorization: `Bearer ${localStorage.getItem("token")}`,
-              "Content-Type": "multipart/form-data"
-           }
-        }).
+        API.post(`/image/`,data).
         then(res=>{
             setImageData(res.data)
             toast.success(res.data.success)
             onSuccess();
-            console.log("done")
             navigate("/profile", { state: { activeTab: "AddImage" } })
-            // window.location.reload();
         }).catch((err:any)=>{
             toast.error(err.response?.data?.error)
         })

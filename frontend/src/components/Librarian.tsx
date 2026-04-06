@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import AddLibrarian from './AddLibrarian'
 import '../style/Librarian.css'
-import axios from 'axios';
+import API from '../Api/axios';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import Loader from './Loader';
@@ -13,7 +13,7 @@ const Librarian = () => {
     const navigate = useNavigate();
     const fetchLibrarian =()=>{
       setLoding(true)
-      axios.get("http://127.0.0.1:8000/register/librarian/")
+      API.get("/register/librarian/")
       .then((res)=>{
         setData(res.data);
         navigate("/profile", { state: { activeTab: "Librarian" } });
@@ -28,7 +28,7 @@ const Librarian = () => {
       fetchLibrarian();
     },[]);
   const handleDelete = (id :number) =>{
-      axios.delete(`http://127.0.0.1:8000/register/librarian/${id}/`)
+      API.delete(`/register/librarian/${id}/`)
       .then((res=>{
         toast.warning("Deleted..")
       }))

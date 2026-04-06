@@ -12,7 +12,7 @@ from rest_framework.decorators import APIView
 from rest_framework.response import Response
 from django.contrib.auth.hashers import check_password ,make_password
 from libApp.service import Login_service,Audit_service
-from libApp.utils.jwt_utils import generate_access_token,generate_refresh_token ,JWT_Required ,decode_token
+from libApp.utils.jwt_utils import generate_access_token,generate_refresh_token ,decode_token
 
 # from .middlewares.jwt_middleware import JWTAuthenticationMiddleware
 from libApp.Serializer.Login_Serializer import UserSerializer,LoginSerializer ,ContactSerializer
@@ -284,7 +284,7 @@ class RefreshTokenView(APIView):
             if payload.get("type") != "refresh":
                 return Response({"error":"Invalid Token Type"},status=401)
         
-            new_access_token = generate_access_token(payload["user_id"],payload["user_email"],payload["role"])
+            new_access_token = generate_access_token(payload["user_id"],payload["user_email"],payload.get("roles",[]),payload.get("permissions",[]))
             return Response ({"access_token":new_access_token})
         except jwt.ExpiredSignatureError:
                 return Response({"error": "Refresh token expired","code": "TOKEN_EXPIRED"}, status=401)

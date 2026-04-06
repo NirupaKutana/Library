@@ -1,14 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import '../style/Author.css'
-import axios from 'axios'
-import { NavLink, useNavigate } from 'react-router-dom'
-import { toast } from 'react-toastify'
-import { error } from 'console'
+import { useNavigate } from 'react-router-dom'
 import Loader from './Loader'
 import Addauthor from './Addauthor'
 import Pagination from './Pagination'
 import { hasAnyPermission, hasPermission } from './RBAC'
-import { QueryClient, useMutation, useQueries, useQuery, useQueryClient } from '@tanstack/react-query'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import API from '../Api/axios'
 const fetchAuthor = async() =>{
   const res = await API.get(`/author/`);

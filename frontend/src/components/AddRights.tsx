@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../style/AddRight.css'
 import { toast } from 'react-toastify';
-import axios from 'axios';
+import API from '../Api/axios';
 import { useNavigate } from 'react-router-dom';
 const AddRights = ({right,onSuccess}:any) => {
   const [name,setName] = useState("");
@@ -21,7 +21,7 @@ const AddRights = ({right,onSuccess}:any) => {
         {
             try
             {
-                const res= await axios.put(`http://127.0.0.1:8000/right/${right.id}/`,{
+                const res= await API.put(`/right/${right.id}/`,{
                   permission_name:name,
                   description:description
                 });
@@ -39,7 +39,7 @@ const AddRights = ({right,onSuccess}:any) => {
         {
             try
             {
-                const res = await axios.post("http://127.0.0.1:8000/right/",{
+                const res = await API.post("/right/",{
                 permission_name:name,
                 description:description
                 });

@@ -1,8 +1,8 @@
-import axios from "axios";
+import API from "../Api/axios";
 let permission : string[] = [];
 export const fetchPermission = async(id:number) =>{
   try{
-    const res = await axios.get(`http://127.0.0.1:8000/role/rights/${id}`)
+    const res = await API.get(`/role/rights/${id}`)
     localStorage.setItem("permissions", JSON.stringify(res.data));
     return res.data;
   }

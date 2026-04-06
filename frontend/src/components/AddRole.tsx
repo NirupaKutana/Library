@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import '../style/AddRole.css'
-import axios from 'axios';
+import API from '../Api/axios';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 const AddRole = () => {
@@ -12,7 +12,7 @@ const AddRole = () => {
        e.preventDefault();
        try
        {
-         const res = await axios.post("http://127.0.0.1:8000/role/",{
+         const res = await API.post("/role/",{
           role_name:name,
           description:description
          })

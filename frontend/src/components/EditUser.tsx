@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import '../style/EditUser.css'
 import API from '../Api/axios'
 import { useMutation } from '@tanstack/react-query';

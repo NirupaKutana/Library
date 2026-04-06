@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import '../style/reset.css'
 import { toast } from 'react-toastify'
-import axios from 'axios'
+import API from '../Api/axios'
 import { useParams } from 'react-router-dom'
 import Loader from './Loader'
 const ResetPassword = () => {
@@ -12,7 +12,7 @@ const ResetPassword = () => {
     {
         try
         {
-               const response = await axios.post("http://127.0.0.1:8000/reset/",{
+               const response = await API.post("/reset/",{
                 token :token,
                 user_password : Password 
                });

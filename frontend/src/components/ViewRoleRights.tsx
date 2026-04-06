@@ -1,5 +1,5 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import API from '../Api/axios';
+import { useEffect, useState } from 'react'
 import { toast } from 'react-toastify';
 import '../style/ViewRoleRights.css'
 import { useNavigate } from 'react-router-dom';
@@ -23,7 +23,7 @@ const ViewRoleRights = () => {
     const fetchRoleRights =async(id :number)=>{
         setData([])
     try{   
-    const res = await axios.get(`http://127.0.0.1:8000/role/rights/${id}/`)
+    const res = await API.get(`/role/rights/${id}/`)
     const formatted = res.data.map((item:any) => ({
         id: item[0],
         name: item[2],
@@ -68,9 +68,8 @@ const ViewRoleRights = () => {
     const handleToggle = (id:number) => {
             try {
             
-                axios.put(
-                `http://127.0.0.1:8000/role/rights/${id}/`
-                ).then((res=>{toast.success(res.data.success)}));
+                API.put(`/role/rights/${id}/`)
+                .then((res=>{toast.success(res.data.success)}));
                 setData(prev =>
                 prev.map(item => {
                     if (item.id === id) {
