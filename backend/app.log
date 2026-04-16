@@ -5333,3 +5333,11 @@ INFO 2026-04-15 19:00:44,778 "GET /membership/plan/ HTTP/1.1" 200 197
 INFO 2026-04-15 19:00:44,799 "GET /image/pag/?page=1&page_size=4 HTTP/1.1" 200 299
 INFO 2026-04-16 11:48:41,525 Watching for file changes with StatReloader
 INFO 2026-04-16 11:48:52,674 Watching for file changes with StatReloader
+INFO 2026-04-16 11:49:42,939 "GET / HTTP/1.1" 200 32
+WARNING 2026-04-16 11:49:43,873 Not Found: /favicon.ico
+WARNING 2026-04-16 11:49:43,874 "GET /favicon.ico HTTP/1.1" 404 11101
+INFO 2026-04-16 11:50:56,050 "GET /membership/plan/ HTTP/1.1" 200 197
+INFO 2026-04-16 11:50:56,180 "GET /image/pag/?page=1&page_size=4 HTTP/1.1" 200 299
+INFO 2026-04-16 11:50:56,334 "GET /image/pag/?page=1&page_size=4 HTTP/1.1" 200 299
+INFO 2026-04-16 11:50:56,445 "GET /membership/plan/ HTTP/1.1" 200 197
+INFO 2026-04-16 11:57:05,196 Watching for file changes with StatReloader
