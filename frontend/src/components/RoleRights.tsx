@@ -46,7 +46,7 @@ const RoleRights = () => {
   return (
     <>{Loading && <Loader/>}
     <div className='roleright-container'>
-      <h2>Role And Rights</h2>
+      {/* <h2>Role And Rights</h2> */}
       <div className='space'>
       <button className='add-role-btn' onClick={()=>setIsShowRole(true)}>+Add Role</button>  
       <button className='add-role-btn' onClick={()=>{setIsShowRight(true);setSelectedRIghts(null)}}>+Add Right</button>
@@ -62,9 +62,9 @@ const RoleRights = () => {
           </tr>
         </thead>
         <tbody>
-          {currenData.map((data:any)=>(
+          {currenData.map((data:any,index:any)=>(
             <>
-            <tr key={data[0]}>
+            <tr key={index}>
               <td>{data[0]}</td>
               <td>{data[1]}</td>
               <td>{data[2]}</td>

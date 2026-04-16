@@ -32,14 +32,14 @@
   width: 54px;
   height: 54px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #55a6c8, #4377ab);
+  background: linear-gradient(135deg, #ededf0, #f4f5f6);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 22px;
   font-weight: 600;
-  color: white;
+  color: black;
   margin: 0 auto 12px;
   box-shadow: 0 4px 16px rgba(91,141,238,0.4);
   letter-spacing: -0.5px;
@@ -57,6 +57,7 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  margin-top: 40px;
   padding-right: 5px;
   min-height: 0; 
   flex: 1;   /* This pushes logout to bottom */

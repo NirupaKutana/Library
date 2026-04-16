@@ -31,6 +31,7 @@ import UserProfile from '../components/UserProfile'
 import ProtectRouter from '../components/ProtectRouter'
 import NotFound from '../components/NotFound'
 import LearnForm from '../components/LearnForm'
+import DemoFile from '../components/DemoFile'
 const Approuter = () => {
   return (
     <div>
@@ -59,7 +60,7 @@ const Approuter = () => {
             <Route path='/profile' element={<><ProtectRouter><Profile/></ProtectRouter></>}/>
             <Route path='Uprofile' element={<><ProtectRouter><UserProfile/></ProtectRouter></>}></Route>
             <Route path='/SignUp' element={<><Header/><Signup/></>}/>
-            <Route path='/login' element={<><Header/><Login/><Footer/></>}></Route>
+            <Route path='/login' element={<><Header/><Login/></>}></Route>
             <Route path='/reset/:token' element={<><ResetPassword/></>}></Route>
             <Route path='/Verify' element={<><Header/><VerifyEmail/></>}/>
 
@@ -70,7 +71,9 @@ const Approuter = () => {
             
             <Route path='/unauthorized' element={<Unauthorized/>}></Route>
             <Route path='*' element={<NotFound />} />
-            <Route path='/learn' element={<LearnForm/>}></Route>
+            <Route path='/learnUseForm' element={<LearnForm/>}></Route>
+            <Route path='/demofile' element={<DemoFile/>}></Route>
+
         </Routes>
       
     </div>

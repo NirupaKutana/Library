@@ -7,6 +7,7 @@ import Books from './Books';
 import Category from './Category';
 import Author from './Author';
 import AboutUs from './AboutUs';
+import GetMembership from './GetMembership';
 const Home = () => {
     const [activeTab, setActiveTab] = useState("books");
   return (
@@ -54,6 +55,7 @@ const Home = () => {
         </div>
        
       </div>)}
+      <GetMembership/>
        <ImgPage/>
        
        <AboutUs/>

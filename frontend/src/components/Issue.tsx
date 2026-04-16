@@ -99,7 +99,7 @@ const handleReturn = async(id : number)=>
 return (
     <>
      {Loading && <Loader/>}
-      <h2>Issue Book</h2>
+      {/* <h2>Issue Book</h2> */}
 
     <div className='action'>
     <input type="text" className='srch' placeholder='🔍  Search Here..!' value={search} onChange={(e)=>setsearch(e.target.value)}/>

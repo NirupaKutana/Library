@@ -87,7 +87,7 @@ const ViewRoleRights = () => {
 
   return (
     <div>
-      <h2>Update Role&Rights</h2>
+      {/* <h2>Update Role&Rights</h2> */}
         <div className="role-switch">
         <button onClick={()=>{setActive("user");fetchRoleRights(2)}}
         className={`role-btn ${active==="user" ? "active-role" : ""}`}>user</button>

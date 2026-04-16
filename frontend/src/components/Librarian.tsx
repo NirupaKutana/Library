@@ -37,7 +37,7 @@ const Librarian = () => {
     <>
     {Loading && <Loader/>}
     <div className="table-container">
-      <h2>Librarian</h2>
+      {/* <h2>Librarian</h2> */}
       <button className='add-lib-btn' onClick={()=>{setIsShow(true);setselectedLibrarian(null);}}>+Add Librarian</button>
       <table>
         <thead>

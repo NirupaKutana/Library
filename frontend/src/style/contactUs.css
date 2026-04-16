@@ -1,9 +1,9 @@
 /* ===== FULL SECTION ===== */
 
 .contact-section {
-  
+  /* margin-top: 20px; */
   width: 100%;
-  min-height: 40vh;
+  align-items: center;
   display: flex;
   background: #f4f6f9;
  
@@ -12,6 +12,7 @@
 /* ===== WRAPPER ===== */
 
 .contact-wrapper {
+  
   margin-top: 40px; 
   width: 100%;
   display: flex;
@@ -42,6 +43,7 @@
 .contact-left h2 {
   font-size: 36px;
   margin-bottom: 20px;
+  color: white;
 }
 
 .contact-left p {
@@ -67,7 +69,7 @@
   border: 1px solid black;
   border-radius: 10px;
   width: 400px;
-  height: 300px;
+  /* min-height: 60vh; */
 }
 
 /* ===== FORM ===== */

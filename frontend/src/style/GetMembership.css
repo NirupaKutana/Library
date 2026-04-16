@@ -1,0 +1,170 @@
+.membership-container {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.header-section {
+  margin-bottom: 50px;
+}
+
+.header-section .title {
+  font-size: 2.5rem;
+  color: var(--text-main);
+  margin-bottom: 10px;
+}
+
+.header-section .subtitle {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.plan-grid {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.card {
+  position: relative;
+  background: var(--surface);
+  padding: 30px;
+  width: 320px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-header h3 {
+  color: var(--text-muted);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+
+.card-header h1 {
+  font-size: 2.5rem;
+  color: var(--text-main);
+  display: flex;
+  align-items: baseline;
+}
+
+.card-header h1 span {
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-weight: normal;
+  margin-left: 5px;
+  font-family: 'Inter', sans-serif;
+}
+
+.card-header .description {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 25px 0;
+  width: 100%;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+  flex-grow: 1;
+}
+
+.features-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  color: var(--text-main);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.features-list .icon {
+  width: 20px;
+  height: 20px;
+  color: var(--primary);
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.membership-container button {
+  cursor: pointer;
+  padding: 14px 20px;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.membership-container .btn-primary {
+  background: var(--primary);
+  color: white;
+  border: none;
+}
+
+.membership-container .btn-primary:hover {
+  background: var(--primary-hover);
+  box-shadow: var(--shadow-glow);
+}
+
+.membership-container .btn-secondary {
+  background: var(--surface);
+  color: var(--text-main);
+  border: 1px solid var(--border);
+}
+
+.membership-container .btn-secondary:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* Highlight (e.g. Yearly Plan) */
+.highlight {
+  border: 2px solid var(--primary);
+  transform: scale(1.03);
+  box-shadow: var(--shadow-glow);
+}
+
+.highlight:hover {
+  transform: scale(1.03) translateY(-5px);
+}
+
+.badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}

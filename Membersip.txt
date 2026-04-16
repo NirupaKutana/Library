@@ -1,0 +1,86 @@
+CREATE TABLE tbl_membership_plans (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50), -- Monthly / Quarterly / Yearly
+    price NUMERIC(10,2),
+    duration_days INT, -- 30 / 90 / 365
+
+    max_books INT, -- 2 / 5 / unlimited (use -1 for unlimited)
+    issue_days INT, -- 7 / 15 etc
+    fine_discount INT, -- percentage (10%, 20%)
+
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    is_active BOOLEAN DEFAULT TRUE
+);
+
+CREATE TABLE tbl_user_memberships (
+    id SERIAL PRIMARY KEY,
+    user_id INT,
+    plan_id INT REFERENCES tbl_membership_plans(id),
+    start_date DATE,
+    end_date DATE,
+    status VARCHAR(20), -- Active / Expired
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO tbl_membership_plans 
+(name, price, duration_days, max_books, issue_days, fine_discount)
+VALUES
+('Monthly', 99, 30, 2, 7, 10),
+('Quarterly', 249, 90, 5, 15, 20),
+('Yearly', 799, 365, -1, 30, 50);
+
+CREATE OR REPLACE FUNCTION sp_create_membership(
+    p_user_id INT,
+    p_plan_id INT
+)
+RETURNS TEXT AS $$
+DECLARE
+    v_duration INT;
+BEGIN
+    SELECT duration_days INTO v_duration 
+    FROM tbl_membership_plans 
+    WHERE id = p_plan_id;
+
+    INSERT INTO tbl_user_memberships (
+        user_id, plan_id, start_date, end_date, status
+    )
+    VALUES (
+        p_user_id,
+        p_plan_id,
+        CURRENT_DATE,
+        CURRENT_DATE + v_duration,
+        'Active'
+    );
+
+    RETURN 'Membership Created';
+END;
+$$ LANGUAGE plpgsql;
+
+
+CREATE OR REPLACE FUNCTION sp_expire_memberships()
+RETURNS VOID AS $$
+BEGIN
+    UPDATE tbl_user_memberships
+    SET status = 'Expired'
+    WHERE end_date < CURRENT_DATE AND status = 'Active';
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION sp_get_active_membership(p_user_id INT)
+RETURNS TABLE (
+    plan_name VARCHAR,
+    max_books INT,
+    issue_days INT,
+    fine_discount INT,
+	end_date date
+) AS $$
+BEGIN
+    RETURN QUERY
+    SELECT mp.name, mp.max_books, mp.issue_days, mp.fine_discount ,um.end_date
+    FROM tbl_user_memberships um
+    JOIN tbl_membership_plans mp ON mp.id = um.plan_id
+    WHERE um.user_id = p_user_id AND um.status = 'Active';
+END;
+$$ LANGUAGE plpgsql;
+SELECT * FROM tbl_membership_plans WHERE is_active = true;
+select * from sp_get_active_membership(2);

@@ -1,0 +1,136 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.glass-modal {
+  background: var(--surface);
+  width: 100%;
+  max-width: 420px;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: var(--shadow-lg), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+  text-align: center;
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid var(--border);
+}
+
+.modal-header .icon-wrapper {
+  width: 56px;
+  height: 56px;
+  background: #EEF2FF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.modal-header .icon-wrapper svg {
+  width: 28px;
+  height: 28px;
+  color: var(--primary);
+}
+
+.modal-header h2 {
+  font-size: 1.5rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.modal-body {
+  margin-bottom: 30px;
+}
+
+.modal-body p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.modal-body strong {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.price-tag {
+  background: #F8FAFC;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 15px;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 15px;
+}
+
+.price-tag span {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-left: 10px;
+  font-family: 'Inter', sans-serif;
+}
+
+.modal-body .notice {
+  font-size: 0.85rem;
+  color: #94A3B8;
+}
+
+.modal-footer {
+  display: flex;
+  gap: 12px;
+}
+
+.modal-footer button {
+  flex: 1;
+  padding: 12px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.btn-cancel {
+  background: white;
+  border: 1px solid var(--border);
+  color: var(--text-main);
+}
+
+.btn-cancel:hover {
+  background: #F1F5F9;
+}
+
+.btn-confirm {
+  background: var(--primary);
+  border: none;
+  color: white;
+}
+
+.btn-confirm:hover {
+  background: var(--primary-hover);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}

@@ -1,0 +1,114 @@
+/* ---------- Container ---------- */
+.demo-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f5f7fa, #e4ecf7);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ---------- Card ---------- */
+.demo-card {
+  background: #ffffff;
+  padding: 35px 40px;
+  width: 420px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+}
+
+.demo-card:hover {
+  transform: translateY(-3px);
+}
+
+/* ---------- Title ---------- */
+.demo-card h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+/* ---------- Form ---------- */
+.demo-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ---------- Label ---------- */
+.demo-card label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #34495e;
+}
+
+/* ---------- Text Input ---------- */
+.demo-card input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #dcdfe6;
+  outline: none;
+  font-size: 14px;
+  transition: all 0.25s ease;
+}
+
+.demo-card input:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.15);
+}
+
+/* ---------- File Input ---------- */
+.demo-file {
+  padding: 8px;
+  border: 1px dashed #cfd8dc;
+  border-radius: 8px;
+  background: #f9fbfd;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.demo-file:hover {
+  border-color: #4a90e2;
+  background: #f1f7ff;
+}
+
+/* ---------- Error ---------- */
+.demo-card p {
+  margin: 0;
+  font-size: 13px;
+  color: #e74c3c;
+}
+
+/* ---------- Button ---------- */
+.demo-card button {
+  margin-top: 10px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #32365b, #1e1e37);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.demo-card button:hover {
+  background: linear-gradient(135deg, #586b7a, #2463c3);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(53, 122, 189, 0.3);
+}
+
+.demo-card button:active {
+  transform: scale(0.98);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 500px) {
+  .demo-card {
+    width: 90%;
+    padding: 25px;
+  }
+}

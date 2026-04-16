@@ -1,0 +1,50 @@
+-----------------------------------**********************---------------------------------------
+create table tbl_files(
+id serial primary key ,
+file_name varchar(200),
+file_image varchar(200),
+file_pdf varchar(200),
+created_at TIMESTAMP default CURRENT_TIMESTAMP,
+is_delete boolean default true
+)
+select * from tbl_files;
+
+--------------------------------CREATE-------------------------------------------------------
+create function sp_create_file(p_name varchar , p_image varchar , p_pdf varchar)
+returns text 
+as $$
+begin
+    insert into tbl_files(file_name,file_image,file_pdf)values(p_name,p_image,p_pdf);
+	return 'Created..!';
+end;
+$$ language plpgsql;
+select from sp_create_file('Nirupa','\image.jpg\','image.pdf\');
+
+--------------------------------READ-------------------------------------------------------
+create function sp_read_file()
+returns table(p_id int ,p_name varchar,p_image varchar,p_pdf varchar,p_created_at timestamp,p_isdelete boolean)
+as $$ 
+begin
+   return query select * from tbl_files where is_delete=true ;
+end;
+$$ language plpgsql;
+select * from  sp_read_file();
+
+-------------------------------UPDATE-----------------------------------------
+create function sp_update_file(p_id int ,p_name varchar,p_image varchar,p_pdf varchar)
+returns text as $$
+begin 
+  update tbl_files set file_name = p_name,file_image=p_image,file_pdf=p_pdf where id = p_id;
+  return 'Updated..!';
+end;$$ language plpgsql;
+select * from sp_update_file(1,'Niru','\image.png\','\file.pdf\');
+
+---------------------------DELETE--------------------------------------
+create function sp_delete_file(p_id int)
+returns text as $$ 
+begin 
+    update tbl_files set is_delete=false where id = p_id ;
+	return 'deleted..!';
+end; $$ language plpgsql;
+select * from sp_delete_file(1);
+------------------------------------------------------------------------

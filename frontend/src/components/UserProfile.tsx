@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import '../style/UserProfile.css'
 import { NavLink } from 'react-router-dom';
 import EditUser from './EditUser';
+import GetUserPlan from './GetUserPlan';
 const UserProfile = () => {
     const location = useLocation()
   const [userdata, setUserData] = useState<any>(null);
@@ -118,6 +119,8 @@ useEffect(()=>{
           </li>
          </>
           )}
+          <li className={activeTab === "plan" ? "active" : ""}
+          onClick={() => setActiveTab("plan")}>Membership Plan</li>
           </ul>
         <div className="sidebar-bottom">
           <button onClick={handleLogout}>Logout</button>
@@ -189,7 +192,7 @@ useEffect(()=>{
         )}
         </>
         )}
-
+      {activeTab === "plan" && (<GetUserPlan/>)}
       </div>
       
     </div>

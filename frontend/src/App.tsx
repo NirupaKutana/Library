@@ -13,17 +13,20 @@ function App() {
   const token =localStorage.getItem("access_token") ;
  
   const[Locked,setLocked]=useState(localStorage.getItem("sessionLocked") === "true");
+ 
   useIdeleTimer(()=>{
+    if(token){
     localStorage.setItem("sessionLocked", "true");
-    setLocked(true);
+    setLocked(true);}
   },10*60*1000);
-  
+
   const logout = ()=>{
-    localStorage.removeItem("token");
-    window.location.href ="/login";
+    localStorage.clear();
+    window.location.reload();
+    window.location.href ="/";
   };
 
-  if(Locked && token)
+  if(Locked)
   {
     return(
       <SessionLock onSuccess={() => {

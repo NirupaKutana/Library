@@ -3,6 +3,7 @@ from django.urls import path,include
 from libApp import views
 from libApp.Views import Book_Views,Category_Views,Author_Views,Image_Views 
 from libApp.Views import Login_Views,Issue_View,Audit_Views,RoleRights_Views 
+from libApp.Views import File_View ,membership_View
 urlpatterns = [
     path("",Login_Views.test_api),
     path("getusers/",Login_Views.getUsersListView.as_view()),
@@ -75,6 +76,16 @@ urlpatterns = [
     path("role/rights/",RoleRights_Views.RoleRightsListView.as_view()),
     path("role/rights/<int:id>/",RoleRights_Views.RoleRightsListView.as_view()),
 
+    path('file/',File_View.FileListView.as_view()),
+    path('file/<int:id>/',File_View.FileListView.as_view()),
+    # path('file/del/<int:id>/',File_View.FileListView.as_view()),
+
+     path('membership/plan/',membership_View.MembershipListView.as_view()),
+     path('user/plan/',membership_View.CreateMembershipView.as_view()),
+     path('user/plan/<int:id>/',membership_View.CreateMembershipView.as_view()),
+
+    #  path('get/plan/',membership_View.UserMembershipView.as_view()),
+     
 
 ]
 

@@ -62,7 +62,9 @@ const ImageFile = () => {
                 )}
             </div>
             )}
+       
         <div className='pag'>
+             
         <Pagination
         currentPage={currentPage}
         totalItems={imgdata.length}

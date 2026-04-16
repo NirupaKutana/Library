@@ -73,7 +73,7 @@ const Audit = () => {
   return (
     <>{Loading && <Loader/>}
     <div className="audit-container">
-      <h2>Audit Logs</h2>
+      {/* <h2>Audit Logs</h2> */}
 
       <div  className="audit-filter">
       <label>Start Date :</label>

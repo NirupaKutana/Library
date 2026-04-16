@@ -47,7 +47,7 @@ const UserList = () => {
     <>
     {Loading && <Loader/>}
     <div className="userlist-container">
-        <h2>USER LIST</h2>
+        {/* <h2>USER LIST</h2> */}
         {/* <input type="text" className='srch' placeholder='🔍  Search Here..!' value={search} onChange={(e)=>setsearch(e.target.value)}/> */}
 
       <table className="user-table">
@@ -56,7 +56,7 @@ const UserList = () => {
                 <th>ID</th>
                 <th>NAME</th>
                 <th>EMAIL</th>
-                <th>ROLE</th>
+                {/* <th>ROLE</th> */}
                 <th>Audit</th>
             </tr>   
         </thead>
@@ -66,7 +66,7 @@ const UserList = () => {
                 <td>{u[0]}</td>
                 <td>{u[1]}</td>
                 <td>{u[2]}</td>
-                <td>{u[3]}</td>
+                {/* <td>{u[3]}</td> */}
                 <td><button className="audit-btn" onClick={()=>userAudit(u[2])}>View Audit</button></td>
              </tr>
              ))}

@@ -51,7 +51,7 @@ const LoginAudit = () => {
     {Loading && <Loader/>}
     <div>
       <div className="audit-container">
-      <h2>Login Audit</h2>
+      {/* <h2>Login Audit</h2> */}
    
       <input type="text" placeholder='🔍  Search Here..!' className='srchbar' value={search} onChange={(e)=>setsearch(e.target.value)}/>        
     
