@@ -87,11 +87,7 @@ env\Scripts\activate
 source env/bin/activate
 
 # Install required dependencies
-pip install django djangorestframework psycopg2-binary django-cors-headers
-
-# Run database migrations
-python manage.py makemigrations
-python manage.py migrate
+pip install -r requirements.txt
 
 # Start the Django development server
 python manage.py runserver
