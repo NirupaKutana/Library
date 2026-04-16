@@ -1,5 +1,13 @@
 from django.db import connection
 # ---------------------------------------ISSUE BOOK-------------------------------------------------------------
+def get_user_active_book_count(user_id):
+    with connection.cursor() as cursor:
+        cursor.execute("""
+            SELECT COUNT(*) FROM tbl_book_issue
+            WHERE user_id = %s AND return_date IS NULL
+        """, [user_id])
+        return cursor.fetchone()[0]
+    
 def get_all_issue_book_detail():
     with connection.cursor() as cursor:
         cursor.execute("select * from get_issue_book_detail()")

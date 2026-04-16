@@ -6,8 +6,9 @@ from rest_framework.decorators import APIView
 from rest_framework.response import Response
 from datetime import datetime
 from libApp.utils import jwt_utils
-from libApp.service import Issue_service ,Audit_service
+from libApp.service import Issue_service ,Audit_service ,Membership_service
 from libApp.Serializer.Issue_Serializer import IssueBookSerializer 
+from django.db import connection
 # ---------------------------------------ISSUE BOOK-------------------------------------------------------------
 class IssueBookView(APIView):
     def get(self,request):
@@ -20,8 +21,22 @@ class IssueBookView(APIView):
         user_id = request.data.get("user_id")
         book_ids = request.data.get("book_ids", [])
         issue_date =request.data.get("issue_date")
+        max_books = 3
+        issue_days = 7
+        fine_discount = 0
+        #id=request.GET.get("id","")
+        membership = Membership_service.get_user_membership(user_id)
+        print("user_id",user_id)
+        print("membership",membership)
+        if membership:
+            membership = membership[0] 
+            max_books = membership[1] if membership[1] != -1 else 9999  # unlimited
+            issue_days = membership[2]
+            fine_discount = membership[3]
+        else:
+            print("No membership found, using default")
+        due_date = datetime.now() + timedelta(days=issue_days)
         is_overdue =Issue_service.check_overdue(user_id)
-
         if is_overdue:
           return Response({"error": "User has overdue book. Cannot issue new book."},status=status.HTTP_403_FORBIDDEN)
         
@@ -33,10 +48,13 @@ class IssueBookView(APIView):
         
         if not issue_date :
              return Response({"error": "Issue Date id required"},status=status.HTTP_403_FORBIDDEN)
-    
-        due_date = datetime.now() + timedelta(days=7)
-        if len(book_ids) >3:
-            return Response({"error": "you can not take more then 3 books at a time"},status=status.HTTP_403_FORBIDDEN)
+       
+        
+        current_books = Issue_service.get_user_active_book_count(user_id)
+        print(current_books)
+        if (current_books + len(book_ids)) > max_books:
+            return Response({"error": f"Limit exceeded. You already have {current_books} books.Max allowed is {max_books}"}, 
+                             status=403)
        
         for book_id in book_ids :
           qty = Issue_service.get_available_qty(book_id)

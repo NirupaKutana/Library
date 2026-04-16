@@ -21,6 +21,7 @@ const fetchuser = async ()=>{
     try
     {
         setUserdata(res.data)
+
     }
     catch(err:any){toast.error(err.response?.data?.error);}
 }
@@ -42,18 +43,19 @@ const handlesubmit = async(e:React.FormEvent)=>{
     e.preventDefault()
     
     try{
-     const res = await API.post("/issue/",{
+     const res = await API.post(`/issue/`,{
       user_id:user,
       book_ids: selectedBooks,
       issue_date:issue 
     })
         toast.success(res.data.success)
+        console.log(res.data)
          navigate("/profile" ,{state : {activeTab : "issue"}})
          window.location.reload()
         onSuccess();
     }
     catch(err:any){
-      //  console.log("Full error:", err);
+       console.log("Full error:", err);
        if(err.response && err.response.data)
        {toast.error(err.response.data.error || "Something went wrong");}
        else{toast.error("Server error. Please try again.");} 
@@ -61,11 +63,11 @@ const handlesubmit = async(e:React.FormEvent)=>{
 
 }
 
-  return (
+  return (  
     <div className="issue-container">
-     
-      <form className="issue-form" onSubmit={handlesubmit}>
     
+      <form className="issue-form" onSubmit={handlesubmit}>
+        
         <h2>Issue Book</h2>
         
         <label>User : </label>
